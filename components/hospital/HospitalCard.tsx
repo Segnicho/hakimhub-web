@@ -4,15 +4,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Services = [
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-];
 
 interface isOpenProps {
   isopen: boolean;
@@ -62,7 +53,9 @@ const HospitalCard: React.FC = () => {
         <div className="flex flex-wrap m-2">
           <div className="w-1/2">
             <div className="text-gray-400 text-xl font-bold">
-              <span className="text-blue-400 font-extrabold text-2xl -mt-3">12</span>{" "}
+              <span className="text-blue-400 font-extrabold text-2xl -mt-3">
+                12
+              </span>{" "}
               Hour
             </div>
             <div className="text-gray-400 text-sm">8:00am - 8:00pm</div>
@@ -82,22 +75,25 @@ const HospitalCard: React.FC = () => {
       <div className="pl-5 w-full md:w-3/4">
         <div className="font-extrabold text-3xl pb-2">
           Tikur Anbesa{" "}
-          <span className="text-blue-400 font-extrabold text-3xl">Hospital</span>
+          <span className="text-blue-400 font-extrabold text-3xl">
+            Hospital
+          </span>
         </div>
-        <div className="text-gray-400 text-sm pb-2 mb-5">King George Street</div>
-        <div className="text-gray-500 text-xl font-bold pb-2 mb-2">Services</div>
+        <div className="text-gray-400 text-sm pb-2 mb-5">
+          King George Street
+        </div>
+        <div className="text-gray-500 text-xl font-bold pb-2 mb-2">
+          Services
+        </div>
 
         <div className="hidden md:block">
           <Slider {...settings}>
-          {Services.map((service, index) => (
-              <div key={index} className="p-2">
-                {service}
-              </div>
+            {Array(6).map((comp, idx) => (
+              <ServicesCard key={idx} />
             ))}
           </Slider>
         </div>
-        <div className="md:hidden">
-        </div>
+        <div className="md:hidden"></div>
       </div>
     </div>
   );
