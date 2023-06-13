@@ -10,7 +10,7 @@ const Hero = () => {
         <span className="text-[45px] font-bold">
           Health <span className="text-blue-500"> Care</span>
         </span>
-        <span>Options More Accessible</span>
+        <span>Options Easier <span className="text-blue-500">&</span> <br /> More Accessible</span>
       </div>
       <div className="cols-span-1">
         <Image src={doctor} alt="doctor and patient" />

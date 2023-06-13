@@ -16,8 +16,9 @@ export default function Home() {
           Services We Provide
         </h3>
         <div className="flex justify-between">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <Service
+              key={index}
               description={service.description}
               image={service.image}
               service={service.service}
@@ -26,7 +27,9 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2">
           <div className="cols-span-1">
-            <h1 className="font-bold text-[40px] text-[#565656] my-3 mb-5">What is Hakimhub</h1>
+            <h1 className="font-bold text-[40px] text-[#565656] my-3 mb-5">
+              What is Hakimhub
+            </h1>
             <div className="leading-1 tracking-wide">
               HakimHub is a professional website designed to empower users in
               understanding their health concerns. With our user-friendly
@@ -42,7 +45,11 @@ export default function Home() {
           </div>
           <div className="cols-span-1">
             <h2 className="text-center">Android</h2>
-          <Image src={phone} alt="Phone" className="object-contain h-[400px] w-full" />
+            <Image
+              src={phone}
+              alt="Phone"
+              className="object-contain h-[400px] w-full"
+            />
           </div>
         </div>
       </div>
