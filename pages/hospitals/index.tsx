@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import FilterCard from "@/components/commons/FilterCard";
 import SearchCard from "@/components/commons/SearchCard";
 import HospitalCard from "@/components/hospital/HospitalCard";
@@ -18,3 +19,17 @@ export default function HospitalsPage() {
     </div>
   );
 }
+=======
+import Overview from "@/components/hospitals/Overview";
+import React from "react";
+
+const Hospitals = () => {
+  return <div>Hospitals
+    <div>
+      <Overview />
+    </div>
+  </div>;
+};
+
+export default Hospitals;
+>>>>>>> 51a8b38 (add overview's map and about us.)
