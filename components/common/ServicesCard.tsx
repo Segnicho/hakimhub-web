@@ -24,9 +24,7 @@ const ServicesCard: React.FC = () => {
         </div>
       </div>
       <div className="flex flex-wrap font-bold text-md ">
-       
        General and specialty surgical services.
-       
       </div>
     </div>
   );

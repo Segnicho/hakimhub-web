@@ -1,4 +1,3 @@
-import FilterCard from "@/components/common/FilterCard";
 import HospitalCard from "@/components/hospital/HospitalCard";
 import HospitalsList from "@/components/hospital/HospitalsList";
 

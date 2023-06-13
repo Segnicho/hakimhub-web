@@ -37,8 +37,6 @@ const HospitalCard: React.FC = () => {
   const settings = {
     speed: 500,
     slidesToShow: 3,
-    nextArrow: null,
-    prevArrow: null,
   };
 
   return (
@@ -90,7 +88,6 @@ const HospitalCard: React.FC = () => {
         <div className="text-gray-500 text-xl font-bold pb-2 mb-2">Services</div>
 
         <div className="hidden md:block">
-          {/* Render services with Slider on medium and larger screens */}
           <Slider {...settings}>
           {Services.map((service, index) => (
               <div key={index} className="p-2">
@@ -100,7 +97,6 @@ const HospitalCard: React.FC = () => {
           </Slider>
         </div>
         <div className="md:hidden">
-          {/* Hide services on small screens */}
         </div>
       </div>
     </div>
