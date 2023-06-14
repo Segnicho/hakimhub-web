@@ -2,7 +2,7 @@ import { doctor } from "@/public";
 import Image from "next/image";
 import React from "react";
 
-const Hero = () => {
+const Hero:React.FC = () => {
   return (
     <div className="grid grid-cols-2 max-md:grid-cols-1 font-semibold px-5 mt-10">
       <div className="cols-span-1 flex flex-col gap-2 text-[40px] ">

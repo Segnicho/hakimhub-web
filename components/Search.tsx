@@ -1,7 +1,7 @@
 import React from "react";
 import { MdSend } from "react-icons/md";
 
-const Search = () => {
+const Search: React.FC = () => {
   return (
     <div className="flex items-center p-2 rounded shadow-md mt-5 ml-3 bg-[#EFF3F9] w-1/2 max-md:w-full">
       <input

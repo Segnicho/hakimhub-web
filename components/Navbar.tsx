@@ -3,7 +3,7 @@ import { HiChat } from "react-icons/hi";
 
 import { logo } from "@/public";
 import Link from "next/link";
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav className="sticky flex top-0 justify-between px-5 z-50 bg-white py-2 shadow-sm">
       <Link href="/">

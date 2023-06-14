@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
     <div className="py-5 flex justify-between px-10  mr-10 bg-slate-50">
       <div>
