@@ -9,9 +9,6 @@ const Services = [
   <ServicesCard />,
   <ServicesCard />,
   <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
 ];
 
 interface isOpenProps {
@@ -27,7 +24,7 @@ const IsOpen: React.FC<isOpenProps> = ({ isopen = false }) => {
     );
   }
   return (
-    <div className="text-red-500 text-lg font-bold flex flex-wrap justify-end mr-2 ">
+    <div className="text-red-300 text-lg font-bold flex flex-wrap justify-end mr-2 ">
       CLOSED
     </div>
   );
@@ -54,28 +51,28 @@ const HospitalCard: React.FC = () => {
           <Image
             src={"/image/logo.png"}
             alt={""}
-            width={80}
-            height={100}
+            width={100}
+            height={160}
             className="rounded-full -m-10"
           />
         </div>
         <div className="flex flex-wrap m-2">
-          <div className="w-1/2">
-            <div className="text-gray-400 text-xl font-bold">
-              <span className="text-blue-400 font-extrabold text-2xl -mt-3">
+          <div className="w-1/2 hidden md:block">
+            <div className="text-xl font-bold">
+              <span className="text-primary font-extrabold text-2xl -mt-3">
                 12
               </span>{" "}
               Hour
             </div>
-            <div className="text-gray-400 text-sm">8:00am - 8:00pm</div>
+            <div className="text-sm ">8:00am - 8:00pm</div>
           </div>
-          <div className="w-1/2 flex justify-end">
+          <div className="w-1/2 pl-6 hidden md:block">
             <div>
-              <div className="text-gray-400 text-xl font-bold">
-                <span className="text-blue-400 font-extrabold text-2xl">5</span>{" "}
+              <div className=" text-xl font-bold">
+                <span className="text-primary font-extrabold text-2xl">5</span>{" "}
                 Days
               </div>
-              <div className="text-gray-400 text-sm">Monday - Friday</div>
+              <div className="text-sm">Monday - Friday</div>
             </div>
           </div>
         </div>
@@ -84,18 +81,18 @@ const HospitalCard: React.FC = () => {
       <div className="pl-5 w-full md:w-2/3">
         <div className="font-extrabold text-3xl pb-2">
           Tikur Anbesa{" "}
-          <span className="text-blue-400 font-extrabold text-3xl">
+          <span className="text-primary font-extrabold text-3xl">
             Hospital
           </span>
         </div>
-        <div className="text-gray-400 text-sm pb-2 mb-8">
+        <div className="text-sm pb-2 mb-2">
           King George Street
         </div>
-        <div className="text-gray-500 text-xl font-bold pb-2 mb-2 hidden md:block">
+        <div className=" text-xl font-bold pb-2 mb-2 hidden md:block">
           Services
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block p-4">
           <Slider {...settings}>
             {Services.map((service, index) => (
               <div key={index}>{service}</div>

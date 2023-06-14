@@ -4,13 +4,11 @@ const hospitals = [
   <HospitalCard />,
   <HospitalCard />,
   <HospitalCard />,
-  <HospitalCard />,
-  <HospitalCard />,
-  <HospitalCard />,
+  <HospitalCard />
 ];
 const HospitalsList: React.FC = () => {
   return (
-    <div>
+    <div className="text-primary-text">
       {hospitals.map((hospital, index) => (
         <div key={index} className="mb-16">
           {hospital}
