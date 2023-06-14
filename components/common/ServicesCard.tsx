@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const ServicesCard: React.FC = () => {
   return (
-    <div className="bg-white rounded-lg mr-4 p-2 -mb-3">
+    <div className="bg-white rounded-lg mr-4 p-2">
       <div className="flex flex-wrap">
-        <div className="w-1/2">
+        <div className="w-1/2 mb-2">
           <Image
             src={"/image/plus.png"}
             alt={""}
@@ -23,8 +23,8 @@ const ServicesCard: React.FC = () => {
           />
         </div>
       </div>
-      <div className="flex flex-wrap font-bold text-md ">
-       General and specialty surgical services.
+      <div className="flex flex-wrap font-bold text-md p-2 pb-4">
+        General and specialty surgical services.
       </div>
     </div>
   );
