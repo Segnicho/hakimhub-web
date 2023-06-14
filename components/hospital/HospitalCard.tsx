@@ -11,38 +11,20 @@ const Services = [
   <ServicesCard />,
 ];
 
-interface isOpenProps {
-  isopen: boolean;
-}
-
-const IsOpen: React.FC<isOpenProps> = ({ isopen = false }) => {
-  if (isopen) {
-    return (
-      <div className="text-green-500 text-lg font-bold flex flex-wrap justify-end mr-2">
-        OPEN
-      </div>
-    );
-  }
-  return (
-    <div className="text-red-300 text-lg font-bold flex flex-wrap justify-end mr-2 ">
-      CLOSED
-    </div>
-  );
-};
-
 const HospitalCard: React.FC = () => {
   const settings = {
     speed: 500,
     slidesToShow: 3,
   };
+  const isopen = false;
 
   return (
-    <div className="flex flex-wrap bg-gray-300 rounded-lg m-3 shadow-lg">
-      <div className="w-full md:w-1/3 bg-white rounded-lg">
+    <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg">
+      <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
         <div>
           <Image
             src={"/image/background.png"}
-            alt={""}
+            alt={"hospital"}
             width={500}
             height={200}
           />
@@ -50,7 +32,7 @@ const HospitalCard: React.FC = () => {
         <div className="flex justify-center mb-10">
           <Image
             src={"/image/logo.png"}
-            alt={""}
+            alt={"logo"}
             width={100}
             height={160}
             className="rounded-full -m-10"
@@ -61,45 +43,52 @@ const HospitalCard: React.FC = () => {
             <div className="text-xl font-bold">
               <span className="text-primary font-extrabold text-2xl -mt-3">
                 12
-              </span>{" "}
-              Hour
+              </span>
+              <span>Hour</span>
             </div>
-            <div className="text-sm ">8:00am - 8:00pm</div>
+            <div className="text-sm ">
+              <span>8:00am - 8:00pm</span>
+            </div>
           </div>
           <div className="w-1/2 pl-6 hidden md:block">
             <div>
               <div className=" text-xl font-bold">
                 <span className="text-primary font-extrabold text-2xl">5</span>{" "}
-                Days
+                <span>Days</span>
               </div>
-              <div className="text-sm">Monday - Friday</div>
+              <div className="text-sm">
+                <span>Monday - Friday</span>
+              </div>
             </div>
           </div>
         </div>
-        <IsOpen isopen={false} />
+        <div
+          className={`text-lg font-bold flex flex-wrap justify-end mr-2 ${
+            isopen ? "text-green-500" : "text-red-300"
+          }`}
+        >
+          {isopen ? "OPEN" : "CLOSED"}
+        </div>
       </div>
       <div className="pl-5 w-full md:w-2/3">
         <div className="font-extrabold text-3xl pb-2">
-          Tikur Anbesa{" "}
-          <span className="text-primary font-extrabold text-3xl">
-            Hospital
-          </span>
+          <span>Tikur Anbesa</span>
+          <span className="text-primary font-extrabold text-3xl"> Hospital</span>
         </div>
         <div className="text-sm pb-2 mb-2">
-          King George Street
+          <span>King George Street</span>
         </div>
         <div className=" text-xl font-bold pb-2 mb-2 hidden md:block">
-          Services
+          <span>Services</span>
         </div>
 
-        <div className="hidden md:block p-4">
+        <div className="hidden md:block pb-1">
           <Slider {...settings}>
             {Services.map((service, index) => (
               <div key={index}>{service}</div>
             ))}
           </Slider>
         </div>
-        <div className="md:hidden"></div>
       </div>
     </div>
   );

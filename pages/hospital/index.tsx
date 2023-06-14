@@ -3,7 +3,7 @@ import HospitalsList from "@/components/hospital/HospitalsList";
 
 export default function HospitalsPage() {
     return (
-        <div className="p-40">
+        <div className="bg-primary-bg">
             <HospitalsList />
         </div>
     )
