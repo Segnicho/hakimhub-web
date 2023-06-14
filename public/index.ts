@@ -1,0 +1,6 @@
+export {default as phone } from "@/public/imgs/landing/phone.png"
+export {default as doctor } from "@/public/imgs/landing/doctor.png"
+export {default as medicalTeam } from "@/public/imgs/landing/medical-team.png"
+export {default as hospital } from "@/public/imgs/landing/hospital.png"
+export {default as chat } from "@/public/imgs/landing/chat.png"
+export {default as logo } from "@/public/imgs/landing/logo.png"
