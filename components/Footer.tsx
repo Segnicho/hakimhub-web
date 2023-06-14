@@ -9,7 +9,7 @@ const Footer = () => {
         <span className="mr-8">Privacy Policy</span>
         <span>Terms of Use</span>
       </div>
-      <div className="flex gap-8 text-[#68A4F9]">
+      <div className="flex gap-8 text-primary">
         <Link href="/">
           <BsFacebook />
         </Link>

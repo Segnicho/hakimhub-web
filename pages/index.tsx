@@ -12,10 +12,10 @@ export default function Home() {
       <Hero />
       <Search />
       <div className="mt-10">
-        <h3 className="font-bold text-center text-[#565555] text-[40px]">
+        <h3 className="font-bold text-center text-primary-text text-[40px]">
           Services We Provide
         </h3>
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap">
           {services.map((service, index) => (
             <Service
               key={index}
@@ -25,9 +25,9 @@ export default function Home() {
             />
           ))}
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 max-md:grid-cols-1">
           <div className="cols-span-1">
-            <h1 className="font-bold text-[40px] text-[#565656] my-3 mb-5">
+            <h1 className="font-bold text-[40px] text-primary-text my-3 mb-5">
               What is Hakimhub
             </h1>
             <div className="leading-1 tracking-wide">
