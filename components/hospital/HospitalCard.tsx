@@ -41,7 +41,7 @@ const HospitalCard: React.FC = () => {
 
   return (
     <div className="flex flex-wrap bg-gray-300 rounded-lg m-3 shadow-lg">
-      <div className="w-full md:w-1/4 bg-white rounded-lg">
+      <div className="w-full md:w-1/3 bg-white rounded-lg">
         <div>
           <Image
             src={"/image/background.png"}
@@ -62,7 +62,9 @@ const HospitalCard: React.FC = () => {
         <div className="flex flex-wrap m-2">
           <div className="w-1/2">
             <div className="text-gray-400 text-xl font-bold">
-              <span className="text-blue-400 font-extrabold text-2xl -mt-3">12</span>{" "}
+              <span className="text-blue-400 font-extrabold text-2xl -mt-3">
+                12
+              </span>{" "}
               Hour
             </div>
             <div className="text-gray-400 text-sm">8:00am - 8:00pm</div>
@@ -79,30 +81,28 @@ const HospitalCard: React.FC = () => {
         </div>
         <IsOpen isopen={false} />
       </div>
-      <div className="pl-5 w-full md:w-3/4">
+      <div className="pl-5 w-full md:w-2/3">
         <div className="font-extrabold text-3xl pb-2">
           Tikur Anbesa{" "}
-          <span className="text-blue-400 font-extrabold text-3xl">Hospital</span>
+          <span className="text-blue-400 font-extrabold text-3xl">
+            Hospital
+          </span>
         </div>
-        <div className="text-gray-400 text-sm pb-2 mb-5">King George Street</div>
-        <div className="text-gray-500 text-xl font-bold pb-2 mb-2">Services</div>
+        <div className="text-gray-400 text-sm pb-2 mb-8">
+          King George Street
+        </div>
+        <div className="text-gray-500 text-xl font-bold pb-2 mb-2 hidden md:block">
+          Services
+        </div>
 
         <div className="hidden md:block">
           <Slider {...settings}>
-          {
-            Array(6).map((comp, idx)=>(
-                <ServicesCard key={idx}/>
-            ))
-        }
-          {Services.map((service, index) => (
-              <div key={index} className="p-2">
-                {service}
-              </div>
+            {Services.map((service, index) => (
+              <div key={index}>{service}</div>
             ))}
           </Slider>
         </div>
-        <div className="md:hidden">
-        </div>
+        <div className="md:hidden"></div>
       </div>
     </div>
   );

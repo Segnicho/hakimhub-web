@@ -11,7 +11,6 @@ const hospitals = [
 const HospitalsList: React.FC = () => {
   return (
     <div>
-        
       {hospitals.map((hospital, index) => (
         <div key={index} className="mb-16">
           {hospital}
