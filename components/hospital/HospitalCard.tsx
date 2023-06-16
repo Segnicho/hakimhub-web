@@ -10,8 +10,10 @@ const HospitalCard: React.FC = () => {
     slidesToShow: 3,
   };
   const isopen = false;
-  const numServices = 4; 
-  const services = Array(numServices).fill().map((_, index) => ( <ServicesCard key={index} /> ));
+  const numServices = 4;
+  const services = Array(numServices)
+    .fill()
+    .map((_, index) => <ServicesCard key={index} />);
   return (
     <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
@@ -67,7 +69,10 @@ const HospitalCard: React.FC = () => {
       <div className="pl-5 w-full md:w-2/3">
         <div className="font-extrabold text-3xl pb-2">
           <span>Tikur Anbesa</span>
-          <span className="text-primary font-extrabold text-3xl"> Hospital</span>
+          <span className="text-primary font-extrabold text-3xl">
+            {" "}
+            Hospital
+          </span>
         </div>
         <div className="text-sm pb-2 mb-2">
           <span>King George Street</span>
