@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import gallery from './../public/data/gallery.json';
+import gallery from '../../public/data/gallery.json';
 
 const Gallery = () => {
   const columns = Math.ceil(gallery.Photos.length / 3); 

@@ -1,5 +1,5 @@
 import DoctorCard from './DoctorCard';
-import doctors from './../public/data/doctor.json';
+import doctors from '../../public/data/doctor.json';
 
 const DoctorsList = () => {
   return (

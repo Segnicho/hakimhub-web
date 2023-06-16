@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
-import Gallery from '@/components/Gallery'
-import DoctorsList from '@/components/DoctorsList'
-import ContactCard from "@/components/ContactCard"
-import HospitalCard from "@/components/HospitalCard"
+import Gallery from './../../components/hospital-detail-common/Gallery'
+import DoctorsList from './../../components/doctor/DoctorsList'
+import ContactCard from "./../../components/hospital-detail-common/ContactCard"
+import HospitalCard from "./../../components/hospital-detail-common/HospitalCard"
 
 const HospitalDetailPage = () => {
   const router = useRouter();

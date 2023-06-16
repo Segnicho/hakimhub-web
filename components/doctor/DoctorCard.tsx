@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import {Doctor} from './../types/Hospital';
+import {Doctor} from '../../types/Hospital';
 interface Props {
   doctor: Doctor;
 }
