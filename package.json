@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.18",
     "@types/node": "20.2.5",
     "@types/react": "18.2.9",
     "@types/react-dom": "18.2.4",
@@ -20,8 +21,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
+<<<<<<< HEAD
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+=======
+>>>>>>> 46839c8 (refactor environment, install necessary packages, and resolve issues for suitable development)
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   }
