@@ -4,20 +4,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Services = [
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-  <ServicesCard />,
-];
-
 const HospitalCard: React.FC = () => {
   const settings = {
     speed: 500,
     slidesToShow: 3,
   };
   const isopen = false;
-
+  const numServices = 4; 
+  const services = Array(numServices).fill().map((_, index) => ( <ServicesCard key={index} /> ));
   return (
     <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
@@ -84,7 +78,7 @@ const HospitalCard: React.FC = () => {
 
         <div className="hidden md:block pb-1">
           <Slider {...settings}>
-            {Services.map((service, index) => (
+            {services.map((service, index) => (
               <div key={index}>{service}</div>
             ))}
           </Slider>

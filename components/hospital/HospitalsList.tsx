@@ -1,12 +1,8 @@
 import HospitalCard from "./HospitalCard";
 
-const hospitals = [
-  <HospitalCard />,
-  <HospitalCard />,
-  <HospitalCard />,
-  <HospitalCard />
-];
 const HospitalsList: React.FC = () => {
+  const numHospitals = 4; 
+  const hospitals = Array(numHospitals).fill().map((_, index) => ( <HospitalCard key={index} /> ));
   return (
     <div className="text-primary-text">
       {hospitals.map((hospital, index) => (
