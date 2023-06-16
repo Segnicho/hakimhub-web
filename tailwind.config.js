@@ -11,6 +11,8 @@ module.exports = {
         primary: "#2196F3",
         accent: "#FF9F43",
         "primary-text": "#565656",
+        "card-bg" : "#FDFDFD",
+        "primary-bg": "#FAFAFA"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

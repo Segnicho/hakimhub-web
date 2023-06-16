@@ -20,7 +20,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.9.0",
+<<<<<<< HEAD
     "react-range": "^1.8.14",
+=======
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
+>>>>>>> da3edc2f4c6e3b2ae353d486f989702b1d339de5
     "tailwindcss": "3.3.2",
     "typescript": "5.1.3"
   }
