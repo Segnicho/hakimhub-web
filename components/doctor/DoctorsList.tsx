@@ -3,7 +3,7 @@ import doctors from '../../public/data/doctor.json';
 
 const DoctorsList = () => {
   return (
-    <div className='mx-6 my-6'>
+    <div className='mx-6 my-6 bg-secondary-bg'>
       <div className='flex flex-row'>
         <h3 className='text-2xl font-bold mx-20'>Doctors at Tikur Ambessa</h3>
         <div className='flex flex-row ml-36'>
