@@ -8,7 +8,7 @@ const DoctorsList = () => {
         <h3 className='text-2xl font-bold mx-20'>Doctors at Tikur Ambessa</h3>
         <div className='flex flex-row ml-36'>
           <div className='relative'>
-            <label htmlFor='speciality' className='text-md font-semi-bold text-blue-500'>
+            <label htmlFor='speciality' className='text-md font-semi-bold text-primary'>
               Speciality
             </label>
             <select
@@ -23,7 +23,7 @@ const DoctorsList = () => {
             </select>
           </div>
           <div className='relative ml-4'>
-            <label htmlFor='university' className='text-md font-semi-bold text-blue-500'>
+            <label htmlFor='university' className='text-md font-semi-bold text-primary'>
               Education
             </label>
             <select
@@ -39,18 +39,18 @@ const DoctorsList = () => {
             </select>
           </div>
           <div className='relative ml-4'>
-            <label htmlFor='experience' className='text-md font-semi-bold text-blue-500'>
+            <label htmlFor='experience' className='text-md font-semi-bold text-primary'>
               Experience
             </label>
             <select
               id='experience'
               className='block w-32 mt-1 py-2 px-3 bg-white rounded-md  drop-shadow shadow-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500'
             >
-              <option value=''>0-5 years</option>
-              <option value='0-5 years'>0-5 years</option>
-              <option value='5-10 years'>5-10 years</option>
-              <option value='10-15 years'>10-15 years</option>
-              <option value='15+ years'>15+ years</option>
+              <option value=''>0-2 years</option>
+              <option value='0-5 years'>3-5 years</option>
+              <option value='5-10 years'>6-8 years</option>
+              <option value='10-15 years'>8-10 years</option>
+              <option value='15+ years'>10+ years</option>
             </select>
           </div>
         </div>

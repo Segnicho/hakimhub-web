@@ -9,12 +9,12 @@ const ContactCard = () => {
             <h3 className='text-xl my-2 mx-3'>Reception</h3>
             <div className="flex items-center gap-5 max-w-sm bg-white rounded-lg 
  drop-shadow-lg my-4">
-                <MdPhone className="h-10 w-12 text-blue-500 bg-white rounded-full drop-shadow-md p-3" />
+                <MdPhone className="h-10 w-12 text-primary bg-white rounded-full drop-shadow-md p-3" />
                 <p className="text-lg font-medium">+251-765-837</p>
             </div>
             <div className="flex items-center gap-5 max-w-sm bg-white rounded-lg 
 drop-shadow-md my-4">
-                <MdPhone className="h-10 w-12 text-blue-500 bg-white rounded-full drop-shadow-md p-3" />
+                <MdPhone className="h-10 w-12 text-primary bg-white rounded-full drop-shadow-md p-3" />
                 <p className="text-lg font-medium">+251-765-837</p>
             </div>
         </div>
@@ -22,7 +22,7 @@ drop-shadow-md my-4">
             <h3 className='text-xl my-2'>Email</h3>
             <div className="flex items-center gap-5 max-w-sm bg-white rounded-lg 
 drop-shadow-md">
-                <TfiEmail className="h-10 w-12 text-blue-500 bg-white rounded-full drop-shadow-md p-3" />
+                <TfiEmail className="h-10 w-12 text-primary bg-white rounded-full drop-shadow-md p-3" />
                 <p className="text-lg font-medium">+251-765-837</p>
             </div>
         </div>
@@ -30,7 +30,7 @@ drop-shadow-md">
             <h3 className='text-xl my-2'>Web</h3>
             <div className="flex items-center gap-5 max-w-sm bg-white rounded-lg 
 drop-shadow-md">
-                <MdPhone className="h-10 w-12 text-blue-500 bg-white rounded-full drop-shadow-md p-3" />
+                <MdPhone className="h-10 w-12 text-primary bg-white rounded-full drop-shadow-md p-3" />
                 <p className="text-lg font-medium">+251-765-837</p>
             </div>
         </div>

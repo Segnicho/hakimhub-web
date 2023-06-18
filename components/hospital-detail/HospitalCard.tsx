@@ -11,7 +11,7 @@ const HospitalCard = () => {
         </div>
       </div>
       <div className="my-20">
-        <h3 className="text-3xl text-blue-500 font-bold mx-16">Tikur Ambessa</h3>
+        <h3 className="text-3xl text-primary font-bold mx-16">Tikur Ambessa</h3>
         <p className="text-2xl text-gray-600 p-5 mx-28">Open</p>
         <div className="border-b border-gray-300 my-1"></div>
       </div>
