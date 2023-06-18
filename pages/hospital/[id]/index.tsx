@@ -1,8 +1,5 @@
 import { useRouter } from 'next/router'
-import Gallery from '../../../components/hospital-detail/GalleryCard'
-import DoctorsList from '../../../components/doctor/DoctorsList'
-import ContactCard from "../../../components/hospital-detail/ContactCard"
-import HospitalCard from "../../../components/hospital-detail/HospitalCard"
+import {DoctorsList,GalleryCard,ContactCard,HospitalCard} from '../../../components/index'
 
 const HospitalDetailPage = () => {
   const router = useRouter();
@@ -37,7 +34,7 @@ const HospitalDetailPage = () => {
         {/* To be added by Segni */}
         {/* {router.pathname === '/hospital/[id]' && <OverviewComponent />} */}
         {router.pathname === '/hospital/[id]/doctors' && <DoctorsList />}
-        {router.pathname === '/hospital/[id]/gallery' && <Gallery />}
+        {router.pathname === '/hospital/[id]/gallery' && <GalleryCard />}
       </div>
     </div>
   );
