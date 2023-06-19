@@ -74,14 +74,14 @@ const HospitalCard: React.FC = () => {
             Hospital
           </span>
         </div>
-        <div className="text-sm pb-2 mb-2">
+        <div className="text-sm pb-2">
           <span>King George Street</span>
         </div>
-        <div className=" text-xl font-bold pb-2 mb-2 hidden md:block">
+        <div className=" text-xl font-bold hidden md:block">
           <span>Services</span>
         </div>
 
-        <div className="hidden md:block pb-1">
+        <div className="hidden md:block">
           <Slider {...settings}>
             {services.map((service, index) => (
               <div key={index}>{service}</div>
