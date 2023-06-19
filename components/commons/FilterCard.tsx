@@ -7,9 +7,13 @@ import { filter_service } from "@/data/services";
 >>>>>>> 8f27905 (implement filtering)
 =======
 import FilterChip from "./FilterChip";
+<<<<<<< HEAD
 
 const services = ["Oncologists", "Lab", "Emergency", "Allergist"];
 >>>>>>> 7a8192e (add filter button)
+=======
+import { filter_service } from "@/data/services";
+>>>>>>> 42b73e9 (add services data)
 
 const FilterCard: React.FC = () => {
   const [openNow, setOpenNow] = useState(false);
@@ -61,6 +65,7 @@ const FilterCard: React.FC = () => {
         <div className="mb-4">
           <label className="block mb-4">Services</label>
           <div className="flex flex-wrap font-normal">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             {filter_service.map((service, index) => (
@@ -128,6 +133,10 @@ const FilterCard: React.FC = () => {
 =======
             {services.map((service, index) => (
               <FilterChip service={service} key={index}/>
+=======
+            {filter_service.map((service, index) => (
+              <FilterChip service={service} key={index} />
+>>>>>>> 42b73e9 (add services data)
             ))}
 >>>>>>> 7a8192e (add filter button)
           </div>
