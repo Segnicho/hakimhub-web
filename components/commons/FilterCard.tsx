@@ -71,7 +71,11 @@ const FilterCard: React.FC = () => {
               }`}
               onClick={() => handleServiceSelection("Oncologists")}
             >
-              <span className="text-primary text-lg">+ </span>Oncologists
+              <span className={`text-primary text-lg ${
+                selectedServices.includes("Oncologists")
+                  ? "hidden"
+                  : "bg-white"
+              }`}>+ </span>Oncologists
             </button>
             <button
               className={`mr-2 mb-2 px-6 py-1 rounded-full ${
@@ -81,7 +85,11 @@ const FilterCard: React.FC = () => {
               }`}
               onClick={() => handleServiceSelection("Lab")}
             >
-              <span className="text-primary text-lg">+ </span>Lab
+              <span className={`text-primary text-lg ${
+                selectedServices.includes("Lab")
+                  ? "hidden"
+                  : "bg-white"
+              }`}>+ </span>Lab
             </button>
             <button
               className={`mr-2 mb-2 px-6 py-1 rounded-full ${
@@ -91,7 +99,11 @@ const FilterCard: React.FC = () => {
               }`}
               onClick={() => handleServiceSelection("Emergency")}
             >
-              <span className="text-primary text-lg">+ </span>Emergency
+              <span className={`text-primary text-lg ${
+                selectedServices.includes("Emergency")
+                  ? "hidden"
+                  : "bg-white"
+              }`}>+ </span>Emergency
             </button>
 
             <button
@@ -102,7 +114,11 @@ const FilterCard: React.FC = () => {
               }`}
               onClick={() => handleServiceSelection("Allergist")}
             >
-              <span className="text-primary text-lg">+ </span>Allergist
+              <span className={`text-primary text-lg ${
+                selectedServices.includes("Allergist")
+                  ? "hidden"
+                  : "bg-white"
+              }`}>+ </span>Allergist
             </button>
 >>>>>>> 8f27905 (implement filtering)
           </div>
