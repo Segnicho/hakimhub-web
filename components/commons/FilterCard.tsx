@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import FilterChip from "./FilterChip";
-
-const services = ["Oncologists", "Lab", "Emergency", "Allergist"];
+import { filter_service } from "@/data/services";
 
 const FilterCard: React.FC = () => {
   const [openNow, setOpenNow] = useState(false);
@@ -42,8 +41,8 @@ const FilterCard: React.FC = () => {
         <div className="mb-4">
           <label className="block mb-4">Services</label>
           <div className="flex flex-wrap font-normal">
-            {services.map((service, index) => (
-              <FilterChip service={service} key={index}/>
+            {filter_service.map((service, index) => (
+              <FilterChip service={service} key={index} />
             ))}
           </div>
         </div>

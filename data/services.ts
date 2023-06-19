@@ -19,3 +19,6 @@ export const services: Service[] = [
     service: "Chat",
   },
 ];
+
+
+export const filter_service = ["Oncologists", "Lab", "Emergency", "Allergist"];
