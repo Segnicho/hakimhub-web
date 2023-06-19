@@ -1,18 +1,13 @@
 import React, { useState } from "react";
+import FilterChip from "./FilterChip";
+
+const services = ["Oncologists", "Lab", "Emergency", "Allergist"];
 
 const FilterCard: React.FC = () => {
   const [openNow, setOpenNow] = useState(false);
   const [activeRange, setActiveRange] = useState(0);
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [withinRange, setWithinRange] = useState(10);
 
-  const handleServiceSelection = (service: string) => {
-    if (selectedServices.includes(service)) {
-      setSelectedServices(selectedServices.filter((s) => s !== service));
-    } else {
-      setSelectedServices([...selectedServices, service]);
-    }
-  };
+  const [withinRange, setWithinRange] = useState(10);
 
   return (
     <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full">
@@ -47,63 +42,9 @@ const FilterCard: React.FC = () => {
         <div className="mb-4">
           <label className="block mb-4">Services</label>
           <div className="flex flex-wrap font-normal">
-            <button
-              className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-                selectedServices.includes("Oncologists")
-                  ? "bg-primary text-white"
-                  : "bg-white text-primary-text border border-primary-text"
-              }`}
-              onClick={() => handleServiceSelection("Oncologists")}
-            >
-              <span className={`text-primary text-lg ${
-                selectedServices.includes("Oncologists")
-                  ? "hidden"
-                  : "bg-white"
-              }`}>+ </span>Oncologists
-            </button>
-            <button
-              className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-                selectedServices.includes("Lab")
-                  ? "bg-primary text-white"
-                  : "bg-white text-primary-text border border-primary-text"
-              }`}
-              onClick={() => handleServiceSelection("Lab")}
-            >
-              <span className={`text-primary text-lg ${
-                selectedServices.includes("Lab")
-                  ? "hidden"
-                  : "bg-white"
-              }`}>+ </span>Lab
-            </button>
-            <button
-              className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-                selectedServices.includes("Emergency")
-                  ? "bg-primary text-white"
-                  : "bg-white text-primary-text border border-primary-text"
-              }`}
-              onClick={() => handleServiceSelection("Emergency")}
-            >
-              <span className={`text-primary text-lg ${
-                selectedServices.includes("Emergency")
-                  ? "hidden"
-                  : "bg-white"
-              }`}>+ </span>Emergency
-            </button>
-
-            <button
-              className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-                selectedServices.includes("Allergist")
-                  ? "bg-primary text-white"
-                  : "bg-white text-primary-text border border-primary-text"
-              }`}
-              onClick={() => handleServiceSelection("Allergist")}
-            >
-              <span className={`text-primary text-lg ${
-                selectedServices.includes("Allergist")
-                  ? "hidden"
-                  : "bg-white"
-              }`}>+ </span>Allergist
-            </button>
+            {services.map((service, index) => (
+              <FilterChip service={service} key={index}/>
+            ))}
           </div>
         </div>
 
