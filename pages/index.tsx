@@ -1,14 +1,12 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import { Hero, Search, Service } from "@/components";
 import { services } from "@/data/services";
 import { phone } from "@/public";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen flex-col px-10 ${inter.className}`}>
+    <main className={`flex min-h-screen flex-col px-10 `}>
       <Hero />
       <Search />
       <div className="mt-10">
