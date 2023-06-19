@@ -78,10 +78,14 @@ const HospitalCard: React.FC = () => {
           <span>King George Street</span>
         </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className=" text-xl font-bold hidden md:block">
 =======
         <div className=" text-xl font-boldhidden md:block">
 >>>>>>> df3d731 (modify service filtering)
+=======
+        <div className=" text-xl font-bold hidden md:block">
+>>>>>>> 3f3808e (remove comment)
           <span>Services</span>
         </div>
 
