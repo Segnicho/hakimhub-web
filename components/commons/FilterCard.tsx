@@ -1,37 +1,13 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import FilterChip from "./FilterChip";
 import { filter_service } from "@/data/services";
-=======
->>>>>>> 8f27905 (implement filtering)
-=======
-import FilterChip from "./FilterChip";
-<<<<<<< HEAD
-
-const services = ["Oncologists", "Lab", "Emergency", "Allergist"];
->>>>>>> 7a8192e (add filter button)
-=======
-import { filter_service } from "@/data/services";
->>>>>>> 42b73e9 (add services data)
 
 const FilterCard: React.FC = () => {
   const [openNow, setOpenNow] = useState(false);
   const [activeRange, setActiveRange] = useState(0);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
   const [withinRange, setWithinRange] = useState(10);
 
-=======
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [withinRange, setWithinRange] = useState(10);
-=======
->>>>>>> 7a8192e (add filter button)
-
-  const [withinRange, setWithinRange] = useState(10);
-
->>>>>>> 8f27905 (implement filtering)
   return (
     <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full">
       <h3 className="text-primary-text text-xl font-bold mb-6">Filter</h3>
