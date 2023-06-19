@@ -77,7 +77,7 @@ const HospitalCard: React.FC = () => {
         <div className="text-sm pb-2">
           <span>King George Street</span>
         </div>
-        <div className=" text-xl font-boldhidden md:block">
+        <div className=" text-xl font-bold hidden md:block">
           <span>Services</span>
         </div>
 

@@ -62,7 +62,6 @@ const FilterCard: React.FC = () => {
           </div>
         </div>
 
-        {/* Apply filter button */}
         <button className="bg-primary text-white px-4 py-2 rounded-full">
           Apply Filter
         </button>
