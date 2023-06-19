@@ -12,7 +12,7 @@ const HospitalCard: React.FC = () => {
   const isopen = false;
   const numServices = 4;
   const services = Array(numServices)
-    .fill()
+    .fill(null)
     .map((_, index) => <ServicesCard key={index} />);
   return (
     <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg">
