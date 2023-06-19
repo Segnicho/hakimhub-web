@@ -6,7 +6,7 @@ import { phone } from "@/public";
 
 export default function Home() {
   return (
-    <main className={`flex min-h-screen flex-col px-10 `}>
+    <main className={`flex min-h-screen flex-col px-10`}>
       <Hero />
       <Search />
       <div className="mt-10">
