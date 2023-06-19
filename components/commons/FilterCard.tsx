@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import FilterChip from "./FilterChip";
 import { filter_service } from "@/data/services";
 =======
 >>>>>>> 8f27905 (implement filtering)
+=======
+import FilterChip from "./FilterChip";
+
+const services = ["Oncologists", "Lab", "Emergency", "Allergist"];
+>>>>>>> 7a8192e (add filter button)
 
 const FilterCard: React.FC = () => {
   const [openNow, setOpenNow] = useState(false);
   const [activeRange, setActiveRange] = useState(0);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
   const [withinRange, setWithinRange] = useState(10);
@@ -15,14 +22,10 @@ const FilterCard: React.FC = () => {
 =======
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [withinRange, setWithinRange] = useState(10);
+=======
+>>>>>>> 7a8192e (add filter button)
 
-  const handleServiceSelection = (service: string) => {
-    if (selectedServices.includes(service)) {
-      setSelectedServices(selectedServices.filter((s) => s !== service));
-    } else {
-      setSelectedServices([...selectedServices, service]);
-    }
-  };
+  const [withinRange, setWithinRange] = useState(10);
 
 >>>>>>> 8f27905 (implement filtering)
   return (
@@ -58,6 +61,7 @@ const FilterCard: React.FC = () => {
         <div className="mb-4">
           <label className="block mb-4">Services</label>
           <div className="flex flex-wrap font-normal">
+<<<<<<< HEAD
 <<<<<<< HEAD
             {filter_service.map((service, index) => (
               <FilterChip service={service} key={index} />
@@ -121,6 +125,11 @@ const FilterCard: React.FC = () => {
               }`}>+ </span>Allergist
             </button>
 >>>>>>> 8f27905 (implement filtering)
+=======
+            {services.map((service, index) => (
+              <FilterChip service={service} key={index}/>
+            ))}
+>>>>>>> 7a8192e (add filter button)
           </div>
         </div>
 
