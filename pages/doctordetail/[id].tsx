@@ -26,7 +26,7 @@ function DoctorDetail() {
             </div>
             <div>
                 <h1 className=' text-3xl font-bold pb-8'>Biography</h1>
-                <p className='max-w-[700px] text-xl font-normal text-lightblack  '>Madison Blackstone is a director of brand marketing, 
+                <p className='max-w-[700px] text-xl font-normal text-[#8B8B8B]  '>Madison Blackstone is a director of brand marketing, 
                     with experience managing global teams and multi-million-dollar
                      campaigns. Her background in brand strategy, visual design, and 
                      account management inform her mindful but competitive approach. 
