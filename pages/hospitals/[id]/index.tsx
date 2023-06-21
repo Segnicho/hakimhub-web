@@ -11,20 +11,20 @@ const HospitalDetailPage = () => {
   const router = useRouter();
 
   const handleOverviewClick = () => {
-    router.push("/hospital/[id]", `/hospital/${router.query.id}`);
+    router.push("/hospitals/[id]", `/hospitals/${router.query.id}`);
   };
 
   const handleDoctorsClick = () => {
     router.push(
-      "/hospital/[id]/doctors",
-      `/hospital/${router.query.id}/doctors`
+      "/hospitals/[id]/doctors",
+      `/hospitals/${router.query.id}/doctors`
     );
   };
 
   const handleGalleryClick = () => {
     router.push(
-      "/hospital/[id]/gallery",
-      `/hospital/${router.query.id}/gallery`
+      "/hospitals/[id]/gallery",
+      `/hospitals/${router.query.id}/gallery`
     );
   };
 
@@ -58,9 +58,9 @@ const HospitalDetailPage = () => {
           </button>
         </nav>
 
-        {router.pathname === "/hospital/[id]" && <Overview />}
-        {router.pathname === "/hospital/[id]/doctors" && <DoctorsList />}
-        {router.pathname === "/hospital/[id]/gallery" && <GalleryCard />}
+        {router.pathname === "/hospitals/[id]" && <Overview />}
+        {router.pathname === "/hospitals/[id]/doctors" && <DoctorsList />}
+        {router.pathname === "/hospitals/[id]/gallery" && <GalleryCard />}
       </div>
     </div>
   );
