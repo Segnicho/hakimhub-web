@@ -1,11 +1,16 @@
 import DoctorCard from './DoctorCard';
-import doctors from '../../public/data/doctor.json';
+import { Doctor } from '../../types/hospital';
 
-const DoctorsList = () => {
+interface DoctorProps {
+  doctors: Doctor[];
+  name:string;
+}
+
+const DoctorsList: React.FC<DoctorProps> = ({doctors,name}) => {
   return (
     <div className='mx-6 my-6 bg-secondary-bg'>
       <div className='flex flex-row'>
-        <h3 className='text-2xl font-bold mx-20'>Doctors at Tikur Ambessa</h3>
+        <h3 className='text-2xl font-bold mx10'>Doctors at <span>{name}</span></h3>
         <div className='flex flex-row ml-36'>
           <div className='relative'>
             <label htmlFor='speciality' className='text-md font-semi-bold text-primary'>
@@ -56,7 +61,7 @@ const DoctorsList = () => {
         </div>
       </div>
       <div className='flex flex-wrap mx-4 my-20'>
-        {doctors.Doctors.map((doctor, index) => (
+        {doctors.map((doctor,index) => (
           <DoctorCard key={index} doctor={doctor} />
         ))}
       </div>
