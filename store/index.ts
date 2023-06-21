@@ -1,3 +1,4 @@
+import { doctorDetail } from "@/slices/doctors/doctor-detail-api";
 import { configureStore } from "@reduxjs/toolkit";
 
 // import { userApi } from "@pages/api/example";
@@ -5,10 +6,11 @@ import { configureStore } from "@reduxjs/toolkit";
 export const store = configureStore({
   reducer: {
     // [userApi.reducerPath]: userApi.reducer,
+    [doctorDetail.reducerPath]: doctorDetail.reducer
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware();
-    // .concat(userApi.miidleware)
+    return getDefaultMiddleware()
+    .concat(doctorDetail.middleware)
   },
 });
 
