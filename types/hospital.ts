@@ -1,55 +1,77 @@
-export interface Data {
-Address: Address;
-InstitutionAvailability: InstitutionAvailability;
-Doctors: Doctor[];
-Photos:Photo[];
-}
+export default interface HospitalDetailResponse {
+    isSuccess: boolean;
+    value: Hospital;
+    error: string;
+  }
 
+export interface Hospital {
+  institutionName: string;
+  branchName: string;
+  website: string;
+  phoneNumber: string;
+  summary: string;
+  establishedOn: string;
+  rate: number;
+  status: boolean;
+  logoUrl: string;
+  bannerUrl: string;
+  allEducationalInstitutions:[];
+  allSpecialities:string[];
+  institutionAvailability: InstitutionAvailability[];
+  address: Address[];
+  services: string[];
+  photos: string[];
+  doctors: Doctor[];
+  id: string;
+}
+export type AllEducationalInstitutions={
+  id:string;
+  institutionName:string;
+  logoUrl:string;
+}
 export type Doctor = {
-  Photo: Photo;
-  About: string;
-  Specialities: Speciality[];
-  CareerStartTime: string;
-  Gender: number;
-  Experiences: any[]; 
-  FullName: string;
-  Educations: any[]; 
-  DoctorAvailabilities: DoctorAvailability[];
+    photoUrl: string;
+    about: string;
+    specialities: Speciality[];
+    gender: String;
+    yearsOfExperience: number; 
+    fullName: string;
+    email:string;
+    id:string;
+    mainInstitutionId:string;
+    mainInstitutionName:string;
+
 };
 
-export interface Address {
-Region: string;
-Woreda: string;
-Zone: string;
-Summary: string;
-Latitude: number;
-Longtiude: number;
-Country: string;
-City: string;
-SubCity: string;
+export type Address = {
+    country: string;
+    region: string;
+    zone: string;
+    woreda: string;
+    city: string;
+    subCity: string;
+    longitude: number;
+    latitude: number;
+    summary: string;
+    id: string;
 }
 
-export type Speciality ={
+export type Speciality = {
     Name: string;
     Description: string;
-  };
+};
   
 export type Photo = {
     Id: string;
     Url: string;
-  };
+};
   
-export type DoctorAvailability = {
-    // Define the properties for doctor availability if available
-  };
-  
-  
-
-export interface InstitutionAvailability {
-TwentyFourHours: boolean;
-StartDay: number;
-EndDay: number;
-Opening: string;
-Closing: string;
+export type InstitutionAvailability = {
+    startDay: string;
+    endDay: string;
+    opening: string;
+    closing: string;
+    twentyFourHours: boolean;
+    id: string;
 }
 
