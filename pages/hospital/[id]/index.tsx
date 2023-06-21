@@ -5,7 +5,7 @@ import {
   ContactCard,
   HospitalCard,
   Overview,
-} from "../../../components/index";
+} from "@/components";
 
 const HospitalDetailPage = () => {
   const router = useRouter();
@@ -58,7 +58,6 @@ const HospitalDetailPage = () => {
           </button>
         </nav>
 
-        {/* To be added by Segni */}
         {router.pathname === "/hospital/[id]" && <Overview />}
         {router.pathname === "/hospital/[id]/doctors" && <DoctorsList />}
         {router.pathname === "/hospital/[id]/gallery" && <GalleryCard />}
