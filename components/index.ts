@@ -1,9 +1,9 @@
 export { default as Loading } from "./commons/Loading";
-export { default as Navbar } from "./Navbar";
-export { default as Footer } from "./Footer";
-export { default as Hero } from "./Hero";
-export { default as Search } from "./Search";
-export { default as Service } from "./Service";
+export { default as Navbar } from "./home/Navbar";
+export { default as Footer } from "./home/Footer";
+export { default as Hero } from "./home/Hero";
+export { default as Search } from "./home/Search";
+export { default as Service } from "./home/Service";
 export { default as GalleryCard } from "./hospital-detail/GalleryCard";
 export { default as DoctorsList } from "./doctor/DoctorsList";
 export { default as ContactCard } from "./hospital-detail/ContactCard";
