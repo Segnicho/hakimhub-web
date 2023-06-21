@@ -1,3 +1,5 @@
+import { store } from '@/store/index'
+import { Provider } from 'react-redux'
 import RootLayout from "@/layouts/RootLayout";
 import { store } from "@/store";
 import "@/styles/globals.css";
@@ -6,12 +8,10 @@ import { Provider } from "react-redux";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Provider store={store}>
-        <RootLayout>
-          <Component {...pageProps} />
-        </RootLayout>
-      </Provider>
-    </> 
+    <Provider store={store}>
+      <RootLayout>
+        <Component {...pageProps} />
+      </RootLayout>
+    </Provider>
   );
 }
