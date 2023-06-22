@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import  HospitalResponse  from './../../types/hospital';
+import  { HospitalDetailResponse,Doctor}  from '@/types/hospital';
 
 const BASE_URL = 'https://hakim-hub.onrender.com/api/InsitutionProfile';
 
@@ -7,7 +7,10 @@ export const hospitalDetailApi = createApi({
   reducerPath: 'hospitalDetailApi',
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
-    getHospitalById: builder.query<HospitalResponse, string>({
+    getHospitalById: builder.query<HospitalDetailResponse, string>({
+      query: (id) => `/${id}`,
+    }),
+    getDoctors:builder.query<Doctor, string>({
       query: (id) => `/${id}`,
     }),
   }),
