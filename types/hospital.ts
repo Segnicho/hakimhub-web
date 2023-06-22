@@ -1,4 +1,4 @@
-export default interface HospitalDetailResponse {
+export interface HospitalDetailResponse {
     isSuccess: boolean;
     value: Hospital;
     error: string;
