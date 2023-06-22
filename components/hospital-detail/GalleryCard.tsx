@@ -8,7 +8,7 @@ const Gallery: React.FC<GalleryProps> = ({ photos }) => {
   const columns = Math.ceil(photos.length / 3);
   return (
     <div className='my-4 mx-6'>
-      <h3 className='text-3xl font-bold mx-4 my-4'>Gallery</h3>
+      <h3 className='text-3xl font-bold mx-4 my-6'>Gallery</h3>
       <div className='overflow-y-scroll h-[720px]'>
         <div className={`grid grid-cols-3 grid-rows-${columns}`}>
           {photos.map((photosUrl, index) => (
