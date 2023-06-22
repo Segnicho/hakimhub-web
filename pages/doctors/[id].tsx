@@ -72,7 +72,9 @@ function DoctorDetail() {
                         className='rounded-full '
                         alt = 'Education'
                         fill
-                        src = {education.EducationInstitutionLogoUrl} />
+                        src = {education.EducationInstitutionLogoUrl}
+                        priority
+                         />
                         
                     </div>
                     <div>
