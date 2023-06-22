@@ -16,7 +16,7 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
         )}
 
         {logo && (
-          <div className="absolute top-48 left-32 w-30 h-20 rounded-full overflow-hidden border-2 border-white">
+          <div className="absolute top-1/3 left-32 w-30 h-20 rounded-full overflow-hidden border-2 border-white">
             <Image src={logo} alt="Logo of the Hospital" width={80} height={80} className="object-cover h-full drop-shadow" />
           </div> 
         )}
