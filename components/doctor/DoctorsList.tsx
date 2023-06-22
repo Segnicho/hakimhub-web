@@ -27,21 +27,25 @@ const DoctorsList: React.FC<DoctorProps> = ({ doctors, name }) => {
         className='flex flex-row items-center justify-between cursor-pointer'
         onClick={toggleFilters}
       >
-        <div className='flex flex-row text-2xl font-bold gap-2'>
+        <div className='sm:text-sm lg:text-xl xl:text-2xl 2xl:text-3xl my-2 flex flex-row text-2xl font-bold gap-2'>
           <h3 className='ml-2'>Doctors at</h3>
           <h3 className='text-primary'>{name}</h3>
         </div>
+        <div className='flex flex-row gap-2'>
+        <h3 className='text-primary'>filter</h3>
         <svg
-          className={`w-6 h-6 ${showFilters ? 'transform rotate-180' : ''}`}
+          className={`sm:w-4 w-6 h-6 ${showFilters ? 'transform rotate-180' : ''}`}
           fill='none'
           viewBox='0 0 24 24'
           stroke='currentColor'
         >
           <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M19 9l-7 7-7-7' />
         </svg>
+        </div>
+        
       </div>
       {showFilters && (
-        <div className='flex flex-row items-center space-x-4 mt-4'>
+        <div className='flex flex-col items-center space-x-4 mt-4'>
           <div className='relative'>
             <label htmlFor='speciality' className='text-md font-semi-bold text-primary'>
               Speciality
@@ -97,7 +101,7 @@ const DoctorsList: React.FC<DoctorProps> = ({ doctors, name }) => {
           </div>
         </div>
       )}
-      <div className='flex flex-wrap w-full -mx-3 my-6 overflow-y-scroll h-[700px]'>
+      <div className='sm:mx-6 md:mx-16 md:w-3/4  lg:w-4/6 lg:ml-24 xl:w-full xl:-ml-6 2xl:w-full 2xl:-ml-6 flex flex-wrap w-full -mx-3 my-6 overflow-y-scroll h-[700px]'>
         {doctors
           .filter((doctor) => {
             if (selectedSpeciality && doctor.specialities[0].Name !== selectedSpeciality) {
