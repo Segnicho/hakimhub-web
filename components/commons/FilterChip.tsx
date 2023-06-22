@@ -13,26 +13,33 @@ const FilterChip: React.FC<FilterProps> = ({ service }) => {
       setSelectedServices([...selectedServices, service]);
     }
   };
+
+  const isSelected = selectedServices.includes(service);
+
   return (
     <button
       className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-        selectedServices.includes(`${ service }`)
-          ? "bg-primary text-white"
-          : "bg-white text-primary-text border border-primary-text"
+        isSelected
+          ? "bg-chip-bg text-primary-text"
+          : "bg-white text-primary-text border border-chip-bg"
       }`}
-      onClick={() => handleServiceSelection(`${ service }`)}
+      onClick={() => handleServiceSelection(service)}
     >
       <span
-        className={`text-primary text-lg ${
-          selectedServices.includes(`${ service }`) ? "hidden" : "bg-white"
-        }`}
+        className={`text-primary text-lg ${isSelected ? "hidden" : "bg-white"}`}
       >
         {"+ "}
       </span>
       {service}
+      <span
+        className={`text-primary text-lg ${
+          isSelected ? "bg-chip-bg" : "hidden"
+        }`}
+      >
+        {"  x"}
+      </span>
     </button>
   );
 };
-
 
 export default FilterChip;

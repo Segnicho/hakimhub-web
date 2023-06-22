@@ -1,6 +1,5 @@
 import FilterCard from "@/components/commons/FilterCard";
 import SearchCard from "@/components/commons/SearchCard";
-import HospitalCard from "@/components/hospital/HospitalCard";
 import HospitalsList from "@/components/hospital/HospitalsList";
 
 export default function HospitalsPage() {

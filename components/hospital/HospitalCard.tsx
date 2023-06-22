@@ -3,90 +3,124 @@ import ServicesCard from "@/components/commons/ServicesCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-const HospitalCard: React.FC = () => {
+import Hospital from "@/types/Hospital";
+import NoServices from "../commons/NoService";
+const getCurrentTime = () => {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  return `${hours}:${minutes}`;
+};
+interface HospitalProps {
+  hospital: Hospital;
+}
+const HospitalCard: React.FC<HospitalProps> = ({
+  hospital: {
+    logoUrl,
+    bannerUrl,
+    institutionName,
+    address,
+    services,
+    id,
+    institutionAvailability: { opening, closing, startDay, endDay },
+  },
+}) => {
   const settings = {
     speed: 500,
     slidesToShow: 3,
   };
-  const isopen = false;
-  const numServices = 4;
-  const services = Array(numServices)
-    .fill(null)
-    .map((_, index) => <ServicesCard key={index} />);
+
+  const openingTime = opening;
+  const closingTime = closing;
+  const currentTime = getCurrentTime();
+  const isOpen = currentTime >= openingTime && currentTime <= closingTime;
+
+  const Institution = institutionName.split(" ");
+  const LastInstitutionName = Institution.pop();
+  const FirtInstitutionName = Institution.join(" ");
+
   return (
-    <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg">
+    <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg ">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
-        <div>
-          <Image
-            src={"/imgs/hospital/background.png"}
-            alt={"hospital"}
-            width={500}
-            height={200}
-          />
+        <div className="w-full h-[150px]">
+          <div className="relative w-full h-full">
+            <Image
+              src={bannerUrl}
+              alt="hospital"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
         </div>
-        <div className="flex justify-center mb-10">
+        <div className="flex justify-center -mt-[50px] mx-auto rounded-full relative w-[100px] h-[100px]">
           <Image
-            src={"/imgs/hospital/logo.png"}
-            alt={"logo"}
-            width={100}
-            height={160}
-            className="rounded-full -m-10"
+            src={logoUrl}
+            alt="logo"
+            className="rounded-full object-cover "
+            fill
           />
         </div>
         <div className="flex flex-wrap m-2">
-          <div className="w-1/2 hidden md:block">
+          <div className="w-1/2 md:block">
             <div className="text-xl font-bold">
               <span className="text-primary font-extrabold text-2xl -mt-3">
-                12
+                24
               </span>
-              <span>Hour</span>
+              <span> Hour</span>
             </div>
-            <div className="text-sm ">
-              <span>8:00am - 8:00pm</span>
+            <div className="text-sm text-primary-text font-light">
+              <span>
+                {opening} : {closing}
+              </span>
             </div>
           </div>
-          <div className="w-1/2 pl-6 hidden md:block">
+          <div className="w-1/2 pl-6 md:block">
             <div>
               <div className=" text-xl font-bold">
                 <span className="text-primary font-extrabold text-2xl">5</span>{" "}
                 <span>Days</span>
               </div>
               <div className="text-sm">
-                <span>Monday - Friday</span>
+                <span>
+                  {startDay} - {endDay}
+                </span>
               </div>
             </div>
           </div>
         </div>
         <div
           className={`text-lg font-bold flex flex-wrap justify-end mr-2 ${
-            isopen ? "text-green-500" : "text-red-300"
+            isOpen ? "text-isopen-text" : "text-closed-text"
           }`}
         >
-          {isopen ? "OPEN" : "CLOSED"}
+          {isOpen ? "OPEN" : "CLOSED"}
         </div>
       </div>
-      <div className="pl-5 w-full md:w-2/3">
+      <div className="pl-5 w-full md:w-2/3 p-2">
         <div className="font-extrabold text-3xl pb-2">
-          <span>Tikur Anbesa</span>
+          <span> {FirtInstitutionName}</span>
           <span className="text-primary font-extrabold text-3xl">
             {" "}
-            Hospital
+            {LastInstitutionName}
           </span>
         </div>
-        <div className="text-sm pb-2">
-          <span>King George Street</span>
+        <div className="text-md pb-6 font-light text-primary-text">
+          <span>{address.summary}</span>
         </div>
-        <div className=" text-xl font-bold hidden md:block">
+        <div className="text-xl font-bold hidden md:block">
           <span>Services</span>
         </div>
 
-        <div className="hidden md:block">
-          <Slider {...settings}>
-            {services.map((service, index) => (
-              <div key={index}>{service}</div>
-            ))}
-          </Slider>
+        <div className="hidden md:block pt-6">
+          {services.length > 0 ? (
+            <Slider {...settings}>
+              {services.map((service) => (
+                <ServicesCard service={service} key={id} />
+              ))}
+            </Slider>
+          ) : (
+            <NoServices />
+          )}
         </div>
       </div>
     </div>

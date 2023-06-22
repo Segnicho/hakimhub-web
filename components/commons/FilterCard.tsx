@@ -1,15 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import FilterChip from "./FilterChip";
 import { filter_service } from "@/data/services";
 
-
 const FilterCard: React.FC = () => {
+  const router = useRouter();
   const [openNow, setOpenNow] = useState(false);
   const [activeRange, setActiveRange] = useState(0);
-  const [withinRange, setWithinRange] = useState(10);
+
+  useEffect(() => {
+    const queryParams = new URLSearchParams();
+    queryParams.set("openNow", String(openNow));
+    queryParams.set("activeRange", String(activeRange));
+    router.push({ query: queryParams.toString() });
+  }, [openNow, activeRange]);
 
   return (
-    <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full">
+    <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full sticky top-[85px]">
       <h3 className="text-primary-text text-xl font-bold mb-6">Filter</h3>
 
       <div className="ml-4">
@@ -28,7 +35,7 @@ const FilterCard: React.FC = () => {
           <input
             type="range"
             min={0}
-            max={30}
+            max={10}
             value={activeRange}
             onChange={(e) => setActiveRange(parseInt(e.target.value))}
             className="w-full bg-transparent text-primary"
@@ -41,28 +48,12 @@ const FilterCard: React.FC = () => {
         <div className="mb-4">
           <label className="block mb-4">Services</label>
           <div className="flex flex-wrap font-normal">
-
             {filter_service.map((service, index) => (
               <FilterChip service={service} key={index} />
             ))}
           </div>
         </div>
-
-        <div className="mb-8">
-          <label className="block mb-4">Within Range</label>
-          <input
-            type="range"
-            min={0}
-            max={50}
-            value={withinRange}
-            onChange={(e) => setWithinRange(parseInt(e.target.value))}
-            className="w-full text-primary"
-          />
-          <div className="text-primary-text font-normal text-sm flex justify-center">
-            {withinRange} KM
-          </div>
-        </div>
-        <button className="bg-primary text-white px-4 py-2 rounded-full">
+        <button className="bg-primary text-white px-4 py-1 rounded-full">
           Apply Filter
         </button>
       </div>

@@ -1,17 +1,25 @@
 import HospitalCard from "./HospitalCard";
+import { useGetHospitalsQuery } from "@/store/features/hospital/hospitals-api";
+import Institution from "@/types/Hospital";
+import LoadingPage from "../commons/Loading";
+import NoData from "../commons/NoData";
 
 const HospitalsList: React.FC = () => {
-  const numHospitals = 4;
-  const hospitals = Array(numHospitals)
-    .fill(null)
-    .map((_, index) => <HospitalCard key={index} />);
+  const { data: hospitals, isLoading, isError } = useGetHospitalsQuery("");
+
+  if (isLoading) {
+    return <LoadingPage />
+  }
+  
   return (
     <div className="text-primary-text">
-      {hospitals.map((hospital, index) => (
-        <div key={index} className="mb-16">
-          {hospital}
+     {
+     hospitals.value.map((hospital: Institution) => (
+        <div key={hospital.id} className="mb-16">
+          <HospitalCard hospital={hospital} />
         </div>
       ))}
+      {/* <NoData /> */}
     </div>
   );
 };
