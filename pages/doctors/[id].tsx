@@ -3,17 +3,14 @@ import Image from 'next/image'
 import {BsBagFill} from "react-icons/bs"
 import { useRouter } from 'next/router';
 import { useGetDoctorByIdQuery } from '@/slices/doctors/doctor-detail-api';
+import { Loading } from '@/components';
 function DoctorDetail() {
     const router = useRouter();
     const  id = router.query.id as string;
     const { data: doctor, error, isLoading } = useGetDoctorByIdQuery(id)
     if (isLoading){
-        return <div>
-            <div className="flex items-center justify-center h-screen ">
-                <div className="w-6 h-6 rounded-full bg-blue-500 animate-pulse"></div>
-                <span className="ml-2 text-blue-500 font-medium">Loading...</span>
-            </div>
-        </div>
+        return 
+            <Loading/>
     }
     if (error){
         return <div>
