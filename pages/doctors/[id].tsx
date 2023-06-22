@@ -33,7 +33,7 @@ function DoctorDetail() {
                 className='object-cover rounded-[2rem]'
                 alt='Doctor detail'
                 fill
-                src = {doctor?.value?.photoUrl}
+                src = {doctor?.value?.photoUrl as string}
                 sizes='1'
                 priority
                  />
