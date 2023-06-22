@@ -1,5 +1,3 @@
-import { store } from '@/store/index'
-import { Provider } from 'react-redux'
 import RootLayout from "@/layouts/RootLayout";
 import { store } from "@/store";
 import "@/styles/globals.css";
