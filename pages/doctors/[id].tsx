@@ -25,7 +25,6 @@ function DoctorDetail() {
         </div>  
       </div>;
     }
-    console.log(doctor?.value?.specialities)
     return (
         <div className='md:flex  p-12 gap-16 '>
             <div className='min-w-[40%]  flex flex-col items-center justify-items-center '>
@@ -36,6 +35,7 @@ function DoctorDetail() {
                 fill
                 src = {doctor?.value?.photoUrl}
                 sizes='1'
+                priority
                  />
                 </div>
             
