@@ -7,5 +7,5 @@ export { default as Service } from "./home/Service";
 export { default as GalleryCard } from "./hospital-detail/GalleryCard";
 export { default as DoctorsList } from "./doctor/DoctorsList";
 export { default as ContactCard } from "./hospital-detail/ContactCard";
-export { default as HospitalCard } from "./hospital-detail/HospitalCard";
+export { default as HospitalDetailCard } from "./hospital-detail/HospitalDetailCard";
 export { default as Overview } from "./hospital-detail/Overview";

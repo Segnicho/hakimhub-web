@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
-import ServicesCard from "../commons/ServicesCard";
+import ServicesCard from "@/components/commons/ServicesCard";
 
 const Overview = () => {
   const mapRef = useRef(null);
@@ -24,9 +24,8 @@ const services = Array(numServices)
 
   return (
     <div className="p-5 space-y-4">
-      Overview
       <div className="bg-white rounded-md p-5 w-[95%] shadow-md">
-        <h1 className="font-medium text-[40px]">About Us</h1>
+        <h1 className="font-medium text-[30px]">About Us</h1>
         <p className="py-5">
           Black Lion (Tikur Anbessa) Specialized Hospital, School of Medicine,
           College of Health Sciences, Addis Ababa University is the largest
