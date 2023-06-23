@@ -7,7 +7,7 @@ import {
   HospitalDetailCard,
   Overview,
 } from "@/components";
-import { useGetHospitalByIdQuery } from '../../../store/hospital/hospital-detail-api';
+import { useGetHospitalByIdQuery } from '@/store/hospital/hospital-detail-api';
 import  Image  from 'next/image';
 const HospitalDetailPage = () => {
   const router = useRouter();
