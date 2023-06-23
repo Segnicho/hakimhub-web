@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DoctorCard from './DoctorCard';
-import { Doctor } from '../../types/hospital';
+import { Doctor } from '@/types/hospital';
 
 interface DoctorProps {
   doctors: Doctor[];
