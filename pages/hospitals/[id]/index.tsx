@@ -8,7 +8,7 @@ import {
   Overview,
 } from "@/components";
 import { useGetHospitalByIdQuery } from '../../../store/hospital/hospital-detail-api';
-
+import  Image  from 'next/image';
 const HospitalDetailPage = () => {
   const router = useRouter();
   const id = router.query.id as string;
@@ -35,8 +35,11 @@ const HospitalDetailPage = () => {
   };
 
   const isMobileOrTablet = () => {
-    const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    return windowWidth < 940; // Adjust the breakpoint as per your requirements
+    if (typeof window !== 'undefined') {
+      const windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+      return windowWidth < 940; // Adjust the breakpoint as per your requirements
+    }
+    return false; // Return a default value if running in a non-browser environment
   };
 
   return (
@@ -161,14 +164,40 @@ const HospitalDetailPage = () => {
         <div className="mt-4">
           {activeTab === 'overview' && (
             <div>
+              <Overview />
+            </div>
+          )}
+          {activeTab === 'overview' && (
+            <div>
               <h2>Overview</h2>
             </div>
           )}
-          {activeTab === 'doctors' && hospital?.value.doctors && (
-            <DoctorsList
-              doctors={hospital?.value.doctors}
-              name={hospital?.value.institutionName}
-            />
+          {activeTab === 'doctors' && (
+            <>
+              {isError && (
+                <div className='text-center text-xl'>
+                  <h3 className='text-2xl text-primary'> Oops!</h3>
+                <div className="text-black">
+                 An error occurred while fetching the hospital data.
+                </div>
+                </div>
+              )}
+              {!isError && hospital?.value.doctors && hospital?.value.doctors.length > 0 ? (
+                <DoctorsList
+                  doctors={hospital?.value.doctors}
+                  name={hospital?.value.institutionName}
+                />
+              ) : (
+                <div className='flex flex-row items-center my-30 mx-12 ml-44 mt-40 gap-1'>
+                    <Image src='/img/doctor/doctor.jpg' alt="There is no doctor" width={150} height={150} className="object-cover"/>
+                <div className='text-start text-gray-500 font-bold'>
+                  <h3 className='text-5xl my-2'>Oops!</h3>
+                  Seems like there are no doctors data for this hospital at the moment.
+                </div>
+                </div>
+              
+              )}
+            </>
           )}
           {activeTab === 'gallery' && hospital?.value.photos && (
             <GalleryCard photos={hospital?.value.photos} />

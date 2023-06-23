@@ -45,7 +45,7 @@ const DoctorsList: React.FC<DoctorProps> = ({ doctors, name }) => {
         
       </div>
       {showFilters && (
-        <div className='flex flex-col items-center space-x-4 mt-4'>
+        <div className='flex flex-row items-center space-x-4 mt-4'>
           <div className='relative'>
             <label htmlFor='speciality' className='text-md font-semi-bold text-primary'>
               Speciality
