@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "leaflet/dist/leaflet.css";
-import ServicesCard from "../commons/ServicesCard";
+import ServicesCard from "@/components/commons/ServicesCard";
 
 const Overview = () => {
   const mapRef = useRef(null);
