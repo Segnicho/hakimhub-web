@@ -3,8 +3,10 @@ import ServicesCard from "@/components/commons/ServicesCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Hospital from "@/types/Hospital";
+import Hospital from "@/types/hospital/Hospital";
 import NoServices from "../commons/NoService";
+import { MdForward } from "react-icons/md";
+import Link from "next/link";
 const getCurrentTime = () => {
   const now = new Date();
   const hours = now.getHours();
@@ -89,7 +91,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
           </div>
         </div>
         <div
-          className={`text-lg font-bold flex flex-wrap justify-end mr-2 ${
+          className={`text-lg font-bold flex flex-wrap justify-end mr-2 mb-auto self-end ${
             isOpen ? "text-isopen-text" : "text-closed-text"
           }`}
         >
@@ -114,7 +116,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
         <div className="hidden md:block pt-6">
           {services.length > 0 ? (
             <Slider {...settings}>
-              {services.map((service) => (
+              {services.map((service: string) => (
                 <ServicesCard service={service} key={id} />
               ))}
             </Slider>
@@ -122,6 +124,16 @@ const HospitalCard: React.FC<HospitalProps> = ({
             <NoServices />
           )}
         </div>
+        <Link href={`/hospitals/${id}`}>
+        <div className="border-2 border-primary flex flex-wrap w-1/5 justify-center p-1 rounded-lg">
+          <div className="flex flex-wrap text-primary justify-center w-4/5">
+            <span>Show more</span>
+          </div>
+          <div className="flex flex-wrap w-1/5 justify-end">
+            <MdForward className="text-primary text-xl cursor-pointer flex flex-wrap self-center" />
+          </div>
+        </div>
+        </Link>
       </div>
     </div>
   );
