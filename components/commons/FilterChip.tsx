@@ -1,38 +1,28 @@
-import { useState } from "react";
-
-interface FilterProps {
+interface FilterChipProps {
   service: string;
+  isSelected: boolean;
+  onClick: () => void;
 }
 
-const FilterChip: React.FC<FilterProps> = ({ service }) => {
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const handleServiceSelection = (service: string) => {
-    if (selectedServices.includes(service)) {
-      setSelectedServices(selectedServices.filter((s) => s !== service));
-    } else {
-      setSelectedServices([...selectedServices, service]);
-    }
-  };
+const FilterChip: React.FC<FilterChipProps> = ({ service, isSelected, onClick }) => {
   return (
     <button
       className={`mr-2 mb-2 px-6 py-1 rounded-full ${
-        selectedServices.includes(`${ service }`)
-          ? "bg-primary text-white"
-          : "bg-white text-primary-text border border-primary-text"
+        isSelected
+          ? "bg-chip-bg text-primary-text"
+          : "bg-white text-primary-text border border-chip-bg"
       }`}
-      onClick={() => handleServiceSelection(`${ service }`)}
+      onClick={onClick}
     >
-      <span
-        className={`text-primary text-lg ${
-          selectedServices.includes(`${ service }`) ? "hidden" : "bg-white"
-        }`}
-      >
+      <span className={`text-primary text-lg ${isSelected ? "hidden" : "bg-white"}`}>
         {"+ "}
       </span>
       {service}
+      <span className={`text-primary text-lg ${isSelected ? "bg-chip-bg" : "hidden"}`}>
+        {"  x"}
+      </span>
     </button>
   );
 };
-
 
 export default FilterChip;

@@ -1,11 +1,9 @@
-import React from 'react'
-
-export const Loading = () => {
+const LoadingPage: React.FC = () => {
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="w-16 h-16 border-t-4 border-b-4 border-gray-400 rounded-full animate-spin" />
+    <div className="flex items-center justify-center h-screen">
+      <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default LoadingPage;

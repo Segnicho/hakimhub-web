@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DoctorCard from './DoctorCard';
-import { Doctor } from '@/types/hospital';
+import { Doctor } from '@/types/institution/institution-detail';
 
 interface DoctorProps {
   doctors: Doctor[];
@@ -104,7 +104,7 @@ const DoctorsList: React.FC<DoctorProps> = ({ doctors, name }) => {
       <div className='sm:mx-6 md:mx-16 md:w-3/4  lg:w-4/6 lg:ml-24 xl:w-full xl:-ml-6 2xl:w-full 2xl:-ml-6 flex flex-wrap w-full -mx-3 my-6 overflow-y-scroll h-[700px]'>
         {doctors
           .filter((doctor) => {
-            if (selectedSpeciality && doctor.specialities[0].Name !== selectedSpeciality) {
+            if (selectedSpeciality && doctor.specialities[0] !== selectedSpeciality) {
               return false;
             }
             if (selectedExperience && String(doctor.yearsOfExperience) !== selectedExperience) {

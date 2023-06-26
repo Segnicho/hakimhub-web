@@ -4,10 +4,10 @@ import ServicesCard from "@/components/commons/ServicesCard";
 
 const Overview = () => {
   const mapRef = useRef(null);
-const numServices = 4;
-const services = Array(numServices)
-  .fill(null)
-  .map((_, index) => <ServicesCard key={index} />);
+  const numServices = 4;
+  const services = Array(numServices)
+    .fill(null)
+    .map((_, index) => <ServicesCard key={index} service={""} />);
   useEffect(() => {
     if (mapRef.current === null) {
       const L = require("leaflet");
@@ -45,9 +45,11 @@ const services = Array(numServices)
         <div id="map" className="h-96"></div>
       </div>
       <div className="bg-white rounded-lg w-[95%] shadow-md z-10 flex">
-          {services.map((service, index) => (
-            <div className="w-[200px]" key={index}>{service}</div>
-          ))}
+        {services.map((service, index) => (
+          <div className="w-[200px]" key={index}>
+            {service}
+          </div>
+        ))}
       </div>
     </div>
   );
