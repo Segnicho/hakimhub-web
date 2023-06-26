@@ -1,4 +1,3 @@
-
 export default interface Institution {
     institutionName: string;
     branchName: string;

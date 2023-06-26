@@ -31,10 +31,6 @@ const HospitalFiltering: React.FC = () => {
   };
 
   const { data: hospitals, isLoading, isError } = useGetHospitalsQuery(filters);
-
-  if (isLoading) {
-    return <LoadingPage />;
-  }
   if (isError){
     return <div>Error...</div>
   }
@@ -42,10 +38,17 @@ const HospitalFiltering: React.FC = () => {
     <div className="flex flex-wrap">
       <div className="w-3/4 p-16 pt-0 max-lg:w-full">
         <SearchCard keyword={keyword} onChange={handleInputChange} />
-        {hospitals?.value.length > 0 ? (
+        
+        {isLoading? (
+          <LoadingPage />
+        ): (
+          <div>
+            {hospitals?.value.length > 0 ? (
           <HospitalsList hospitals={hospitals.value} />
         ) : (
           <NoData />
+        )}
+          </div>
         )}
       </div>
       <FilterCard

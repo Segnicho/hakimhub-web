@@ -41,3 +41,9 @@ export const services = [
   "Laboratory",
   "Dialysis Center",
 ];
+<<<<<<< HEAD
+=======
+
+
+export const filter_service = ["Oncologists", "Lab", "Emergency", "Allergist", "Oncologists", "Lab", "Emergency", "Allergist", "Oncologists", "Lab", "Emergency", "Allergist"];
+>>>>>>> 731c46e (modify filtering)

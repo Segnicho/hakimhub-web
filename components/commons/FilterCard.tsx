@@ -1,5 +1,6 @@
 import { filter_service } from "@/data/services";
 import FilterChip from "./FilterChip";
+import { useState } from "react";
 
 interface FilterProps {
   openStatus: boolean;
@@ -17,6 +18,12 @@ const FilterCard: React.FC<FilterProps> = ({
   setSelectedServices,
   selectedServices,
 }) => {
+  const [showMore, setShowMore] = useState(false);
+  const MAX_SERVICES_TO_SHOW = 6;
+  const servicesToShow = showMore
+    ? filter_service
+    : filter_service.slice(0, MAX_SERVICES_TO_SHOW);
+
   return (
     <div className="lg:block w-1/4 hidden">
       <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full sticky top-[85px]">
@@ -36,7 +43,7 @@ const FilterCard: React.FC<FilterProps> = ({
             <input
               type="range"
               min={0}
-              max={10}
+              max={50}
               value={activeRange}
               onChange={handleActiveRange}
               className="w-full bg-transparent text-primary"
@@ -47,21 +54,40 @@ const FilterCard: React.FC<FilterProps> = ({
           </div>
           <div className="mb-4">
             <label className="block mb-4">Services</label>
-            <div className="flex flex-wrap font-normal">
-              {filter_service.map((service, index) => (
-                <FilterChip
-                  service={service}
-                  key={index}
-                  isSelected={selectedServices.includes(service)}
-                  onClick={() =>
-                    setSelectedServices((prevServices) =>
-                      prevServices.includes(service)
-                        ? prevServices.filter((s) => s !== service)
-                        : [...prevServices, service]
-                    )
-                  }
-                />
-              ))}
+            <div>
+              <div className="flex flex-wrap font-normal">
+                {servicesToShow.map((service, index) => (
+                  <FilterChip
+                    service={service}
+                    key={index}
+                    isSelected={selectedServices.includes(service)}
+                    onClick={() =>
+                      setSelectedServices((prevServices) =>
+                        prevServices.includes(service)
+                          ? prevServices.filter((s) => s !== service)
+                          : [...prevServices, service]
+                      )
+                    }
+                  />
+                ))}
+              </div>
+             <div className="flex flex-wrap justify-center">
+             {!showMore && filter_service.length > MAX_SERVICES_TO_SHOW ? (
+                <button
+                  className="text-primary-text text-sm hover:text-primary cursor-pointer"
+                  onClick={() => setShowMore(true)}
+                >
+                  Show More
+                </button>
+              ): (
+                <button
+                className="text-primary-text text-sm hover:text-primary cursor-pointer"
+                onClick={() => setShowMore(false)}
+              >
+                Show Less
+              </button>
+              )}
+             </div>
             </div>
           </div>
         </div>
