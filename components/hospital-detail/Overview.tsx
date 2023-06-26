@@ -8,11 +8,9 @@ interface OverviewProps {
 const Overview: React.FC<OverviewProps> = ({ about, services }) => {
   const genericSummary =
     "At Our Institution, we are committed to delivering exceptional healthcare services. Our experienced doctors and state-of-the-art facilities ensure that you receive the highest quality care With a focus on personalized treatment, our skilled doctors bring a wealth of knowledge and expertise to each patient's journey. We prioritize your well-being and strive to provide innovative solutions tailored to your needs. Trust is at the core of our institution. We have built a reputation for delivering successful outcomes and earning the confidence of our patients. From routine care to specialized treatments, we are here to serve you with compassion and dedication.";
-
   if (about === undefined) {
     about = genericSummary;
   }
-  console.log(services);
 
   const mapRef = useRef(null);
   useEffect(() => {
