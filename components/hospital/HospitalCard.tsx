@@ -1,9 +1,7 @@
 import Image from "next/image";
-import ServicesCard from "@/components/commons/ServicesCard";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Hospital from "@/types/hospital/Hospital";
+import Hospital from "@/types/institution/institution";
 import NoServices from "../commons/NoService";
 import { MdForward } from "react-icons/md";
 import Link from "next/link";
@@ -29,11 +27,6 @@ const HospitalCard: React.FC<HospitalProps> = ({
     institutionAvailability: { opening, closing, startDay, endDay },
   },slideShow
 }) => {
-  // const settings = {
-  //   speed: 500,
-  //   slidesToShow: 3,
-  // };
-
   const openingTime = opening;
   const closingTime = closing;
   const currentTime = getCurrentTime();

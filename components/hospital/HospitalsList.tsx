@@ -1,5 +1,5 @@
 import HospitalCard from "./HospitalCard";
-import Institution from "@/types/hospital/Hospital";
+import Institution from "@/types/institution/institution";
 import NoData from "../commons/NoData";
 
 interface HospitalsProps {
