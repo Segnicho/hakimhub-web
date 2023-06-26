@@ -1,17 +1,24 @@
 import HospitalCard from "./HospitalCard";
+import Institution from "@/types/institution/institution";
+import NoData from "../commons/NoData";
 
-const HospitalsList: React.FC = () => {
-  const numHospitals = 4;
-  const hospitals = Array(numHospitals)
-    .fill(null)
-    .map((_, index) => <HospitalCard key={index} />);
+interface HospitalsProps {
+  hospitals: Institution[];
+}
+const HospitalsList: React.FC<HospitalsProps> = ({ hospitals }) => {
   return (
-    <div className="text-primary-text">
-      {hospitals.map((hospital, index) => (
-        <div key={index} className="mb-16">
-          {hospital}
+    <div>
+      {hospitals?.length > 0 ? (
+        <div>
+          {hospitals.map((hospital: Institution) => (
+            <div key={hospital.id} className="mb-16">
+              <HospitalCard hospital={hospital} slideShow={3} />
+            </div>
+          ))}
         </div>
-      ))}
+      ) : (
+        <NoData />
+      )}
     </div>
   );
 };

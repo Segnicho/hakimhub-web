@@ -13,7 +13,10 @@ module.exports = {
         "primary-text": "#565656",
         "card-bg" : "#FDFDFD",
         "primary-bg": "#FAFAFA",
-        "secondary-bg":'#F2F1F1'
+        "secondary-bg":'#F2F1F1',
+        "chip-bg": '#DFE1E8',
+        "isopen-text": "#009045",
+        "closed-text": "#FF8E87"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
