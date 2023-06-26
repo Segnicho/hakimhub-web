@@ -1,7 +1,9 @@
 import React from "react";
 
 const MessageList: React.FC = () => {
-  return <div></div>;
+  return <div>
+    
+  </div>;
 };
 
 export default MessageList;
