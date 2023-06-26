@@ -1,5 +1,4 @@
 export const services = [
-  "ServiceName",
   "MRI",
   "Psychiatry",
   "Hematology",

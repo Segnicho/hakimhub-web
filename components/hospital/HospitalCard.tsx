@@ -7,6 +7,7 @@ import Hospital from "@/types/hospital/Hospital";
 import NoServices from "../commons/NoService";
 import { MdForward } from "react-icons/md";
 import Link from "next/link";
+import ServicesSlide from "../commons/ServicesSlide";
 const getCurrentTime = () => {
   const now = new Date();
   const hours = now.getHours();
@@ -15,6 +16,7 @@ const getCurrentTime = () => {
 };
 interface HospitalProps {
   hospital: Hospital;
+  slideShow:number
 }
 const HospitalCard: React.FC<HospitalProps> = ({
   hospital: {
@@ -25,12 +27,12 @@ const HospitalCard: React.FC<HospitalProps> = ({
     services,
     id,
     institutionAvailability: { opening, closing, startDay, endDay },
-  },
+  },slideShow
 }) => {
-  const settings = {
-    speed: 500,
-    slidesToShow: 3,
-  };
+  // const settings = {
+  //   speed: 500,
+  //   slidesToShow: 3,
+  // };
 
   const openingTime = opening;
   const closingTime = closing;
@@ -115,11 +117,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
 
         <div className="hidden md:block pt-6">
           {services.length > 0 ? (
-            <Slider {...settings}>
-              {services.map((service: string) => (
-                <ServicesCard service={service} key={id} />
-              ))}
-            </Slider>
+            <ServicesSlide slideShow={slideShow} services={services} />
           ) : (
             <NoServices />
           )}
