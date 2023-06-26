@@ -1,4 +1,4 @@
-import { services } from "@/data/allservices";
+import { services } from "@/data/services";
 import FilterChip from "./FilterChip";
 import { useState } from "react";
 

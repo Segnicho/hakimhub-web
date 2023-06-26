@@ -6,7 +6,7 @@ import NoServices from "./NoService";
 import Service from "../home/Service";
 interface SlideProps {
   slideShow: number;
-  services: Service[];
+  services: string[];
 }
 const ServicesSlide: React.FC<SlideProps> = ({ slideShow, services }) => {
   const settings = {
@@ -15,8 +15,8 @@ const ServicesSlide: React.FC<SlideProps> = ({ slideShow, services }) => {
   };
   return (
     <Slider {...settings}>
-      {services.map((service: Service, index) => (
-        <ServicesCard service={service.description} key={index} />
+      {services.map((service: string, index) => (
+        <ServicesCard service={service} key={index} />
       ))}
     </Slider>
   );
