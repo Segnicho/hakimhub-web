@@ -2,16 +2,16 @@
     {
         "id": 1,
         "title": "Ask complex questions",
-        "detail": "Can you recommend a hospital that  has a good reputation for patient care?"
+        "detail": "I have a headache"
     },
     {
         "id": 2,
         "title": "Find out Hospitals close to you",
-        "detail": "Can you recommend a hospital that  has a good reputation for patient care?"
+        "detail": "I have a headache"
     },
     {
         "id": 3,
         "title": "Get better answers",
-        "detail": "Can you recommend a hospital that  has a good reputation for patient care?"
+        "detail": "I have a headache"
     }
 ]

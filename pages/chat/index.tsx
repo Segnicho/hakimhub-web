@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import { chat_logo } from "@/public";
 import services from "@/data/chat/services.json";
@@ -6,12 +6,25 @@ import Service from "@/components/chat/Service";
 import ServiceType from "@/types/chat/service";
 import Chat from "@/components/chat/Chat";
 import MessageList from "@/components/chat/MessageList";
+import MessageCard from "@/components/chat/MessageCard";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import { FC } from 'react';
 
-const index: React.FC = () => {
+const Index: FC = () => {
+  const messages = useSelector((state:RootState) => state.ChatHistory.messages)
+  console.log(messages)
+  console.log(typeof(messages))
+  
   return (
-    <div className="max-w-screen-2xl">
-      <div className="flex flex-col p-8">
+    // <></>
+    <div className="min-h-screen">
+      
+      <div className="max-w-screen-2xl">
+      <div className="flex flex-col p-8"> 
         <div className="flex-grow">
+        {messages.length === 0 ?
+
           <div className="flex flex-col gap-6">
             <div className="flex flex-col items-center">
               <Image
@@ -38,12 +51,26 @@ const index: React.FC = () => {
               ))}
             </div>
           </div>
-          <MessageList />
+          :
+          ""
+            
+          }
         </div>
+        { messages.length > 0 && <MessageCard/>}
+          
         <Chat />
       </div>
+    </div> 
+
+      
     </div>
+    
+      
+      
+     
+    
+    
   );
 };
 
-export default index;
+export default Index;
