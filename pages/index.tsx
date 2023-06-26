@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Hero, Search, Service } from "@/components";
-import { services } from "@/types/services";
+import { services } from "@/data/home";
 import { phone } from "@/public";
 
 const inter = Inter({ subsets: ["latin"] });
