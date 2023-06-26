@@ -5,6 +5,7 @@ import LoadingPage from "../commons/Loading";
 import SearchCard from "../commons/SearchCard";
 import NoData from "../commons/NoData";
 import FilterCard from "../commons/FilterCard";
+import ErrorCard from "../commons/ErrorCard";
 
 const HospitalFiltering: React.FC = () => {
   const [openStatus, setOpenStatus] = useState(false);
@@ -32,7 +33,7 @@ const HospitalFiltering: React.FC = () => {
 
   const { data: hospitals, isLoading, isError } = useGetHospitalsQuery(filters);
   if (isError){
-    return <div>Error...</div>
+    return <div><ErrorCard /></div>
   }
   return (
     <div className="flex flex-wrap">
