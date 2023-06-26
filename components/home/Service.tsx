@@ -1,4 +1,4 @@
-import { Service } from "@/types/services";
+import { Service } from "@/types/services/services";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
