@@ -1,4 +1,3 @@
-import {Service} from "../services"
 export default interface Institution {
     institutionName: string;
     branchName: string;
@@ -12,7 +11,7 @@ export default interface Institution {
     bannerUrl: string;
     institutionAvailability: InstitutionAvailability;
     address: Address;
-    services: Service[];
+    services: string[];
     id: string;
   } 
   
