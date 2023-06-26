@@ -1,3 +1,4 @@
+import { doctorImg } from '@/public';
 import Image from 'next/image'
 import Link from 'next/link';
 const NoData: React.FC = () => {
@@ -5,7 +6,7 @@ const NoData: React.FC = () => {
     <div className='p-10 bg-white'>
       <div className="flex flex-wrap mb-10">
         <div className='w-1/3 flex flex-wrap justify-center'>
-            <Image src={'/imgs/hospital/doctor.png'} alt={''} width={200} height={200} className=''/>
+            <Image src={doctorImg} alt={''} width={200} height={200} className=''/>
         </div>
         <div className='w-2/3 p-5'>
           <span className='font-bold text-7xl text-black'>Oops</span>
