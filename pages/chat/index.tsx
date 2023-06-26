@@ -5,7 +5,7 @@ import services from "@/data/chat/services.json";
 import Service from "@/components/chat/Service";
 import ServiceType from "@/types/chat/service";
 import Chat from "@/components/chat/Chat";
-import MessageList from "@/components/chat/MessageList";
+import MessageList from "@/components/chat/RecomendedHospitalList";
 import MessageCard from "@/components/chat/MessageCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
@@ -18,7 +18,7 @@ const Index: FC = () => {
   
   return (
     // <></>
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-secondary-bg">
       
       <div className="max-w-screen-2xl">
       <div className="flex flex-col p-8"> 

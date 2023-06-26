@@ -12,7 +12,7 @@ export interface ChatResponse {
     };
   }
   
-  interface Institution {
+export interface Institution {
     institutionName: string;
     branchName: string;
     website: string;
@@ -55,7 +55,7 @@ export interface ChatResponse {
     id: string;
   }
   
-  interface Doctor {
+ export interface Doctor {
     fullName: string;
     about: string;
     gender: string;

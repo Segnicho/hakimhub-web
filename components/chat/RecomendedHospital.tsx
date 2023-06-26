@@ -1,8 +1,13 @@
 import Image from "next/image"
-import RecomendedDoctors from "./RecomendedDoctors"
-const RecomendedHospital: React.FC = () => {
+import { Doctor,Institution } from "@/types/chat/service";
+import RecomendedDoctorList from "./RecomendedDoctorList";
+interface RecomendedHospitalInterface{
+  institution : Institution
+}
+const RecomendedHospital: React.FC<RecomendedHospitalInterface> = ({institution}) => {
+  
   return (
-    <div className="mt-10">
+    <div className=" shadow-md rounded-md px-2">
       <div className="flex items-center gap-3">
               <div className=' relative w-[4rem] h-[4rem] rounded-full  shadow-md'>
                 <Image 
@@ -15,22 +20,17 @@ const RecomendedHospital: React.FC = () => {
                 </div>
         <div>
           <p className="font-bold text-xl text-primary capitalize">
-            Tikur anbessa
+            {institution.institutionName}
           </p>
           <p className="text-sm text-secondary-text">
-          Black Lion (Tikur Anbessa) Specialized Hospital, School of Medicine, College of Health Sciences...
+            {institution.summary.slice(0,60)}...
           </p>
-
         </div>
       </div>
 
       <div className=" mt-3">
         <p className="font-semibold text-lg">Doctors</p>
-        
-        <div>
-          <RecomendedDoctors/>
-          
-        </div>
+        <RecomendedDoctorList doctors = {institution.doctors} />   
       </div>
       </div>
   )
