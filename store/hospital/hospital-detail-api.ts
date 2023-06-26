@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import  { HospitalDetailResponse,Doctor}  from '@/types/hospital';
+import  { HospitalDetailResponse,Doctor}  from '@/types/institution/institution-detail';
+
 
 const BASE_URL = 'https://hakim-hub.onrender.com/api/InsitutionProfile';
 
