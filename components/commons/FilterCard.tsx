@@ -1,4 +1,4 @@
-import { filter_service } from "@/data/services";
+import { services } from "@/data/services";
 import FilterChip from "./FilterChip";
 import { useState } from "react";
 
@@ -21,8 +21,8 @@ const FilterCard: React.FC<FilterProps> = ({
   const [showMore, setShowMore] = useState(false);
   const MAX_SERVICES_TO_SHOW = 6;
   const servicesToShow = showMore
-    ? filter_service
-    : filter_service.slice(0, MAX_SERVICES_TO_SHOW);
+    ? services
+    : services.slice(0, MAX_SERVICES_TO_SHOW);
 
   return (
     <div className="lg:block w-1/4 hidden">
@@ -72,7 +72,7 @@ const FilterCard: React.FC<FilterProps> = ({
                 ))}
               </div>
              <div className="flex flex-wrap justify-center">
-             {!showMore && filter_service.length > MAX_SERVICES_TO_SHOW ? (
+             {!showMore && services.length > MAX_SERVICES_TO_SHOW ? (
                 <button
                   className="text-primary-text text-sm hover:text-primary cursor-pointer"
                   onClick={() => setShowMore(true)}
