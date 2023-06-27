@@ -1,26 +1,16 @@
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import {
-  DoctorsList,
-  GalleryCard,
-  ContactCard,
-  HospitalDetailCard,
-  Overview,
-} from "@/components";
-import { useGetHospitalByIdQuery } from "@/store/hospital/hospital-detail-api";
-import Image from "next/image";
-import { doctorImg } from "@/public";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import { DoctorsList, GalleryCard, ContactCard, HospitalDetailCard, Overview,} from "@/components";
+import { useGetHospitalByIdQuery } from '@/store/hospital/hospital-detail-api';
+import  Image  from 'next/image';
+import { doctorImg } from '@/public';
+
 const HospitalDetailPage = () => {
   const router = useRouter();
   const id = router.query.id as string;
-  const {
-    data: hospital,
-    isSuccess,
-    isLoading,
-    isError,
-    error,
-  } = useGetHospitalByIdQuery(id);
-  const [activeTab, setActiveTab] = useState("");
+ 
+  const { data: hospital, isSuccess, isLoading, isError } = useGetHospitalByIdQuery(id);
+  const [activeTab, setActiveTab] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -51,7 +41,7 @@ const HospitalDetailPage = () => {
     }
     return false; // Return a default value if running in a non-browser environment
   };
-
+ 
   return (
     <div className="sm:flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-1 grid grid-cols-3 grid-rows-1 bg-primary-bg">
       <div className="w-30">
@@ -118,9 +108,9 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === "overview" ? "active" : ""
-                } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
-              >
+                  activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+               >
                 Overview
               </button>
               <button
@@ -129,9 +119,9 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === "doctors" ? "active" : ""
-                } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
-              >
+                  activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+               >
                 Doctors
               </button>
               <button
@@ -140,9 +130,9 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === "gallery" ? "active" : ""
-                } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
-              >
+                  activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+               >
                 Gallery
               </button>
             </div>
@@ -152,25 +142,25 @@ const HospitalDetailPage = () => {
                 <button
                   onClick={() => handleTabClick("overview")}
                   className={`${
-                    activeTab === "overview" ? "active" : ""
-                  } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
-                >
+                    activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+                 >
                   Overview
                 </button>
                 <button
                   onClick={() => handleTabClick("doctors")}
                   className={`${
-                    activeTab === "doctors" ? "active" : ""
-                  } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
+                    activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                   'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
                 >
                   Doctors
                 </button>
                 <button
                   onClick={() => handleTabClick("gallery")}
                   className={`${
-                    activeTab === "gallery" ? "active" : ""
-                  } hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold`}
-                >
+                    activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+                 >
                   Gallery
                 </button>
               </div>
@@ -189,7 +179,7 @@ const HospitalDetailPage = () => {
               />
             </div>
           )}
-          {activeTab === "doctors" && (
+          {activeTab === 'doctors' && (
             <>
               {isError && (
                 <div className="text-center text-xl">
@@ -203,8 +193,10 @@ const HospitalDetailPage = () => {
               hospital?.value.doctors &&
               hospital?.value.doctors.length > 0 ? (
                 <DoctorsList
-                  doctors={hospital?.value.doctors}
+                  hospitalId = {hospital?.value.id}
                   name={hospital?.value.institutionName}
+                  allSpecialities={hospital?.value.allSpecialities}
+                  allEducationalInstitutions = {hospital?.value.allEducationalInstitutions}
                 />
               ) : (
                 <div className="flex flex-row items-center my-30 mx-12 ml-44 mt-40 gap-1">
