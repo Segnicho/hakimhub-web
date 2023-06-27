@@ -18,7 +18,9 @@ export default function Home() {
   };
   const { data: hospitals, isLoading, isError } = useGetHospitalsQuery(filters);
   return (
-    <main className={`flex min-h-screen flex-col px-20 mx-auto ${inter.className}`}>
+    <main
+      className={`flex min-h-screen flex-col px-20 mx-auto ${inter.className}`}
+    >
       <Hero />
       <Search />
       <div className="mt-10">
@@ -37,7 +39,10 @@ export default function Home() {
         </div>
         <div className="flex">
           <div className="w-2/3 max-sm:justify-center">
-            <h1 className="font-bold text-[40px] text-primary-text text-center my-3 mb-5 mx-auto ">
+            <h1
+              className="font-bold text-[40px] text-primary-text text-center my-3 mb-5 mx-auto "
+              id="about"
+            >
               What is Hakimhub
             </h1>
             <div className="leading-1 tracking-wide w-[80%]">
