@@ -1,3 +1,4 @@
+export { default as chat_logo } from "@/public/imgs/chat/logo.svg"
 export { default as phone } from "@/public/imgs/landing/phone1.svg";
 export { default as doctor } from "@/public/imgs/landing/doctor.svg";
 export { default as medicalTeam } from "@/public/imgs/landing/medical-team.svg";
