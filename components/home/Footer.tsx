@@ -5,11 +5,11 @@ import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 const Footer:React.FC = () => {
   return (
     <div className="py-5 flex justify-between px-10  mr-10 bg-slate-50">
-      <div>
-        <span className="mr-8">Privacy Policy</span>
-        <span>Terms of Use</span>
+      <div className="flex">
+        <span className="md:mr-8 mr-4">Privacy <span className="max-sm:hidden">Policy</span></span>
+        <span>Terms <span className="max-sm:hidden">of Use</span></span>
       </div>
-      <div className="flex gap-8 text-primary">
+      <div className="flex gap-3 sm:gap-8 text-primary">
         <Link href="/">
           <BsFacebook />
         </Link>
