@@ -50,27 +50,29 @@ const HospitalCard: React.FC<HospitalProps> = ({
           />
         </div>
         <div className="flex flex-wrap m-2">
-          <div className="w-1/2 md:block">
-            <div className="text-xl font-bold">
-              <span className="text-primary font-extrabold text-2xl -mt-3">
-                24
-              </span>
-              <span> Hour</span>
-            </div>
-            <div className="text-sm text-primary-text font-light">
-              <span>
-                {opening} : {closing}
-              </span>
-            </div>
-          </div>
-          <div className="w-1/2 pl-6 md:block">
-            <div>
+          <div className="w-1/2 md:block justify-center">
               <div className="text-xl font-bold">
-                <span className="text-primary font-extrabold text-2xl">5</span>{" "}
-                <span>Days</span>
+                <span className="text-primary font-extrabold text-2xl -mt-3">
+                  24
+                </span>
+                <span> Hour</span>
               </div>
               <div className="text-sm text-primary-text font-light">
                 <span>
+                  {opening} : {closing}
+                </span>
+              </div>
+          </div>
+          <div className="w-1/2 md:block pr-4">
+            <div>
+              <div className="text-xl font-bold">
+                <div className="flex justify-end">
+                <span className="text-primary font-extrabold text-2xl pr-1">{'5  '}</span>
+                <span className="">Days</span>
+                </div>
+              </div>
+              <div className="text-sm text-primary-text font-light">
+                <span className="flex flex-wrap justify-end">
                   {startDay} - {endDay}
                 </span>
               </div>
