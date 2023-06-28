@@ -12,7 +12,7 @@ const HospitalsList: React.FC<HospitalsProps> = ({ hospitals }) => {
         <div>
           {hospitals.map((hospital: Institution) => (
             <div key={hospital.id} className="mb-16">
-              <HospitalCard hospital={hospital} slideShow={3} />
+              <HospitalCard hospital={hospital} slideShow={4} />
             </div>
           ))}
         </div>

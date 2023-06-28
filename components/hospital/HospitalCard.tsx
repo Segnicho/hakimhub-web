@@ -6,15 +6,10 @@ import NoServices from "../commons/NoService";
 import { MdForward } from "react-icons/md";
 import Link from "next/link";
 import ServicesSlide from "../commons/ServicesSlide";
-const getCurrentTime = () => {
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  return `${hours}:${minutes}`;
-};
+
 interface HospitalProps {
   hospital: Hospital;
-  slideShow:number
+  slideShow: number;
 }
 const HospitalCard: React.FC<HospitalProps> = ({
   hospital: {
@@ -25,19 +20,16 @@ const HospitalCard: React.FC<HospitalProps> = ({
     services,
     id,
     institutionAvailability: { opening, closing, startDay, endDay },
-  },slideShow
+    status,
+  },
+  slideShow,
 }) => {
-  const openingTime = opening;
-  const closingTime = closing;
-  const currentTime = getCurrentTime();
-  const isOpen = currentTime >= openingTime && currentTime <= closingTime;
-
   const Institution = institutionName.split(" ");
   const LastInstitutionName = Institution.pop();
   const FirtInstitutionName = Institution.join(" ");
 
   return (
-    <div className="flex flex-wrap bg-card-bg rounded-lg m-3 shadow-lg ">
+    <div className="flex flex-wrap bg-card-bg rounded-lg shadow-lg ">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
         <div className="w-full h-[150px]">
           <div className="relative w-full h-full">
@@ -73,11 +65,11 @@ const HospitalCard: React.FC<HospitalProps> = ({
           </div>
           <div className="w-1/2 pl-6 md:block">
             <div>
-              <div className=" text-xl font-bold">
+              <div className="text-xl font-bold">
                 <span className="text-primary font-extrabold text-2xl">5</span>{" "}
                 <span>Days</span>
               </div>
-              <div className="text-sm">
+              <div className="text-sm text-primary-text font-light">
                 <span>
                   {startDay} - {endDay}
                 </span>
@@ -87,10 +79,10 @@ const HospitalCard: React.FC<HospitalProps> = ({
         </div>
         <div
           className={`text-lg font-bold flex flex-wrap justify-end mr-2 mb-auto self-end ${
-            isOpen ? "text-isopen-text" : "text-closed-text"
+            status == "Open" ? "text-isopen-text" : "text-closed-text"
           }`}
         >
-          {isOpen ? "OPEN" : "CLOSED"}
+          {status == "Open" ? "OPEN" : "CLOSED"}
         </div>
       </div>
       <div className="pl-5 w-full md:w-2/3 p-2">
@@ -110,21 +102,18 @@ const HospitalCard: React.FC<HospitalProps> = ({
 
         <div className="hidden md:block pt-6">
           {services.length > 0 ? (
-            <ServicesSlide slideShow={slideShow} services={services} />
+            <div>
+              <ServicesSlide slideShow={slideShow} services={services} />
+              <Link href={`/hospitals/${id}`}>
+                <div className="flex flex-wrap text-primary justify-start font-bold hover:text-blue-600">
+                  <span>{"Show more"}</span>
+                </div>
+              </Link>
+            </div>
           ) : (
-            <NoServices />
+            <NoServices id={id} />
           )}
         </div>
-        <Link href={`/hospitals/${id}`}>
-        <div className="border-2 border-primary flex flex-wrap w-1/5 justify-center p-1 rounded-lg">
-          <div className="flex flex-wrap text-primary justify-center w-4/5">
-            <span>Show more</span>
-          </div>
-          <div className="flex flex-wrap w-1/5 justify-end">
-            <MdForward className="text-primary text-xl cursor-pointer flex flex-wrap self-center" />
-          </div>
-        </div>
-        </Link>
       </div>
     </div>
   );
