@@ -11,9 +11,9 @@ export const hospitalsApi = createApi({
         let url = "InsitutionProfile/search-institutions";
 
         const queryParams = [];
-        if (openStatus) queryParams.push(`openStatus=${openStatus}`);
-        if (operationYears) queryParams.push(`operationYears=${operationYears}`)
-        if (name) queryParams.push(`name=${encodeURIComponent(name)}`);
+        queryParams.push(`openStatus=${openStatus}`);
+        queryParams.push(`operationYears=${operationYears}`)
+        queryParams.push(`name=${encodeURIComponent(name)}`);
 
         const body = services ;
 

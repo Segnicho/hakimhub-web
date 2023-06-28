@@ -25,9 +25,13 @@ const FilterCard: React.FC<FilterProps> = ({
     : services.slice(0, MAX_SERVICES_TO_SHOW);
 
   return (
-    <div className="lg:block w-1/4 hidden">
-      <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 text-lg min-h-full sticky top-[85px]">
-        <h3 className="text-primary-text text-xl font-bold mb-6">Filter</h3>
+    <div className="max-lg:w-full -mt-10">
+      <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 pt-0 text-lg min-h-full">
+        <div>
+          <h3 className="text-primary-text text-xl font-bold mb-6 max-lg:-mt-4 mt-2">
+            Filter Hospitals
+          </h3>
+        </div>
         <div className="ml-4">
           <div className="flex items-center mb-6">
             <input
@@ -71,23 +75,23 @@ const FilterCard: React.FC<FilterProps> = ({
                   />
                 ))}
               </div>
-             <div className="flex flex-wrap justify-center">
-             {!showMore && services.length > MAX_SERVICES_TO_SHOW ? (
-                <button
-                  className="text-primary-text text-sm hover:text-primary cursor-pointer"
-                  onClick={() => setShowMore(true)}
-                >
-                  Show More
-                </button>
-              ): (
-                <button
-                className="text-primary-text text-sm hover:text-primary cursor-pointer"
-                onClick={() => setShowMore(false)}
-              >
-                Show Less
-              </button>
-              )}
-             </div>
+              <div className="flex flex-wrap justify-center">
+                {!showMore && services.length > MAX_SERVICES_TO_SHOW ? (
+                  <button
+                    className="text-primary-text text-sm hover:text-primary cursor-pointer"
+                    onClick={() => setShowMore(true)}
+                  >
+                    Show More
+                  </button>
+                ) : (
+                  <button
+                    className="text-primary-text text-sm hover:text-primary cursor-pointer"
+                    onClick={() => setShowMore(false)}
+                  >
+                    Show Less
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </div>
