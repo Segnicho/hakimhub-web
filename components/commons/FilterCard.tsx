@@ -28,7 +28,7 @@ const FilterCard: React.FC<FilterProps> = ({
     <div className="max-lg:w-full">
       <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 pt-0 text-lg min-h-full sticky top-[85px]">
         <div>
-          <h3 className="text-primary-text text-xl font-bold mb-6 max-lg:-mt-4">
+          <h3 className="text-primary-text text-xl font-bold mb-6 max-lg:-mt-4 mt-2">
             Filter Hospitals
           </h3>
         </div>
