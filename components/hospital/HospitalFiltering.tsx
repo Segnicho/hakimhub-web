@@ -53,7 +53,7 @@ const HospitalFiltering: React.FC = () => {
       <div className="w-3/4 pt-0 max-lg:w-full">
         <div className="flex flex-wrap">
           <div className="w-5/6">
-            <SearchCard keyword={keyword} onChange={handleInputChange} />
+          <SearchCard keyword={keyword} onChange={handleInputChange} />
           </div>
           <div className="w-1/6 flex flex-wrap items-center -mt-8">
             <button
@@ -66,7 +66,7 @@ const HospitalFiltering: React.FC = () => {
               className={`fixed top-20 right-0 h-full w-3/5 max-lg:block bg-white shadow-lg transform ${
                 showFilter ? "translate-x-0" : "translate-x-full"
               } transition-all duration-300`}
-              style={{ zIndex: 9999 }}
+              style={{ zIndex: 9999,  }}
             >
               <div className="px-6 sm:px-8 sm:pt-0 h-full overflow-y-auto">
                 <div className="py-4 flex flex-wrap justify-end">
@@ -74,7 +74,7 @@ const HospitalFiltering: React.FC = () => {
                     className="text-gray-500 hover:text-gray-900"
                     onClick={handleClick}
                   >
-                    <MdClose className="text-2xl flex flex-wrap w-full justify-end" />
+                  <MdClose className="text-2xl flex flex-wrap w-full justify-end" />
                   </button>
                 </div>
                 <FilterCard
@@ -115,10 +115,7 @@ const HospitalFiltering: React.FC = () => {
       {showFilter && (
         <div
           className="fixed top-0 left-0 w-full h-full bg-white z-10"
-          style={{
-            backdropFilter: "blur(0.5px)",
-            backgroundColor: "rgba(255, 255, 255, 0.5)",
-          }}
+          style={{ backdropFilter: "blur(0.5px)", backgroundColor: "rgba(255, 255, 255, 0.5)" }}
         ></div>
       )}
     </div>
