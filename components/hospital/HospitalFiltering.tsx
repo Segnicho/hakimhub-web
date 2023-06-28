@@ -63,7 +63,7 @@ const HospitalFiltering: React.FC = () => {
               <MdFilterList className="text-primary-text text-5xl mr-4 cursor-pointer ml-auto" />
             </button>
             <div
-              className={`fixed top-20 right-0 h-full w-3/5 max-lg:block bg-white shadow-lg transform ${
+              className={`fixed top-4 right-0 h-full w-3/5 max-lg:block bg-white shadow-lg transform ${
                 showFilter ? "translate-x-0" : "translate-x-full"
               } transition-all duration-300`}
               style={{ zIndex: 9999,  }}
@@ -102,7 +102,7 @@ const HospitalFiltering: React.FC = () => {
           </div>
         )}
       </div>
-      <div className="w-1/4 lg:block hidden fixed right-0 h-full bg-white shadow-lg">
+      <div className="w-1/4 lg:block hidden right-0 h-full bg-white shadow-lg">
         <FilterCard
           openStatus={openStatus}
           handleOpenStatus={handleOpenStatus}
