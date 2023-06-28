@@ -7,7 +7,7 @@ import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 const Footer: React.FC = () => {
   return (
     <div className="py-5 justify-between px-10 space-y-10 bg-slate-50 mx-auto">
-      <div className="grid pl-10 bg-slate-50 grid-cols-12">
+      <div className="grid pl-10 bg-slate-50 grid-cols-12 max-sm:flex max-sm:flex-col">
         <div className="col-span-5">
           <div className="flex">
             <Image src={cross} alt="cross" />{" "}
@@ -20,15 +20,15 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="col-span-7 flex flex-col space-y-3">
-          <div className="flex flex-col text-center">
+          <div className="flex flex-col text-center max-sm:hidden">
             <span className="font-bold text-[35px]">
               Health <span className="text-primary"> Care</span>
             </span>
             <span>Options More accessible</span>
           </div>
-          <div className="justify-center flex gap-3">
+          <div className="justify-center flex gap-3 max-sm:justify-start">
             <Image src={googleplay} alt="google play" />
-            <Image src={appstore} alt="google play" />
+            <Image src={appstore} alt="google play" className="max-md:hidden"/>
           </div>
         </div>
       </div>
