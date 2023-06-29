@@ -7,7 +7,7 @@ interface HospitalsProps {
 }
 const HospitalsList: React.FC<HospitalsProps> = ({ hospitals }) => {
   return (
-    <div>
+    <div className="min-h-screen">
       {hospitals?.length > 0 ? (
         <div>
           {hospitals.map((hospital: Institution) => (

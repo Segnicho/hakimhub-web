@@ -29,7 +29,8 @@ const HospitalCard: React.FC<HospitalProps> = ({
   const FirtInstitutionName = Institution.join(" ");
 
   return (
-    <div className="flex flex-wrap bg-card-bg rounded-lg shadow-lg ">
+    <Link href={`/hospitals/${id}`}>
+    <div className="flex flex-wrap bg-card-bg rounded-lg shadow-lg">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
         <div className="w-full h-[150px]">
           <div className="relative w-full h-full">
@@ -51,13 +52,13 @@ const HospitalCard: React.FC<HospitalProps> = ({
         </div>
         <div className="flex flex-wrap m-2">
           <div className="w-1/2 md:block justify-center">
-              <div className="text-xl font-bold">
-                <span className="text-primary font-extrabold text-2xl -mt-3">
+              <div className="text-xl font-bold max-lg:text-md">
+                <span className="text-primary font-extrabold text-2xl max-lg:text-xl -mt-3">
                   24
                 </span>
                 <span> Hour</span>
               </div>
-              <div className="text-sm text-primary-text font-light">
+              <div className="text-sm text-primary-text font-light max-xl:text-xs">
                 <span>
                   {opening} : {closing}
                 </span>
@@ -71,7 +72,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
                 <span className="">Days</span>
                 </div>
               </div>
-              <div className="text-sm text-primary-text font-light">
+              <div className="text-sm text-primary-text font-light max-xl:text-xs">
                 <span className="flex flex-wrap justify-end">
                   {startDay} - {endDay}
                 </span>
@@ -102,10 +103,10 @@ const HospitalCard: React.FC<HospitalProps> = ({
           <span>Services</span>
         </div>
 
-        <div className="hidden md:block pt-6">
+        <div className="pt-6 max-lg:pt-0">
           {services.length > 0 ? (
             <div>
-              <ServicesSlide slideShow={slideShow} services={services} />
+              <div className="hidden sm:block"><ServicesSlide slideShow={slideShow} services={services} /></div>
               <Link href={`/hospitals/${id}`}>
                 <div className="flex flex-wrap text-primary justify-start font-bold hover:text-blue-600">
                   <span>{"Show more"}</span>
@@ -118,6 +119,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

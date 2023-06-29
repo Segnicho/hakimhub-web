@@ -25,10 +25,10 @@ const FilterCard: React.FC<FilterProps> = ({
     : services.slice(0, MAX_SERVICES_TO_SHOW);
 
   return (
-    <div className="max-lg:w-full -mt-10">
-      <div className="bg-white rounded-lg justify-end text-primary font-bold p-8 pt-0 text-lg min-h-full">
+    <div className="max-lg:w-full p-6 overflow-y-scroll h-[450px] pb-10 inset-x-0 z-10">
+      <div className="bg-white rounded-lg justify-end text-primary font-bold pt-0 text-lg min-h-full">
         <div>
-          <h3 className="text-primary-text text-xl font-bold mb-6 max-lg:-mt-4 mt-2">
+          <h3 className="text-primary-text text-xl font-bold mb-6">
             Filter Hospitals
           </h3>
         </div>

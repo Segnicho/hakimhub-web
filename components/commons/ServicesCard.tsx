@@ -22,7 +22,9 @@ const ServicesCard: React.FC<ServiceProps> = ({ service }) => {
         </div>
       </div>
       <div className="flex flex-wrap font-bold lg:text-md md:text-sm items-center h-[65px]">
-        <span className="flex flex-wrap self-center">{service}</span>
+        {service.length > 15 ? (
+          <span className="flex flex-wrap self-center">{service.slice(0, 15)}{"..."}</span>
+        ) : (<span className="flex flex-wrap self-center">{service}</span>)}
       </div>
     </div>
   );
