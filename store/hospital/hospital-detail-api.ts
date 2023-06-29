@@ -11,9 +11,6 @@ export const hospitalDetailApi = createApi({
     getHospitalById: builder.query<HospitalDetailResponse, string>({
       query: (id) => `/${id}`,
     }),
-    getDoctors:builder.query<Doctor, string>({
-      query: (id) => `/${id}`,
-    }),
   }),
 });
 

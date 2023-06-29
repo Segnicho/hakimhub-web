@@ -5,6 +5,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { hospitalDetailApi } from './../store/hospital/hospital-detail-api'
 import { hospitalsApi } from './features/hospital/hospitals-api'
 import { doctorDetail } from "@/slices/doctors/doctor-detail-api";
+import { filterDoctorsApi } from "./doctors/doctors-api";
 
 export const store = configureStore({
   reducer: {
@@ -13,12 +14,12 @@ export const store = configureStore({
     [hospitalDetailApi.reducerPath]: hospitalDetailApi.reducer,
     [hospitalsApi.reducerPath]: hospitalsApi.reducer,
     [doctorDetail.reducerPath]: doctorDetail.reducer,
+    [filterDoctorsApi.reducerPath]:filterDoctorsApi.reducer,
     IpSlice: IpSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(hospitalDetailApi.middleware)
-    .concat(hospitalsApi.middleware)
-  .concat(doctorDetail.middleware).concat(ChatBot.middleware)
+    .concat(hospitalsApi.middleware).concat(doctorDetail.middleware).concat(ChatBot.middleware).concat(filterDoctorsApi.middleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>

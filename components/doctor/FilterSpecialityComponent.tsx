@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import  {AiOutlineClose} from "react-icons/ai"
 import {MdArrowDropDown} from "react-icons/md"
+
 interface Props {
   label: string;
   selected: string[] ;

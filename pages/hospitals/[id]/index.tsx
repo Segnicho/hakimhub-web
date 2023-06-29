@@ -74,7 +74,7 @@ const HospitalDetailPage = () => {
       </div>
       <div className="mt-10 sm:row-span-3 sm:col-span-2 md:row-span-3 md:col-span-3 md:flex-row lg:row-span-3 lg:col-span-2 lg:flex-row">
         {/* Navigation */}
-        <nav className="flex flex-wrap mx-2 md:ml-6 bg-white rounded-lg text-gray-500 drop-shadow shadow-md md:gap-x-24 lg:h-8 lg:gap-24">
+        <nav className="flex flex-wrap md:ml-6 bg-white rounded-lg text-gray-500 drop-shadow shadow-md mx-8 md:gap-x-24 lg:h-8 lg:gap-24">
           <div className="flex items-center justify-between">
             {/* Mobile Menu */}
             <div>
