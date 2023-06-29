@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { DoctorsList, GalleryCard, ContactCard, HospitalDetailCard, Overview,} from "@/components";
+import { DoctorsList, GalleryCard, ContactCard, HospitalDetailCard, Overview, Loading } from "@/components";
 import { useGetHospitalByIdQuery } from '@/store/hospital/hospital-detail-api';
-import  Image  from 'next/image';
+import Image from 'next/image';
 import { doctorImg } from '@/public';
 
 const HospitalDetailPage = () => {
   const router = useRouter();
   const id = router.query.id as string;
- 
+
   const { data: hospital, isSuccess, isLoading, isError } = useGetHospitalByIdQuery(id);
   const [activeTab, setActiveTab] = useState('');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -37,29 +37,46 @@ const HospitalDetailPage = () => {
         window.innerWidth ||
         document.documentElement.clientWidth ||
         document.body.clientWidth;
-      return windowWidth < 940; // Adjust the breakpoint as per your requirements
+      return windowWidth < 640;
     }
-    return false; // Return a default value if running in a non-browser environment
+    return false;
   };
- 
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  if (isError) {
+    return (
+      <div className="text-center text-xl">
+        <h3 className="text-2xl text-primary">Oops!</h3>
+        <div className="text-black">
+          An error occurred while fetching the hospital data.
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="sm:flex flex-col lg:grid lg:grid-cols-3 lg:grid-rows-1 grid grid-cols-3 grid-rows-1 bg-primary-bg">
-      <div className="w-30">
+    
+      <div className='max-sm:flex-col sm:flex'>
+      <div className="gap-3">
         <HospitalDetailCard
-          image={hospital?.value.bannerUrl}
-          logo={hospital?.value.logoUrl}
-          status={hospital?.value.status}
-          name={hospital?.value.institutionName}
+          image = {hospital?.value.bannerUrl}
+          name = {hospital?.value.institutionName}
+          status = {hospital?.value.status}
+          logo = {hospital?.value.logoUrl}
         />
         <ContactCard
           website={hospital?.value.website}
           phoneNumber={hospital?.value.phoneNumber}
         />
       </div>
-
-      <div className="mt-10 mx-20 lg:row-span-3 lg:col-span-2 lg:flex-row lg:mr-10">
-        <nav className="flex flex-wrap w-full bg-white rounded-lg text-gray-500 drop-shadow shadow-md lg:grid lg:grid-rows-1 lg:grid-cols-3 lg:w-full lg:h-10 lg:r-20">
+      <div className="mt-10 sm:row-span-3 sm:col-span-2 md:row-span-3 md:col-span-3 md:flex-row lg:row-span-3 lg:col-span-2 lg:flex-row">
+        {/* Navigation */}
+        <nav className="flex flex-wrap md:ml-6 bg-white rounded-lg text-gray-500 drop-shadow shadow-md mx-8 md:gap-x-24 lg:h-8 lg:gap-24">
           <div className="flex items-center justify-between">
+            {/* Mobile Menu */}
             <div>
               {isMobileOrTablet() ? (
                 <button
@@ -100,6 +117,7 @@ const HospitalDetailPage = () => {
             </div>
           </div>
 
+          {/* Tabs */}
           {isMobileOrTablet() && isMobileMenuOpen ? (
             <div className="flex flex-col items-start mx-2">
               <button
@@ -108,9 +126,10 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
-               >
+                  activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                }`}
+              >
                 Overview
               </button>
               <button
@@ -119,9 +138,10 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
-               >
+                  activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                }`}
+              >
                 Doctors
               </button>
               <button
@@ -130,37 +150,41 @@ const HospitalDetailPage = () => {
                   handleToggleMobileMenu();
                 }}
                 className={`${
-                  activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
-               >
+                  activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                  'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                }`}
+              >
                 Gallery
               </button>
             </div>
           ) : (
             !isMobileOrTablet() && (
-              <div className="lg:flex lg:flex-row lg:gap-40 lg:-ml-36">
+              <div className="flex flex-row sm:mx-10 sm:gap-16 items-center md:mx-16 ">
                 <button
                   onClick={() => handleTabClick("overview")}
                   className={`${
-                    activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
-                 >
+                    activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                  }`}
+                >
                   Overview
                 </button>
                 <button
                   onClick={() => handleTabClick("doctors")}
                   className={`${
-                    activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                   'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
+                    activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                  }`}
                 >
                   Doctors
                 </button>
                 <button
                   onClick={() => handleTabClick("gallery")}
                   className={`${
-                    activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' : 
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'} `}
-                 >
+                    activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
+                  }`}
+                >
                   Gallery
                 </button>
               </div>
@@ -179,43 +203,34 @@ const HospitalDetailPage = () => {
               />
             </div>
           )}
-          {activeTab === 'doctors' && (
-            <>
-              {isError && (
-                <div className="text-center text-xl">
-                  <h3 className="text-2xl text-primary"> Oops!</h3>
-                  <div className="text-black">
-                    An error occurred while fetching the hospital data.
-                  </div>
-                </div>
-              )}
-              {!isError &&
-              hospital?.value.doctors &&
-              hospital?.value.doctors.length > 0 ? (
-                <DoctorsList
-                  hospitalId = {hospital?.value.id}
-                  name={hospital?.value.institutionName}
-                  allSpecialities={hospital?.value.allSpecialities}
-                  allEducationalInstitutions = {hospital?.value.allEducationalInstitutions}
-                />
-              ) : (
-                <div className="flex flex-row items-center my-30 mx-12 ml-44 mt-40 gap-1">
-                  <Image
-                    src={doctorImg}
-                    alt="There is no doctor"
-                    width={150}
-                    height={150}
-                    className="object-cover"
-                  />
-                  <div className="text-start text-gray-500 font-bold">
-                    <h3 className="text-5xl my-2">Oops!</h3>
-                    Seems like there are no doctors data for this hospital at
-                    the moment.
-                  </div>
-                </div>
-              )}
-            </>
+        {activeTab === 'doctors' && (
+        <>
+          {isLoading && <Loading />}
+          {!isError && hospital?.value.doctors && hospital?.value.doctors.length > 0 ? (
+            <DoctorsList
+              hospitalId={hospital?.value.id}
+              name={hospital?.value.institutionName}
+              allSpecialities={hospital?.value.allSpecialities}
+              allEducationalInstitutions={hospital?.value.allEducationalInstitutions}
+            />
+          ) : (
+            <div className="flex flex-row items-center my-30 mx-12 ml-44 mt-40 gap-1">
+              <Image
+                src={doctorImg}
+                alt="There is no doctor"
+                width={150}
+                height={150}
+                className="object-cover"
+              />
+              <div className="text-start text-gray-500 font-bold">
+                <h3 className="text-5xl my-2">Oops!</h3>
+                Seems like there is no doctor data available for this hospital at the moment.
+              </div>
+            </div>
           )}
+        </>
+        )}
+
           {activeTab === "gallery" && hospital?.value.photos && (
             <GalleryCard photos={hospital?.value.photos} />
           )}
@@ -224,5 +239,6 @@ const HospitalDetailPage = () => {
     </div>
   );
 };
+     
 
 export default HospitalDetailPage;

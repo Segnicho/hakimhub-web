@@ -1,4 +1,6 @@
 import { AllEducationalInstitutions } from '@/types/institution/institution-detail';
+import FilterComponent from './FilterComponent';
+import FilterSpecialityComponent from './FilterSpecialityComponent';
 
 interface DoctorFilterProps {
   allSpecialities: string[];
@@ -9,6 +11,7 @@ interface DoctorFilterProps {
   onSpecialityChange: (value: string[]) => void;
   onEducationChange: (value: string) => void;
   onExperienceChange: (value: string) => void;
+  setSpeciality : (speciality: string) => void;
 }
 
 const DoctorFilter: React.FC<DoctorFilterProps> = ({
@@ -20,72 +23,47 @@ const DoctorFilter: React.FC<DoctorFilterProps> = ({
   onSpecialityChange,
   onEducationChange,
   onExperienceChange,
+  setSpeciality
 }) => {
   const handleSpecialityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
     onSpecialityChange(selectedOptions);
   };
 
+  var educations: string[] = [];
+  for (let i=0; i < allEducationalInstitutions.length;i++){
+    educations.push(allEducationalInstitutions[i].institutionName);
+  }
+
+  const filters = [
+    {
+      label: "Experience",
+      values: ["0","1", "2","3", "4", "5", "6", "7", "8", "9", "10"],
+      selected: selectedExperience,
+      onSelectedChange : onExperienceChange
+    },
+
+    {
+      label: "Education",
+      values: educations,
+      selected: selectedEducation,
+      onSelectedChange : onEducationChange
+    },
+
+  ]
+
   return (
-    <div className="flex lg:flex-row xl:flex-row 2xl:flex-row sm:flex-col md:flex-col items-center space-x-4 mt-4 ml-2">
-      <div className="relative">
-        <label htmlFor="speciality" className="text-md font-semi-bold text-primary">
-          Speciality
-        </label>
-        <select
-          id="speciality"
-          className="block w-40 py-2 px-3 bg-white rounded-md shadow-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-          value={selectedSpeciality}
-          onChange={handleSpecialityChange}
-          multiple
-        >
-          <option value="">Select specialities...</option>
-          {allSpecialities.map((speciality, index) => (
-            <option value={speciality} key={index}>
-              {speciality}
-            </option>
-          ))}
-        </select>
-      </div>
-      {allEducationalInstitutions.length > 0 && (
-        <div className="relative">
-          <label htmlFor="university" className="text-md font-semi-bold text-primary">
-            Education
-          </label>
-          <select
-            id="university"
-            className="block w-48 py-2 px-3 bg-white rounded-md shadow-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-            value={selectedEducation}
-            onChange={(e) => onEducationChange(e.target.value)}
-          >
-            <option value="">select</option>
-            {allEducationalInstitutions.map((educationalInstitution) => (
-              <option value={educationalInstitution.institutionName} key={educationalInstitution.id}>
-                {educationalInstitution.institutionName}
-              </option>
-            ))}
-          </select>
-        </div>
-      )}
-      <div className="relative">
-        <label htmlFor="experience" className="text-md font-semi-bold text-primary">
-          Experience
-        </label>
-        <select
-          id="experience"
-          className="block w-40 py-2 px-3 bg-white rounded-md shadow-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-          value={selectedExperience}
-          onChange={(e) => onExperienceChange(e.target.value)}
-        >
-          <option value="">select</option>
-          <option value="0">0 years</option>
-          <option value="1">1 years</option>
-          <option value="2">2 years</option>
-          <option value="3">3 years</option>
-          <option value="4">4 years</option>
-          <option value="5">5 years</option>
-        </select>
-      </div>
+    <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row items-center space-x-4 mt-4 ml-2">
+        <FilterSpecialityComponent  values={allSpecialities} label = {"Speciality"} selected = {selectedSpeciality} setSpeciality = {setSpeciality} />
+    {
+      filters.map((item, index) => {
+        return   <FilterComponent key={index} values={item.values} label = {item.label} selected = {item.selected} onSelectedChange = {item.onSelectedChange} />
+
+      })
+
+    }
+
+   
     </div>
   );
 };

@@ -8,33 +8,32 @@ const Gallery: React.FC<GalleryProps> = ({ photos }) => {
   const columns = Math.ceil(photos.length / 3);
   return (
     <div className='my-4 mx-6'>
-      <h3 className='text-3xl font-bold mx-4 my-6'>Gallery</h3>
-      <div className='overflow-y-scroll h-[720px]'>
-        <div className={`grid grid-cols-3 grid-rows-${columns}`}>
+      <h3 className='text-xl md:text-2xl font-bold mx-4 my-6'>Gallery</h3>
+      <div className='flex flex-col overflow-y-auto h-[400px] sm:h-[430px] lg:h-[520px]'>
+        <div className={`sm:gap-4 sm:grid sm:grid-rows-${columns} sm:grid-cols-3 lg:mx-4`}>
           {photos.map((photosUrl, index) => (
             <div
-              key={index}
-              className={`relative w-full rounded-lg snap-y ${
-                index % 2 === 0 ? 'h-96' : 'h-56'
-              } ${
-                index > 1 && (index - 1) % 3 === 0 && index % 2 !== 0  ? 'mt-[20px]' : ''
-              }${
-                index >= 3 && (index - 1) % 3 !== 0 && index % 2 !== 0  ? 'mt-[20px]' : ''
-              } ${
-                index == 4 ? '-mt-[78px]' : ''
-              }${
-                index >= 10 && (index - 1) % 3 === 0 && index % 2 === 0 ? '-mt-[74px]' : ''
-              }${
-                index >= 6 && (index - 1) % 3 !== 0 && index % 2 === 0 ? 'mt-[16px]' : ''
-              }`}
-            >
+            key={index}
+            className={`w-full rounded-lg snap-y  ${
+              index > 1 && (index - 1) % 3 === 0 && index % 2 !== 0 ? 'sm:mt-[7px]' : ''
+            } ${
+              index >= 3 && (index - 1) % 3 !== 0 && index % 2 !== 0 ? 'sm:mt-[5px]' : ''
+            } ${
+              index === 4 ? 'sm:-mt-[94px]' : ''
+            } ${
+              index >= 10 && (index - 1) % 3 === 0 && index % 2 === 0 ? 'sm:-mt-[64px]' : ''
+            } ${
+              index >= 6 && (index - 1) % 3 !== 0 && index % 2 === 0 ? 'sm:mt-[4px]' : ''
+            }`}
+          >
+                  
               <Image
-                width={300}
-                height={300}
+                width={200}
+                height={200}
                 src={photosUrl}
                 alt='photoimage'
-                className={`brightness-100 object-cover w-full p-4 snap-center backdrop-opacity-95 `}
-                style={{ borderRadius: '2.0rem', height: index % 2 === 0 ? '400px' : '300px' }}
+                className={`brightness-100 object-cover w-full p-4 snap-center sm:p-0 lg:p-1 ${index % 2 === 0  ? 'sm:h-[250px] lg:h-[300px]' : 'sm:h-[150px] lg:h-[200px]'}`}
+                style={{borderRadius:"1.0rem"}}
               />
             </div>
           ))}
