@@ -2,16 +2,16 @@
     {
         "id": 1,
         "title": " 👍 Ask complex questions",
-        "detail": "I am having a heavy headache that has a sharp pain"
+        "detail": "Unlock deeper insights by asking intricate questions about your symptoms"
     },
     {
         "id": 2,
-        "title": " 🏥 Find out Hospitals close to you",
-        "detail": "my back is making me uncoformtable when I sit "
+        "title": " 🏥 Find out Hospitals and Doctors",
+        "detail": "Discover hospitals and doctors specializing in your specific condition"
     },
     {
         "id": 3,
         "title": " 🙌 Get better answers",
-        "detail": "I don't think I have a vision that is normal to others"
+        "detail": "Experience enhanced accuracy and clarity with our AI-powered chat service"
     }
 ]

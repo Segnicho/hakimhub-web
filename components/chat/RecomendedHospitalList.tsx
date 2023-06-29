@@ -10,7 +10,7 @@ const RecomendedHospitalList: React.FC<RecomendedHospitalListInterface> = ({inst
   
   return <div className="mt-4 px-2 ">
     <div className="mb-3">
-      <p> Based on your syptoms I recommend that you see the following Hospitals </p>
+      <p> Based on your symptoms I recommend that you see the following Hospitals </p>
     </div>
     {
       institutions.map((institution:Institution) =>{

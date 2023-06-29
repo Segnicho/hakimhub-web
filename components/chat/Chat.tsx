@@ -88,9 +88,9 @@ const Chat: React.FC<ChatProp> = ({setLoading}) => {
   }
   return (
     <div className="w-full  fixed bottom-0 mt-16 flex flex-row items-center justify-center gap-4">
-      <button onClick={newTopic} className="flex flex-col  justify-center items-center border hover:shadow-chat-button rounded-full text-xl  w-[3rem] h-[3rem] md:px-6 capitalize text-white">
+      <button onClick={newTopic} className="flex flex-col  justify-center items-center border hover:shadow-chat-button rounded-full text-xl  w-[3rem] h-[3rem] md:px-6 hover:bg-primary bg-[#56b2fd] capitalize text-white">
         
-        <IoAdd className=" text-primary" size="1.4rem" />
+        <IoAdd className=" text-white" size="1.4rem" />
       </button>
 
       
@@ -99,7 +99,7 @@ const Chat: React.FC<ChatProp> = ({setLoading}) => {
       <form className="flex flex-stretch w-[80vw] md:w-[50vw] py-2">
         <div className="flex w-full items-center shadow-md rounded-md   p-2 bg-[rgb(248,246,246)]">
           <IoChatbubbleEllipsesOutline
-            className="text-secondary-text hidden md:flex my-[6px]"
+            className="text-secondary-text hidden md:flex my-[6px]  "
             size={24}
           />
           <input
