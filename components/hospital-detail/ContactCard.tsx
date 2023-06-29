@@ -36,7 +36,7 @@ const ContactCard: React.FC<ContactProps> = ({ website, phoneNumber }) => {
         </svg>
         <Link href = {`${website}`}>
 
-        <p className="text-lg ml-2 border-b-4 border-primary hover:text-primary">website</p>
+        <p className="text-lg ml-2 hover:text-primary">website</p>
          </Link>      
       </div>
     </div>)} 
