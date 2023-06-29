@@ -1,21 +1,45 @@
 import { usePostChatBotMutation } from "@/slices/chat/chat-api";
 import { pushMessage, removeAllMessage } from "@/slices/chat/message-history";
+import { RootState } from "@/store";
 import { ChatResponse } from "@/types/chat/service";
+import { truncate } from "fs";
 import React, { useState, useRef, useEffect } from "react";
 import {
   IoChatbubbleEllipsesOutline,
   IoSendSharp,
   IoAdd,
 } from "react-icons/io5";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-const Chat: React.FC = () => {
+type SetStateFunction<T> = React.Dispatch<React.SetStateAction<T>>;
+type ChatProp = {
+  setLoading: SetStateFunction<boolean>;
+};
+const Chat: React.FC<ChatProp> = ({setLoading}) => {
   const [input, setInput] = useState("")
   const [newChat, setNewChat] = useState(true)
   const [buttonActive, setButtonActive] = useState(false)
   const dispatch = useDispatch()
-  const  [postChat,{ isLoading,isSuccess }]  = usePostChatBotMutation()
+  const ipaddress = useSelector((state:RootState) => state.IpSlice.ipAddress)
+  const  [postChat,{ isLoading,isSuccess}]  = usePostChatBotMutation()
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const submitData = async () => {
+      try {
+        const response = await fetch('/api/get-ip');
+        console.log("hello")
+        console.log(response)
+      } catch (error) {
+        console.error('Error submitting data:', error);
+        
+      }
+    };
+
+    submitData();
+    
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
@@ -23,24 +47,29 @@ const Chat: React.FC = () => {
     }
   }, [isLoading]);
   const submitClickHandler = (e: React.FormEvent) =>{
+    
     setButtonActive(true)
+    setLoading(true)
     e.preventDefault()
     dispatch(pushMessage(input))
 
     postChat({
       message:input,
-      Address:"ipadhgjlpopoplkdress",
+      Address:ipaddress,
       isNewChat:newChat
   })
       .unwrap()
       .then((response:ChatResponse) => {
+        
         console.log(response)
+        setLoading(false)
         dispatch(pushMessage(response))
         setButtonActive(false)
         
         
       })
       .catch((error) => {
+        setLoading(false)
         dispatch(pushMessage("An error occured while generating response try again"))
         setButtonActive(false)
         
@@ -54,16 +83,21 @@ const Chat: React.FC = () => {
   const newTopic = () =>{
     setNewChat(true)
     dispatch(removeAllMessage())
+    setLoading(false)
 
   }
   return (
-    <div className="w-full sticky bottom-0 flex flex-row items-center justify-center gap-4">
-      <button onClick={newTopic} className="flex flex-col justify-between hover:bg-main shadow-chat-button rounded-full text-xl bg-chat py-4 px-4 md:px-6 capitalize text-white">
-        <p className="hidden md:flex">New Topic</p>
-        <IoAdd className="flex md:hidden" />
+    <div className="w-full  fixed bottom-0 mt-16 flex flex-row items-center justify-center gap-4">
+      <button onClick={newTopic} className="flex flex-col  justify-center items-center border hover:shadow-chat-button rounded-full text-xl  w-[3rem] h-[3rem] md:px-6 capitalize text-white">
+        
+        <IoAdd className=" text-primary" size="1.4rem" />
       </button>
+
+      
+
+
       <form className="flex flex-stretch w-[80vw] md:w-[50vw] py-2">
-        <div className="flex w-full items-center border rounded-full border-secondary-text p-2 bg-white">
+        <div className="flex w-full items-center shadow-md rounded-md   p-2 bg-[rgb(248,246,246)]">
           <IoChatbubbleEllipsesOutline
             className="text-secondary-text hidden md:flex my-[6px]"
             size={24}

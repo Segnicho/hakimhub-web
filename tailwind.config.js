@@ -25,14 +25,18 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       boxShadow: {
-        'chat-service': '-3px 3px 39px 0px #0000001C',
-        'chat-button': '0px 4px 4px 0px #00000040'
+        'chat-service': '0px 0px 4px 0px #00000040',
+        'chat-button': '0px 0px 4px 0px #00000040'
       },
     },
   },

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 import { chat_logo } from "@/public";
 import services from "@/data/chat/services.json";
@@ -10,43 +10,48 @@ import MessageCard from "@/components/chat/MessageCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { FC } from 'react';
+import { Loading } from "@/components";
+import TypingLoading from "@/components/commons/TypingLoading";
 
 const Index: FC = () => {
   const messages = useSelector((state:RootState) => state.ChatHistory.messages)
+  const [loading,setLoading] = useState<boolean>(false)
   console.log(messages)
   console.log(typeof(messages))
+
+  
   
   return (
-    // <></>
-    <div className="min-h-screen bg-secondary-bg">
+    <div className="min-h-screen relative bg-white">
       
-      <div className="max-w-screen-2xl">
-      <div className="flex flex-col p-8"> 
+      <div className="max-w-screen-2xl min-h-[100vh]">
+      <div className="flex flex-col "> 
         <div className="flex-grow">
         {messages.length === 0 ?
 
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col items-center">
+          <div className="flex flex-col gap-2 ">
+            <div className="flex  items-center min-h-[25vh]  justify-center pt-8">
               <Image
                 src={chat_logo}
                 alt="Hakimhub's logo"
-                width={110}
-                height={110}
+                width={60}
+                height={60}
               />
-            </div>
-            <h1 className="text-5xl font-bold text-center font-inter">
-              Welcome to Hakim<span className="text-main">Hub</span>
-            </h1>
-            <p className="text-secondary-text text-xl text-center font-bold font-inter">
-              Your AI-powered copilot for your health
+            <p className="text-5xl font-bold text-center  font-inter">
+              Hakim<span className="text-main">Hub</span>-Bot
             </p>
+            </div>
+            {/* <p className="text-secondary-text text-lg text-center font-bold font-inter">
+              Your AI-powered copilot for your health
+            </p> */}
 
-            <div className="flex flex-col md:flex-row justify-around">
+            <div className="flex flex-col lg:flex-row justify-center items-center  lg:justify-around p-8">
               {services.map((service: ServiceType) => (
                 <Service
                   key={service.id}
                   title={service.title}
                   detail={service.detail}
+                  setLoading={setLoading}
                 />
               ))}
             </div>
@@ -57,10 +62,10 @@ const Index: FC = () => {
           }
         </div>
         { messages.length > 0 && <MessageCard/>}
-          
-        <Chat />
+        {loading && <TypingLoading/>}     
       </div>
     </div> 
+        <Chat setLoading = {setLoading} />
 
       
     </div>

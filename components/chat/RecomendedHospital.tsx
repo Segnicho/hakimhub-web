@@ -1,20 +1,25 @@
 import Image from "next/image"
 import { Doctor,Institution } from "@/types/chat/service";
 import RecomendedDoctorList from "./RecomendedDoctorList";
+import { useRouter } from "next/router";
 interface RecomendedHospitalInterface{
   institution : Institution
 }
 const RecomendedHospital: React.FC<RecomendedHospitalInterface> = ({institution}) => {
+  const router = useRouter()
+  const hospitalClickHandler = (id:string) =>{
+    router.push(`/hospitals/${id}`)
+  }
   
   return (
-    <div className=" shadow-md rounded-md px-2">
-      <div className="flex items-center gap-3">
+    <div className=" shadow-sm mb-5 border p-3 border-[rgb(248,246,246)] rounded-md px-2">
+      <div onClick={() => hospitalClickHandler(institution.id)} className="flex items-center gap-3">
               <div className=' relative w-[4rem] h-[4rem] rounded-full  shadow-md'>
                 <Image 
                 className='object-cover rounded-full'
                 alt='recomended hospital detail'
                 fill
-                src = '/imgs/doctor-detail/doctor-detail.png'
+                src = {institution.bannerUrl}
                 sizes='1'
                  />
                 </div>
@@ -29,7 +34,7 @@ const RecomendedHospital: React.FC<RecomendedHospitalInterface> = ({institution}
       </div>
 
       <div className=" mt-3">
-        <p className="font-semibold text-lg">Doctors</p>
+        <p className="font-semibold text-lg text-secondary-text py-3">Doctors</p>
         <RecomendedDoctorList doctors = {institution.doctors} />   
       </div>
       </div>

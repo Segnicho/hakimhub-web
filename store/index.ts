@@ -1,4 +1,5 @@
 import { ChatBot } from "@/slices/chat/chat-api";
+import IpSlice from "@/slices/chat/ip-slice";
 import  ChatHistory  from "@/slices/chat/message-history";
 import { configureStore } from '@reduxjs/toolkit'
 import { hospitalDetailApi } from './../store/hospital/hospital-detail-api'
@@ -11,7 +12,8 @@ export const store = configureStore({
     ChatHistory: ChatHistory.reducer,
     [hospitalDetailApi.reducerPath]: hospitalDetailApi.reducer,
     [hospitalsApi.reducerPath]: hospitalsApi.reducer,
-    [doctorDetail.reducerPath]: doctorDetail.reducer
+    [doctorDetail.reducerPath]: doctorDetail.reducer,
+    IpSlice: IpSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(hospitalDetailApi.middleware)

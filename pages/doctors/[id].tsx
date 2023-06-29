@@ -36,7 +36,7 @@ function DoctorDetail() {
                  />
                 </div>
             
-                <p className='pt-16 text-3xl font-extrabold'>Dr.{doctor?.value?.fullName}</p>
+                <p className='pt-16 text-3xl font-extrabold'>{doctor?.value?.fullName}</p>
                 {doctor?.value?.specialities?.map((specialty:string, index:number) =>{
                    return ( <p className='font-semibold text-xl capitalize' key={index}>{specialty}</p>)       
                 })}
