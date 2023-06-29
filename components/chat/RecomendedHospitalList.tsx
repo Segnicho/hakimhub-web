@@ -7,6 +7,7 @@ interface RecomendedHospitalListInterface{
 }
 const RecomendedHospitalList: React.FC<RecomendedHospitalListInterface> = ({institutions}) => {
   
+  
   return <div className="mt-4 px-2 ">
     <div className="mb-3">
       <p> Based on your syptoms I recommend that you see the following Hospitals </p>
@@ -14,7 +15,9 @@ const RecomendedHospitalList: React.FC<RecomendedHospitalListInterface> = ({inst
     {
       institutions.map((institution:Institution) =>{
         return(
-          <RecomendedHospital institution={institution} key={institution.id}/>
+          <div className="cursor-pointer"  key={institution.id} >
+            <RecomendedHospital institution={institution}/>
+          </div>
         )
       })
     }

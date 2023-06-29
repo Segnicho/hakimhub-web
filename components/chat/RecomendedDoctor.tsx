@@ -5,7 +5,7 @@ interface RecomendedDoctorInterface{
 }
 const RecomendedDoctor: React.FC<RecomendedDoctorInterface> = ({doctor}) => {
     return (
-        <div className=" flex flex-col justify-center items-center rounded-md shadow-md  m-2 p-3 ">
+        <div className=" flex flex-col justify-center  items-center rounded-md shadow-md  m-2 p-3 ">
             <div className=' relative w-[3.5rem] h-[3.5rem] rounded-full  shadow-md'>
                 <Image 
                 className='object-cover rounded-full'
