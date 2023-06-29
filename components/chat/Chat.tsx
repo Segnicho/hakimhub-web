@@ -25,21 +25,21 @@ const Chat: React.FC<ChatProp> = ({setLoading}) => {
   const  [postChat,{ isLoading,isSuccess}]  = usePostChatBotMutation()
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // useEffect(() => {
-  //   const submitData = async () => {
-  //     try {
-  //       const response = await fetch('/api/get-ip');
-  //       console.log("hello")
-  //       console.log(response)
-  //     } catch (error) {
-  //       console.error('Error submitting data:', error);
+  useEffect(() => {
+    const submitData = async () => {
+      try {
+        const response = await fetch('/api/get-ip');
+        console.log("hello")
+        console.log(response)
+      } catch (error) {
+        console.error('Error submitting data:', error);
         
-  //     }
-  //   };
+      }
+    };
 
-  //   submitData();
+    submitData();
     
-  // }, []);
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
