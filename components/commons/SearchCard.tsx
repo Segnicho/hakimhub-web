@@ -6,7 +6,7 @@ interface SearchProps {
 }
 const SearchCard: React.FC<SearchProps> = ({ keyword, onChange }) => {
   return (
-    <div className="text-primary-text sticky top-[85px]">
+    <div className="text-primary-text">
       <div className="flex items-center p-2 mb-10 rounded-lg shadow-md bg-white max-md:w-full justify-center">
         <input
           type="text"
