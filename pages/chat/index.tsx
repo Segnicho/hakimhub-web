@@ -29,28 +29,29 @@ const Index: FC = () => {
         <div className="flex-grow">
         {messages.length === 0 ?
 
-          <div className="flex flex-col gap-2">
-            <div className="flex flex-col items-center pt-8">
+          <div className="flex flex-col gap-2 ">
+            <div className="flex  items-center min-h-[25vh]  justify-center pt-8">
               <Image
                 src={chat_logo}
                 alt="Hakimhub's logo"
                 width={60}
                 height={60}
               />
-            </div>
-            <h1 className="text-4xl font-bold text-center font-inter">
-              Welcome to Hakim<span className="text-main">Hub</span>-Bot
-            </h1>
-            <p className="text-secondary-text text-lg text-center font-bold font-inter">
-              Your AI-powered copilot for your health
+            <p className="text-5xl font-bold text-center  font-inter">
+              Hakim<span className="text-main">Hub</span>-Bot
             </p>
+            </div>
+            {/* <p className="text-secondary-text text-lg text-center font-bold font-inter">
+              Your AI-powered copilot for your health
+            </p> */}
 
-            <div className="flex flex-col lg:flex-row justify-center items-center lg:justify-around p-8">
+            <div className="flex flex-col lg:flex-row justify-center items-center  lg:justify-around p-8">
               {services.map((service: ServiceType) => (
                 <Service
                   key={service.id}
                   title={service.title}
                   detail={service.detail}
+                  setLoading={setLoading}
                 />
               ))}
             </div>
