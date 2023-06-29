@@ -16,7 +16,7 @@ const TypingLoading = () => {
     }, []);
   
     return (
-      <div className="md:ml-[25%]">
+      <div className="md:ml-[25%] p-3">
         
           <div className=" text-5xl text-primary">
             

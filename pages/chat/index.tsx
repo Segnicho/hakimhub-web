@@ -10,7 +10,6 @@ import MessageCard from "@/components/chat/MessageCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { FC } from 'react';
-import { Loading } from "@/components";
 import TypingLoading from "@/components/commons/TypingLoading";
 
 const Index: FC = () => {
@@ -25,12 +24,12 @@ const Index: FC = () => {
     <div className="min-h-screen relative bg-white">
       
       <div className="max-w-screen-2xl min-h-[100vh]">
-      <div className="flex flex-col "> 
+      <div className="flex flex-col mb-16 "> 
         <div className="flex-grow">
         {messages.length === 0 ?
 
           <div className="flex flex-col gap-2 ">
-            <div className="flex  items-center min-h-[25vh]  justify-center pt-8">
+            <div className="flex  items-center min-h-[30vh] gap-2 max-sm:flex-col  justify-center pt-8">
               <Image
                 src={chat_logo}
                 alt="Hakimhub's logo"
@@ -38,20 +37,18 @@ const Index: FC = () => {
                 height={60}
               />
             <p className="text-5xl font-bold text-center  font-inter">
-              Hakim<span className="text-main">Hub</span>-Bot
+              Hakim<span className="text-main">Hub</span>
             </p>
             </div>
-            {/* <p className="text-secondary-text text-lg text-center font-bold font-inter">
-              Your AI-powered copilot for your health
-            </p> */}
+            
 
-            <div className="flex flex-col lg:flex-row justify-center items-center  lg:justify-around p-8">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-4 lg:justify-around p-8">
               {services.map((service: ServiceType) => (
                 <Service
                   key={service.id}
                   title={service.title}
                   detail={service.detail}
-                  setLoading={setLoading}
+                  
                 />
               ))}
             </div>
