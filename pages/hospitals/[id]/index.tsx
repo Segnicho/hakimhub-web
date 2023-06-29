@@ -184,6 +184,8 @@ const HospitalDetailPage = () => {
               <Overview
                 about={hospital?.value.summary}
                 services={hospital?.value.services}
+                latitude={hospital?.value.address?.latitude}
+                longitude={hospital?.value.address?.longitude}
               />
             </div>
           )}
