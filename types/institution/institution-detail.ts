@@ -18,7 +18,7 @@ export interface Hospital {
   allEducationalInstitutions:AllEducationalInstitutions[];
   allSpecialities:string[];
   institutionAvailability: InstitutionAvailability[];
-  address: Address[];
+  address: Address;
   services: string[];
   photos: string[];
   doctors: Doctor[];
