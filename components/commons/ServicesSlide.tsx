@@ -3,8 +3,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ServicesCard from "./ServicesCard";
 import NoServices from "./NoService";
-import Service from "../home/Service";
 import { MdCircle } from "react-icons/md";
+import Service from "../home/IndividualService";
 interface ArrowProps {
   className: string;
   onClick: () => void;

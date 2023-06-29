@@ -13,11 +13,11 @@ const Search: React.FC = () => {
     }
   };
   return (
-    <div className="flex items-center p-2 rounded shadow-md mt-5 ml-8 bg-[#EFF3F9] w-2/5 max-md:w-full">
+    <div className="flex items-center p-2 rounded shadow-md mt-5 max-md:mx-auto bg-[#EFF3F9] w-2/5 max-md:w-full">
       <input
         type="text"
         className="mr-2 p-2 outline-none w-full bg-inherit"
-        placeholder="Hi, This will Take You to the chat boat😊"
+        placeholder="Hi, This will take you to the chat boat😊"
         value={searchQuery}
         onChange={handleInputChange}
       />

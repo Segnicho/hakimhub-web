@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { HiChat } from "react-icons/hi";
-import { AiOutlineMenu } from "react-icons/ai";
+import { HiMenu } from "react-icons/hi";
 
-import { cross } from "@/public";
+import { header } from "@/public";
 import Link from "next/link";
 import { useState } from "react";
 import clsx from "clsx";
@@ -16,12 +16,11 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="sticky flex top-0 justify-between px-5 z-50 bg-white py-2 shadow-sm">
-      <Link href="/" className="flex items-center" onClick={()=>setActive("/")}>
-        <Image src={cross} alt="Hakimhub's logo" className="scale-75" />
-        <span className="font-bold text-[20px] pt-1">
-          Hakim<span className="text-primary">Hub</span>
-        </span>
+    <nav className="sticky flex top-0 items-center font-poppins h-full justify-between px-5 z-50 bg-white py-2 shadow-sm">
+      <Link href="/" className="flex items-center justify-center h-full gap-1">
+        <div className="flex items-center justify-center h-full">
+          <Image src={header} alt="Hakimhub's logo" className="scale-75" />
+        </div>
       </Link>
       <div className="flex font-medium text-xl mr-10">
         <div className="hidden md:flex gap-9">
@@ -44,7 +43,7 @@ const Navbar: React.FC = () => {
         className="md:hidden flex flex-col "
         onClick={() => setToggle(!toggle)}
       >
-        <AiOutlineMenu className="w-7 h-7 cursor-pointer" />
+        <HiMenu className="w-7 h-7 cursor-pointer text-primary" />
         <div
           className={`${
             !toggle ? "hidden" : "flex"
