@@ -180,7 +180,7 @@ const HospitalDetailPage = () => {
 
         <div className="mt-4">
           {activeTab === "overview" && (
-            <div>
+            <div className="-z-10">
               <Overview
                 about={hospital?.value.summary}
                 services={hospital?.value.services}

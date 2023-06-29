@@ -74,8 +74,8 @@ const Overview: React.FC<OverviewProps> = ({
         <h1 className="font-medium text-[30px]">About Us</h1>
         <p className="py-5">{about}</p>
       </div>
-      <div className="bg-white rounded-lg w-[95%] shadow-md z-10">
-        <div id="map" className="h-96"></div>
+      <div className="bg-white rounded-lg w-[95%] shadow-md -z-10">
+          <div id="map" className="h-96"></div>
       </div>
       <h1>Our Services</h1>
       {services && <ServicesSlide slideShow={4} services={services} />}

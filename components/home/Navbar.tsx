@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="sticky flex top-0 justify-between px-5 z-50 bg-white py-2 shadow-sm">
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="flex items-center" onClick={()=>setActive("/")}>
         <Image src={cross} alt="Hakimhub's logo" className="scale-75" />
         <span className="font-bold text-[20px] pt-1">
           Hakim<span className="text-primary">Hub</span>
