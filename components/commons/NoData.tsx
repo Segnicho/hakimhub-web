@@ -1,4 +1,4 @@
-import { doctorImg } from "@/public";
+import { doctor, doctorImg } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 import HospitalsList from "../hospital/HospitalsList";
@@ -18,7 +18,7 @@ const NoData: React.FC = () => {
       <div className="flex flex-wrap">
         <div className="w-1/3 flex flex-wrap justify-center h-60 w-250 max-lg:hidden">
           <Image
-            src={doctorImg}
+            src={doctor}
             alt={""}
             width={250}
             height={40}
@@ -40,13 +40,13 @@ const NoData: React.FC = () => {
           </span>
         </div>
       </div>
-      <div className="text-4xl font-bold ml-12 max-lg:ml-4 max-lg:text-xl pb-4">
+      <div className="text-4xl font-bold ml-12 max-lg:ml-4 max-lg:text-xl pb-6">
       <span>
         Other Available Hospitals
       </span>
       </div>
 
-      <div>
+      <div className="p-2">
         {isLoading ? (
           <LoadingPage />
         ) : (

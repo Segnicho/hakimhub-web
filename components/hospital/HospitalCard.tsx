@@ -29,6 +29,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
   const FirtInstitutionName = Institution.join(" ");
 
   return (
+    <Link href={`/hospitals/${id}`}>
     <div className="flex flex-wrap bg-card-bg rounded-lg shadow-lg">
       <div className="w-full md:w-1/3 bg-white rounded-lg shadow-lg">
         <div className="w-full h-[150px]">
@@ -71,7 +72,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
                 <span className="">Days</span>
                 </div>
               </div>
-              <div className="text-xl text-primary-text font-light max-xl:text-xs">
+              <div className="text-sm text-primary-text font-light max-xl:text-xs">
                 <span className="flex flex-wrap justify-end">
                   {startDay} - {endDay}
                 </span>
@@ -118,6 +119,7 @@ const HospitalCard: React.FC<HospitalProps> = ({
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

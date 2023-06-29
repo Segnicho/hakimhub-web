@@ -6,7 +6,8 @@ import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const Footer: React.FC = () => {
   return (
-    <div className="py-5 justify-between px-10 space-y-10 bg-slate-50 mx-auto">
+    <div className="bg-slate-50 mx-auto flex flex-wrap">
+      <div className="w-3/4">
       <div className="grid pl-10 bg-slate-50 grid-cols-12 max-sm:flex max-sm:flex-col">
         <div className="col-span-5">
           <div className="flex">
@@ -41,7 +42,7 @@ const Footer: React.FC = () => {
             Terms <span className="max-sm:hidden">of Use</span>
           </span>
         </div>
-        <div className="flex gap-3 sm:gap-8 text-primary">
+        <div className="flex gap-3 sm:gap-8 text-primary p-2 pr-10">
           <Link href="/">
             <BsFacebook />
           </Link>
@@ -55,6 +56,7 @@ const Footer: React.FC = () => {
             <BsTwitter />
           </Link>
         </div>
+      </div>
       </div>
     </div>
   );

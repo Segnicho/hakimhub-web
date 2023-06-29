@@ -1,16 +1,17 @@
+import Link from 'next/link';
 import React from 'react';
 
 const ErrorCard: React.FC = () => {
   return (
-    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-      <strong className="font-bold">Error!</strong>
-      <span className="block sm:inline"> Something went wrong.</span>
-      <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
-        <svg className="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-          <title>Close</title>
-          <path d="M14.348 5.652a1 1 0 00-1.414 0L10 8.586 6.066 4.652a1 1 0 00-1.414 1.414L8.586 10l-3.934 3.934a1 1 0 000 1.414 1 1 0 001.414 0L10 11.414l3.934 3.934a1 1 0 001.414-1.414L11.414 10l3.934-3.934a1 1 0 000-1.414z" clipRule="evenodd" fillRule="evenodd"></path>
-        </svg>
-      </span>
+    <div className="h-screen flex flex-col items-center justify-center max-lg:justify-start max-lg:pt-6 bg-gray-100">
+      <h1 className="text-5xl font-bold text-primary mb-4 max-lg:mb-2 max-lg:text-xl">Oops!</h1>
+      <h2 className="text-2xl font-semibold text-gray-600 mb-4 max-lg:mb-2 max-lg:text-sm">Something went wrong.</h2>
+      <p className="text-lg text-gray-500 mb-8 max-lg:mb-2 max-lg:text-xs">We're sorry, but there was an error processing your request. Please try again later.</p>
+      <Link href={'/'}>
+      <button className="bg-primary hover:bg-primary text-white font-semibold py-2 px-4 rounded-md shadow-md transition-all duration-200  max-lg:py-1">
+        Back to Home
+      </button>
+      </Link>
     </div>
   );
 };
