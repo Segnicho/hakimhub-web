@@ -16,9 +16,9 @@ const TypingLoading = () => {
     }, []);
   
     return (
-      <div className="md:ml-[25%] p-3">
+      <div className="md:ml-[25%]  pl-4">
         
-          <div className=" text-5xl text-primary">
+          <div className=" text-6xl text-primary">
             
             <span className="animate-pulse">{dots}</span>
           </div>

@@ -29,16 +29,20 @@ const Index: FC = () => {
         {messages.length === 0 ?
 
           <div className="flex flex-col gap-2 ">
-            <div className="flex  items-center min-h-[30vh] gap-2 max-sm:flex-col  justify-center pt-8">
+            <div className="flex  flex-col items-center min-h-[30vh] gap-2 max-sm:flex-col  justify-center pt-8 mb-6">
               <Image
                 src={chat_logo}
                 alt="Hakimhub's logo"
-                width={60}
-                height={60}
+                width={100}
+                height={100}
               />
             <p className="text-5xl font-bold text-center  font-inter">
-              Hakim<span className="text-main">Hub</span>
+
+             Welcome to Hakim<span className="text-main">Hub</span><span className="text-5xl">AI</span>
             </p>
+            <p className="text-secondary-text text-xl text-center font-bold font-inter">
+               Your AI-powered copilot for your health
+               </p>
             </div>
             
 

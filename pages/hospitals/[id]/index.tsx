@@ -59,8 +59,8 @@ const HospitalDetailPage = () => {
 
   return (
     
-      <div className='max-sm:flex-col sm:flex'>
-      <div className="gap-3">
+      <div className='max-sm:flex-col  sm:flex'>
+      <div className="gap-3 ">
         <HospitalDetailCard
           image = {hospital?.value.bannerUrl}
           name = {hospital?.value.institutionName}

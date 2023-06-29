@@ -19,6 +19,14 @@ const RecomendedDoctorList: React.FC<RecomendedDoctorListInterface> = ({doctors}
         slidesToShow: Math.min(doctors.length, 3),
         slidesToScroll: 1
       };
+      if (doctors.length === 1){
+        return(
+        <div className="cursor-pointer p-2 w-fit"  key={doctors[0].id} onClick={() => doctorClickHandler(doctors[0].id)}>
+        <RecomendedDoctor doctor = {doctors[0]}/>
+        </div>
+        )
+      }
+      else{
     return (
         <div>
           
@@ -31,6 +39,7 @@ const RecomendedDoctorList: React.FC<RecomendedDoctorListInterface> = ({doctors}
         </Slider>
         </div>
     )
+         }
 
 }
 export default RecomendedDoctorList
