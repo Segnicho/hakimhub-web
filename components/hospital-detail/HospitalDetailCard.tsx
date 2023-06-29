@@ -9,25 +9,30 @@ interface HospitalCardProps {
 
 const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, logo }) => {
   return (
-    <div className="sm:w-[400px] sm:mx-28 lg:w-[300px] lg:mx-16 xl:w-[350px] xl:mx-16 2xl:w-[400px] 2xl:mx-16 w-sm mx-10 bg-white rounded-[12px] overflow-hidden drop-shadow shadow-xl my-10 sm:place-content-center md:place-content-center">
-      <div className="flex flex-col overflow-hidden ">
+    <div className='flex flex-col place-content-center overflow-hidden drop-shadow shadow-xl rounded-[12px] bg-white mx-4 mt-10 sm:w-[200px] md:w-[250px] md:h-[310px] lg:w-[250px] lg:h-[300px]'>
+      <div className="flex flex-col overflow-hidden justify-end items-center">
         {image && (
-          <Image src={image} alt="Hospital Image" width={400} height={400} className="object-cover" />
+          <Image src={image} alt="Hospital Image" width={400} height={60} className="object-cover w-full" />
         )}
 
         {logo && (
-          <div className="absolute top-1/3 left-32 w-30 h-20 rounded-full overflow-hidden border-2 border-white">
+          <div className="absolute -mb-10 w-30 h-20 rounded-full overflow-hidden border-4 border-white">
             <Image src={logo} alt="Logo of the Hospital" width={80} height={80} className="object-cover h-full drop-shadow" />
           </div> 
         )}
       </div>
-      <div className="my-20">
-        <h3 className="text-3xl text-primary font-bold mx-6 text-center">{name}</h3>
-        <p className="text-2xl text-gray-600 p-5 mx-28">{status}</p>
-        <div className="border-b border-gray-300 my-1"></div>
-      </div>
+      <div className="my-12">
+        <h3 className="text-xl text-primary font-bold mx-6 text-center">{name}</h3>
+        </div>
+        <div
+        className={`text-lg font-bold flex flex-wrap justify-end mr-4 pb-4 mb-auto self-end ${
+          status === true ? "text-isopen-text" : "text-closed-text"
+        }`} >
+       {status === false ? "OPEN" : "CLOSED"}
+       </div>
     </div>
   );
 };
 
 export default HospitalDetailCard;
+
