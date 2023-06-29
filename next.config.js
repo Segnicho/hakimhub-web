@@ -11,7 +11,11 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: ['res.cloudinary.com', 'picsum.photos']
-  },
-}
+  }
+};
 
-module.exports = nextConfig
+module.exports = {
+  ...nextConfig,
+  reactStrictMode: true,
+  productionBrowserSourceMaps: true
+};

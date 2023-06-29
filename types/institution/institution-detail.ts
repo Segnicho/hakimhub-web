@@ -3,8 +3,8 @@ export interface HospitalDetailResponse {
     value: Hospital;
     error: string;
   }
-
-export interface Hospital {
+  
+  export interface Hospital {
   institutionName: string;
   branchName: string;
   website: string;
@@ -23,13 +23,13 @@ export interface Hospital {
   photos: string[];
   doctors: Doctor[];
   id: string;
-}
-export type AllEducationalInstitutions={
+  }
+  export type AllEducationalInstitutions={
   id:string;
   institutionName:string;
   logoUrl:string;
-}
-export type Doctor = {
+  }
+  export type Doctor = {
     photoUrl: string;
     about: string;
     specialities: string[];
@@ -40,10 +40,10 @@ export type Doctor = {
     id:string;
     mainInstitutionId:string;
     mainInstitutionName:string;
-
-};
-
-export type Address = {
+  
+  };
+  
+  export type Address = {
     country: string;
     region: string;
     zone: string;
@@ -54,30 +54,35 @@ export type Address = {
     latitude: number;
     summary: string;
     id: string;
-}
+  }
   
-export type Photo = {
+  export type Photo = {
     Id: string;
     Url: string;
-};
+  };
   
-export type InstitutionAvailability = {
+  export type InstitutionAvailability = {
     startDay: string;
     endDay: string;
     opening: string;
     closing: string;
     twentyFourHours: boolean;
     id: string;
-}
-
-export type FilterDoctors = {
+  }
+  
+  export type FilterDoctors = {
   hospitalId: string;
-  speciality: string;
+  speciality: string[];
   education: string;
   experience: string;
-}
-
-export type FilteredDoctors = {
+  }
+  
+  export type FilteredDoctorsResponse = {
+    isSuccess: boolean;
+    value: FilteredDoctors[];
+    error: string;
+  }
+  export type FilteredDoctors = {
   fullName: string;
   about: string;
   gender: string;
@@ -90,9 +95,9 @@ export type FilteredDoctors = {
   educations: Education[];
   experiences: Experience[];
   id: string;
-};
-
-export type Education = {
+  };
+  
+  export type Education = {
   educationInstitution: string;
   startYear: string;
   graduationYear: string;
@@ -100,9 +105,9 @@ export type Education = {
   fieldOfStudy: string;
   educationInstitutionLogoUrl: string | null;
   id: string;
-};
-
-export type Experience = {
+  };
+  
+  export type Experience = {
   position: string;
   description: string;
   startDate: string;
@@ -110,4 +115,5 @@ export type Experience = {
   institutionId: string;
   institutionName: string;
   id: string;
-};
+  };
+  
