@@ -4,9 +4,9 @@ import { Service } from "@/types/services";
 export const services: Service[] = [
   {
     description:
-      "Select from our diverse list of specialists based on your specific needs.",
-    image: medicalTeam,
-    service: "Specialists",
+      "Hakimhub your guide to getting hospital and doctor recommendations.",
+    image: chat,
+    service: "Chat",
   },
   {
     description: "Find Hospitals and Health Care Centers around you.",
@@ -15,9 +15,9 @@ export const services: Service[] = [
   },
   {
     description:
-      "Hakimhub your guide to getting hospital and doctor recommendations.",
-    image: chat,
-    service: "Chat",
+      "Select from our diverse list of specialists based on your specific needs.",
+    image: medicalTeam,
+    service: "Specialists",
   },
 ];
 
