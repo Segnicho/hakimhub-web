@@ -70,9 +70,9 @@ const HospitalDetailPage = () => {
             phoneNumber={hospital?.value.phoneNumber}
           />
         </div>
-        <div className="mt-10 w-full">
+        <div className={`mt-10 ${activeTab === "overview" && !isMobileOrTablet ? "w-3/4" : "w-full"}`}>
           {/* Navigation */}
-          <nav className="flex flex-row bg-white rounded-lg text-gray-500 drop-shadow shadow-md mx-8 lg:gap-24 h-8 xl:gap-x-56">
+          <nav className="flex flex-row bg-white rounded-lg text-gray-500 drop-shadow shadow-md mx-8 lg:gap-24 h-8 xl:gap-x-56 ">
             <div className="flex items-center justify-between">
               {/* Mobile Menu */}
               <div>
@@ -175,14 +175,12 @@ const HospitalDetailPage = () => {
 
           <div className="mt-4">
           {activeTab === "overview" && (
-            <div className="-z-10">
-              <Overview
-                about={hospital?.value.summary}
-                services={hospital?.value.services}
-                latitude={hospital?.value.address?.latitude}
-                longitude={hospital?.value.address?.longitude}
-              />
-            </div>
+                <Overview
+                  about={hospital?.value.summary}
+                  services={hospital?.value.services}
+                  latitude={hospital?.value.address?.latitude}
+                  longitude={hospital?.value.address?.longitude}
+                />
           )}
         {activeTab === 'doctors' && (
         <>
