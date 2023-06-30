@@ -21,9 +21,9 @@ export const services: Service[] = [
   },
 ];
 
-export const hakimhub:VisionMission = {
+export const hakimhub: VisionMission = {
   mission:
     "Our mission is to empower individuals by providing them with a user-friendly platform that helps them understand their health concerns. We aim to leverage advanced technology and medical expertise to assist users in identifying potential diseases based on their symptoms. By offering valuable insights and personalized recommendations, we strive to enable users to make informed decisions about their well-being and guide them towards appropriate specialists.",
   vision:
-    "Our vision is to be a trusted source of health information and guidance for individuals worldwide. We aim to continuously enhance our platform's capabilities, incorporating cutting-edge technology and medical advancements, to ensure accurate and reliable assistance in understanding health concerns. By fostering a user-centric approach and prioritizing user satisfaction, we aspire to become the go-to resource for individuals seeking answers to their symptoms and personalized recommendations for seeking further medical care. Through our efforts, we envision a healthier and more informed society empowered to take control of their well-being.",
+    "Our vision is to be a trusted source of health information and guidance for individuals worldwide. We aim to continuously enhance our platform's capabilities, incorporating cutting-edge technology and medical advancements, to ensure accurate and reliable assistance in understanding health concerns. By fostering a user-centric approach and prioritizing user satisfaction, we aspire to become the go-to resource for individuals seeking answers to their symptoms and personalized recommendations.",
 };

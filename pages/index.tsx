@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col mt-28 px-8 md:px-20 ${inter.className}`}
+      className={`flex min-h-screen flex-col mt-20 px-8 md:px-20 ${inter.className}`}
     >
       <Hero />
       <Search />
