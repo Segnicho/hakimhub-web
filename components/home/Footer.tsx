@@ -1,13 +1,15 @@
 import { appstore, header, googleplay } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { BsFacebook, BsLinkedin, BsTwitter, BsInstagram } from "react-icons/bs";
 
 const Footer: React.FC = () => {
+  const router = useRouter();
+  const isHospitalsPage = router.pathname === "/hospitals";
   return (
-    <div className="bg-slate-50 mx-auto flex flex-wrap">
-      <div className="w-3/4">
+    <div className="py-5 justify-between px-10 space-y-10 bg-slate-50 mx-auto">
       <div className="grid pl-10 bg-slate-50 grid-cols-12 max-sm:flex max-sm:flex-col">
         <div className="col-span-5 flex flex-col justify-center">
           <Image src={header} alt="Hakimhub's logo" className="scale-100" />
@@ -15,7 +17,11 @@ const Footer: React.FC = () => {
             All rights reserved by the Eskalate
           </div>
         </div>
-        <div className="col-span-7 flex flex-col space-y-3">
+        <div
+          className={`col-span-7 flex flex-col space-y-3 ${
+            isHospitalsPage && "col-span-3"
+          }`}
+        >
           <div className="flex flex-col text-center max-sm:hidden">
             <span className="font-bold text-[35px]">
               Health<span className="text-primary">Care</span>
@@ -28,8 +34,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className=" flex justify-between  mx-10 bg-slate-50 mx-auto">
-        <div className="flex">
+      <div
+        className={`flex justify-between ${
+          isHospitalsPage && "justify-center"
+        } mr-10 bg-slate-50 mx-auto`}
+      >
+        <div className="justify-between">
           <span className="md:mr-8 mr-4">
             Privacy <span className="max-sm:hidden">Policy</span>
           </span>
@@ -37,7 +47,11 @@ const Footer: React.FC = () => {
             Terms <span className="max-sm:hidden">of Use</span>
           </span>
         </div>
-        <div className="flex gap-3 sm:gap-8 text-primary p-2 pr-10">
+        <div
+          className={`flex gap-3 sm:gap-8 text-primary ${
+            isHospitalsPage ? "justify-start" : ""
+          }`}
+        >
           <Link href="/">
             <BsFacebook />
           </Link>
@@ -51,7 +65,6 @@ const Footer: React.FC = () => {
             <BsTwitter />
           </Link>
         </div>
-      </div>
       </div>
     </div>
   );
