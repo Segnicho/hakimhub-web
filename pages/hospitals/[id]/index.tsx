@@ -99,7 +99,7 @@ const HospitalDetailPage = () => {
 
             {/* Tabs */}
             {isMobileOrTablet && isMobileMenuOpen ? (
-              <div className="flex flex-row items-start mx-2 gap-">
+              <div className="flex flex-row items-start mx-2 gap-5">
                 <button
                   onClick={() => {
                     handleTabClick("overview");
