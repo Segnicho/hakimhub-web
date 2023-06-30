@@ -9,10 +9,10 @@ interface HospitalCardProps {
 
 const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, logo }) => {
   return (
-    <div className='flex flex-col place-content-center overflow-hidden drop-shadow shadow-xl rounded-[12px] bg-white mx-4 mt-10 sm:w-[200px] md:w-[250px] md:h-[310px] lg:w-[250px] lg:h-[300px]'>
+    <div className='flex flex-col place-content-center overflow-hidden drop-shadow shadow-xl rounded-[12px] bg-white mx-4 mt-10 sm:w-[200px] md:w-[250px] md:h-[380px] lg:w-[250px]'>
       <div className="flex flex-col overflow-hidden justify-end items-center">
         {image && (
-          <Image src={image} alt="Hospital Image" width={400} height={60} className="object-cover w-full" />
+          <Image src={image} alt="Hospital Image" width={400} height={200} className="object-cover w-full h-full" />
         )}
 
         {logo && (

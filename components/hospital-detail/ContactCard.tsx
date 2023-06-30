@@ -9,7 +9,7 @@ interface ContactProps {
 
 const ContactCard: React.FC<ContactProps> = ({ website, phoneNumber }) => {
   return (
-    <div className='flex flex-col drop-shadow shadow-xl rounded-[12px] bg-white mx-4 my-10 sm:w-[200px] md:w-[250px] md:h-[310px]'>
+    <div className='flex flex-col drop-shadow shadow-xl rounded-[12px] bg-white mx-4 my-10 sm:w-[200px] md:w-[250px] md:h-[280px]'>
       <h1 className="text-2xl font-semi-bold my-2 text-center">Contact</h1>
       <div className="">
         <h3 className="text-xl my-2 mx-8">Reception</h3>

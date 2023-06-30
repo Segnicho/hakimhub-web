@@ -2,10 +2,10 @@ import { ChatBot } from "@/slices/chat/chat-api";
 import IpSlice from "@/slices/chat/ip-slice";
 import  ChatHistory  from "@/slices/chat/message-history";
 import { configureStore } from '@reduxjs/toolkit'
-import { hospitalDetailApi } from './../store/hospital/hospital-detail-api'
+import { hospitalDetailApi } from './features/hospital/hospital-detail-api'
 import { hospitalsApi } from './features/hospital/hospitals-api'
 import { doctorDetail } from "@/slices/doctors/doctor-detail-api";
-import { filterDoctorsApi } from "./doctors/doctors-api";
+import { filterDoctorsApi } from "./features/doctors/doctors-api";
 
 export const store = configureStore({
   reducer: {

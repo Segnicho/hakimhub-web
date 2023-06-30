@@ -23,7 +23,7 @@ const FilterSpecialityComponent: React.FC<Props> = ({
 
   return (
     <div className="relative flex flex-col gap-1 z-50 w-40 sm:w-48">
-      <label htmlFor="experience" className="text-xs font-semi-bold text-primary">
+      <label htmlFor="experience" className="text-xs md:text-base font-semi-bold text-primary">
         {label}
       </label>
       <div className="relative inline-block">
@@ -36,7 +36,7 @@ const FilterSpecialityComponent: React.FC<Props> = ({
             <div className='flex flex-col gap-1'>
               {selected.map((item, index)=> {
                 return <div key={index}  className='flex flex-row gap-1 bg-primary rounded-lg' >
-                  <div className='text-xs flex flex-row mx-2'>
+                  <div className='text-xs md:text-base flex flex-row mx-2'>
                   {item}
                   </div>
                   <AiOutlineClose onClick={() => [setSpeciality(item), toggleDropdown(false)]}className='mt-1' />
@@ -46,7 +46,7 @@ const FilterSpecialityComponent: React.FC<Props> = ({
             </div>
 
             : <div className='flex flex-row gap-4 place-content-center items-center'>
-              <p className='text-xs'>select</p>
+              <p className='text-xs md:text-base'>select</p>
               <MdArrowDropDown />
               </div>}
         </button>

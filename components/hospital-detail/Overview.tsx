@@ -69,7 +69,7 @@ const Overview: React.FC<OverviewProps> = ({
   }, [latitude, longitude]);
 
   return (
-    <div className="p-5 space-y-4 -z-10">
+    <div className="p-5 md:-mr-12 -z-10">
       <div className="bg-white rounded-md p-5 w-[95%] shadow-md">
         <h1 className="font-medium text-[30px]">About Us</h1>
         <p className="py-5">{about}</p>
