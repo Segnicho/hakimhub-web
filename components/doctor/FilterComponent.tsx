@@ -45,14 +45,14 @@ const FilterComponent: React.FC<Props> = ({
               className={`block w-full py-2 px-3 text-left hover:bg-gray-100 ${selected === "" ? 'bg-gray-200' : ''}`}
               onClick={() => [onSelectedChange(""),toggleDropdown()]}
             >
-            Select
+            
         </button>
 
           {values.map((value, index) => (
             <button
               key={index}
               type="button"
-              className={`block w-full py-2 px-3 text-left hover:bg-gray-100 ${selected === value ? 'bg-gray-200' : ''}`}
+              className={`block font-light text-sm text-gray-600 w-full py-2 px-3 text-left hover:bg-gray-100 ${selected === value ? 'bg-gray-200' : ''}`}
               onClick={() => [onSelectedChange(value), toggleDropdown()]}
             >
               {value} {label === 'Experience' && " years"}

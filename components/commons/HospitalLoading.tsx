@@ -44,7 +44,7 @@ const HospitalLoading: React.FC = () => {
               <div className="pt-6 max-lg:pt-0 h-32 rounded-lg bg-slate-200 m-2 w-1/4"></div>
               <div className="pt-6 max-lg:pt-0 h-32 rounded-lg bg-slate-200 m-2 w-1/4"></div>
               <div className="pt-6 max-lg:pt-0 h-32 rounded-lg bg-slate-200 m-2 w-1/4"></div>
-              <div className="pt-6 max-lg:pt-0 h-32 rounded-lg bg-slate-200 m-2 w-20 max-sm:w-0 max-sm:h-0"></div>
+              
             </div>
             <div className="h-4"></div>
             <div className="rounded-lg h-4 w-20 bg-slate-200 ml-4 "></div>

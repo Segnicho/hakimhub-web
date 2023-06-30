@@ -58,17 +58,21 @@ const HospitalDetailPage = () => {
   if (isSuccess) {
     return (
       <div className={`max-sm:${isMobileOrTablet ? 'flex-col' : 'flex'} sm:flex`}>
-        <div className="gap-3">
+        <div className="w-1/3 px-4 pb-4 max-md:w-full">
+          <div className='w-full'>
           <HospitalDetailCard
             image={hospital?.value.bannerUrl}
             name={hospital?.value.institutionName}
             status={hospital?.value.status}
             logo={hospital?.value.logoUrl}
           />
+          </div>
+          <div className='w-full mt-2'>
           <ContactCard
             website={hospital?.value.website}
             phoneNumber={hospital?.value.phoneNumber}
           />
+          </div>
         </div>
         <div className={`mt-10 ${activeTab === "overview" && !isMobileOrTablet ? "w-3/4" : "w-full"}`}>
           {/* Navigation */}
@@ -186,12 +190,14 @@ const HospitalDetailPage = () => {
         <>
           {isLoading && <Loading />}
           {!isError && hospital?.value.doctors && hospital?.value.doctors.length > 0 ? (
-            <DoctorsList
+           <div className='w-full'>
+             <DoctorsList
               hospitalId={hospital?.value.id}
               name={hospital?.value.institutionName}
               allSpecialities={hospital?.value.allSpecialities}
               allEducationalInstitutions={hospital?.value.allEducationalInstitutions}
             />
+           </div>
           ) : (
               <NoDoctors />
           )}

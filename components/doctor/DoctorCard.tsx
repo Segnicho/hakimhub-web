@@ -9,7 +9,7 @@ const DoctorCard: React.FC<Props> = ({ doctor }) => {
   
   return (
     (<Link href={`/doctors/${doctor.id}`} className=''>
-      <div className='flex flex-col justify-start items-center  mx-2 h-[150px] bg-white rounded-[12px] drop-shadow-xl border-2 border-grey-200 mb-2 mt-14 relative text-center md:min-w-[250px]'>
+      <div className='flex flex-col justify-start items-center  mx-2 h-[150px] bg-white rounded-[12px] drop-shadow-xl border-2 border-grey-200 mb-2 mt-14 relative text-center'>
         <div className="absolute -mt-10 w-20 h-20 rounded-full overflow-hidden border-2 border-white">
           <Image src={doctor?.photoUrl} alt="doctor image" width={80} height={80} className="object-cover" priority />
         </div>
