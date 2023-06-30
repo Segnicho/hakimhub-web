@@ -1,4 +1,4 @@
-import { appstore, header, googleplay } from "@/public";
+import { appstore, googleplay, header } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -17,10 +17,11 @@ const Footer: React.FC = () => {
             All rights reserved by the Eskalate
           </div>
         </div>
+
         <div
-          className={`col-span-7 flex flex-col space-y-3 ${
-            isHospitalsPage && "col-span-3"
-          }`}
+          className={`${
+            !isHospitalsPage && "col-span-7"
+          }  flex flex-col space-y-3 ${isHospitalsPage && "col-span-3"}`}
         >
           <div className="flex flex-col text-center max-sm:hidden">
             <span className="font-bold text-[35px]">
@@ -34,12 +35,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`flex justify-between ${
-          isHospitalsPage && "justify-center"
-        } mr-10 bg-slate-50 mx-auto sm:mx-8`}
-      >
-        <div className="justify-between">
+      <div className=" flex justify-between  mx-10 bg-slate-50">
+        <div className="flex">
           <span className="md:mr-8 mr-4">
             Privacy <span className="max-sm:hidden">Policy</span>
           </span>
@@ -47,11 +44,7 @@ const Footer: React.FC = () => {
             Terms <span className="max-sm:hidden">of Use</span>
           </span>
         </div>
-        <div
-          className={`flex gap-3 sm:gap-8 text-primary ${
-            isHospitalsPage ? "justify-start" : ""
-          }`}
-        >
+        <div className="flex gap-3 sm:gap-8 text-primary p-2 pr-10">
           <Link href="/">
             <BsFacebook />
           </Link>
