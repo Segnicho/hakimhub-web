@@ -22,7 +22,7 @@ const FilterComponent: React.FC<Props> = ({
 
   return (
     <div className={`relative flex flex-col gap-1 ${label === "Education" ? "z-30":"z-40"}`}>
-      <label htmlFor="experience" className="text-xs font-semi-bold text-primary">
+      <label htmlFor="experience" className="text-xs md:text-base font-semi-bold text-primary">
         {label}
       </label>
       <div className="relative inline-block">
@@ -33,7 +33,7 @@ const FilterComponent: React.FC<Props> = ({
         >
           {selected  ? selected  : 
               <div className='flex flex-row gap-4 place-content-center items-center'>
-              <p className='text-xs'>select</p>
+              <p className='text-xs md:text-base'>select</p>
               <MdArrowDropDown />
               </div>}
           {label === 'Experience' && selected && " years"}

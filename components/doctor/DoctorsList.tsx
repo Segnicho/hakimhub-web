@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import DoctorCard from './DoctorCard';
-import { useFilterDoctorsQuery } from '@/store/doctors/doctors-api';
+import { useFilterDoctorsQuery } from '@/store/features/doctors/doctors-api';
 import { AllEducationalInstitutions } from '@/types/institution/institution-detail';
 import DoctorFilter from './DoctorFilter';
 import ErrorCard from '@/components/commons/ErrorCard';
+import { Loading } from '@/components';
+import NoDoctors from './NoDoctors';
+import NoFilteredDoctors from './NoFilteredDoctors';
 
 interface DoctorsListProps {
   hospitalId: string;
@@ -24,38 +27,45 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
   const [selectedSpeciality, setSelectedSpeciality] = useState<string[]>([]);
 
   const setSpeciality = (speciality: string) => {
-    setSelectedSpeciality(() => {
-      const isSpecialitySelected = selectedSpeciality.includes(speciality);
+    setSelectedSpeciality((prevSpecialities) => {
+      const isSpecialitySelected = prevSpecialities.includes(speciality);
       if (isSpecialitySelected) {
         // Remove the speciality if it already exists
-        return selectedSpeciality.filter((item) => item !== speciality);
+        return prevSpecialities.filter((item) => item !== speciality);
       } else {
         // Add the speciality if it doesn't exist
-        return [...selectedSpeciality, speciality];
+        return [...prevSpecialities, speciality];
       }
     });
   };
-  
+
   const toggleFilters = () => {
     setShowFilters(!showFilters);
   };
 
-  const { data: filteredDoctors, error } = useFilterDoctorsQuery({
+  const { data: filteredDoctors, isError, isLoading } = useFilterDoctorsQuery({
     hospitalId: hospitalId,
     speciality: selectedSpeciality,
     education: selectedEducation,
     experience: selectedExperience,
   });
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
+  const containerClasses =
+    filteredDoctors?.value && filteredDoctors?.value.length < 5
+      ? 'flex flex-wrap my-6 overflow-y-auto h-[360px] mx-6 sm:h-[500px] md:h-[520px] lg:mx-4 lg:justify-start'
+      : 'flex flex-wrap items-center justify-center my-6 overflow-y-auto h-[360px] mx-6 sm:h-[500px] md:h-[520px] lg:mx-4';
+
   return (
     <div className="my-5 mx-6 sm:mx-8 sm:my-8">
-      <div
-        className="flex flex-row cursor-pointer justify-between"
-        onClick={toggleFilters}
-      >
-        {/* <div className="sm:text-sm lg:text-xl xl:text-2xl 2xl:text-3xl my-2 flex flex-row text-2xl font-bold gap-2"> */}
-        <div className='text-xs md:text-lg lg:text-xl flex flex-row '>
-          <h3 className="font-bold">Doctors at<span className="text-primary ml-1">{name}</span></h3>
+      <div className="flex flex-row cursor-pointer justify-between" onClick={toggleFilters}>
+        <div className="text-xs md:text-lg lg:text-xl flex flex-row">
+          <h3 className="font-bold">
+            Doctors at<span className="text-primary ml-1">{name}</span>
+          </h3>
         </div>
         <div className="flex flex-row gap-2">
           <h3 className="text-xs md:text-lg text-primary">filter</h3>
@@ -79,23 +89,23 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
           onSpecialityChange={setSelectedSpeciality}
           onEducationChange={setSelectedEducation}
           onExperienceChange={setSelectedExperience}
-          setSpeciality = {setSpeciality}
+          setSpeciality={setSpeciality}
         />
       )}
-      {error ? (
+      {isError ? (
         <div>
-        <ErrorCard />
+          <ErrorCard />
         </div>
       ) : (
-        <div className="flex flex-wrap items-center justify-center my-6 overflow-y-auto h-[360px] mx-6 sm:h-[500px] md:h-[520px] lg:mx-4 lg:justify-start ">
+        <div className={containerClasses}>
           {filteredDoctors?.value && filteredDoctors?.value.length > 0 ? (
             filteredDoctors?.value.map((filterdoctor, index) => (
-              <DoctorCard key={index} doctor={filterdoctor}/>
+              <DoctorCard key={index} doctor={filterdoctor} />
             ))
           ) : (
             <div>
-              <ErrorCard />
-              </div>
+              <NoFilteredDoctors />
+            </div>
           )}
         </div>
       )}
