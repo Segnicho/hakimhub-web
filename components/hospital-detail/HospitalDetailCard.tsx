@@ -15,7 +15,7 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
     <div className='drop-shadow shadow-md rounded-lg bg-white mt-10'>
       <div>
         {image && (
-         <div className="w-full h-[250px]">
+         <div className="w-full h-[250px] max-lg:h-[150px]">
          <div className="relative w-full h-full">
            <Image
              src={image}

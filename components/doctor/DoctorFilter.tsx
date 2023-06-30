@@ -12,6 +12,7 @@ interface DoctorFilterProps {
   onEducationChange: (value: string) => void;
   onExperienceChange: (value: string) => void;
   setSpeciality : (speciality: string) => void;
+  setSelectedSpeciality: (value: React.SetStateAction<string[]>) => void;
 }
 
 const DoctorFilter: React.FC<DoctorFilterProps> = ({
@@ -23,7 +24,8 @@ const DoctorFilter: React.FC<DoctorFilterProps> = ({
   onSpecialityChange,
   onEducationChange,
   onExperienceChange,
-  setSpeciality
+  setSpeciality,
+  setSelectedSpeciality
 }) => {
   const handleSpecialityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
@@ -53,8 +55,8 @@ const DoctorFilter: React.FC<DoctorFilterProps> = ({
   ]
 
   return (
-    <div className="flex flex-col lg:flex-row xl:flex-row 2xl:flex-row items-center space-x-4 mt-4 ml-2">
-        <FilterSpecialityComponent  values={allSpecialities} label = {"Speciality"} selected = {selectedSpeciality} setSpeciality = {setSpeciality} />
+    <div className="flex flex-col lg:flex-row items-center space-x-4 mt-4 ml-6">
+        <FilterSpecialityComponent  values={allSpecialities} label = {"Speciality"} selected = {selectedSpeciality} setSpeciality = {setSpeciality} setSelectedSpeciality = {setSelectedSpeciality}/>
     {
       filters.map((item, index) => {
         return   <FilterComponent key={index} values={item.values} label = {item.label} selected = {item.selected} onSelectedChange = {item.onSelectedChange} />
