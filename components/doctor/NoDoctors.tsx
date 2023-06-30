@@ -3,7 +3,7 @@ import { doctorImg } from '@/public';
 
 const NoDoctors = () => {
   return (
-            <div className="flex flex-row items-center my-30 mx-12 ml-44 mt-40 gap-1">
+            <div className="flex flex-row items-center my-40 mx-12 mt-20 md:my-44 md:mx-18 lg:mx-56 gap-1">
               <Image
                 src={doctorImg}
                 alt="There is no doctor"

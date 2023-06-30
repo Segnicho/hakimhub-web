@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import classNames from 'classnames';
 import { useEffect, useState } from 'react';
 import { DoctorsList, GalleryCard, ContactCard, HospitalDetailCard, Overview, Loading } from "@/components";
 import { useGetHospitalByIdQuery } from '@/store/features/hospital/hospital-detail-api';
@@ -105,10 +106,10 @@ const HospitalDetailPage = () => {
                     handleTabClick("overview");
                     handleToggleMobileMenu();
                   }}
-                  className={`${
-                    activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                  }`}
+                  className={classNames(
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                    { 'text-primary font-bold': activeTab === 'overview' }
+                  )}
                 >
                   Overview
                 </button>
@@ -117,10 +118,10 @@ const HospitalDetailPage = () => {
                     handleTabClick("doctors");
                     handleToggleMobileMenu();
                   }}
-                  className={`${
-                    activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                  }`}
+                  className={classNames(
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                    { 'text-primary font-bold': activeTab === 'doctors' }
+                  )}
                 >
                   Doctors
                 </button>
@@ -129,10 +130,10 @@ const HospitalDetailPage = () => {
                     handleTabClick("gallery");
                     handleToggleMobileMenu();
                   }}
-                  className={`${
-                    activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                  }`}
+                  className={classNames(
+                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                    { 'text-primary font-bold': activeTab === 'gallery' }
+                  )}
                 >
                   Gallery
                 </button>
@@ -142,28 +143,28 @@ const HospitalDetailPage = () => {
                 <div className="flex flex-row sm:mx-10 sm:gap-16 items-center md:mx-16 ">
                   <button
                     onClick={() => handleTabClick("overview")}
-                    className={`${
-                      activeTab === 'overview' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                    }`}
+                    className={classNames(
+                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                      { 'text-primary font-bold': activeTab === 'overview' }
+                    )}
                   >
                     Overview
                   </button>
                   <button
                     onClick={() => handleTabClick("doctors")}
-                    className={`${
-                      activeTab === 'doctors' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                    }`}
+                    className={classNames(
+                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                      { 'text-primary font-bold': activeTab === 'doctors' }
+                    )}
                   >
                     Doctors
                   </button>
                   <button
                     onClick={() => handleTabClick("gallery")}
-                    className={`${
-                      activeTab === 'gallery' ? 'active selectedTab hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold' :
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold'
-                    }`}
+                    className={classNames(
+                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
+                      { 'text-primary font-bold': activeTab === 'gallery' }
+                    )}
                   >
                     Gallery
                   </button>
