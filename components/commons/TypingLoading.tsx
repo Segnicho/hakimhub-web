@@ -7,7 +7,7 @@ const TypingLoading = () => {
   
     useEffect(() => {
       const timer = setInterval(() => {
-        setDots((prevDots) => (prevDots === '...' ? '' : prevDots + '.'));
+        setDots((prevDots) => (prevDots === '...' ? '.' : prevDots + '.'));
       }, 200);
   
       
