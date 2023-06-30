@@ -12,7 +12,7 @@ export interface HospitalDetailResponse {
   summary: string;
   establishedOn: string;
   rate: number;
-  status: boolean;
+  status: string;
   logoUrl: string;
   bannerUrl: string;
   allEducationalInstitutions:AllEducationalInstitutions[];
