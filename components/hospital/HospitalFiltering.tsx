@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useGetHospitalsQuery } from "@/store/features/hospital/hospitals-api";
 import HospitalsList from "../hospital/HospitalsList";
-import LoadingPage from "../commons/Loading";
 import SearchCard from "../commons/SearchCard";
 import NoData from "../commons/NoData";
 import FilterCard from "../commons/FilterCard";
 import ErrorCard from "../commons/ErrorCard";
 import { MdClose, MdFilterList } from "react-icons/md";
+import HospitalsLoading from "../commons/HospitalsLoading";
 
 const HospitalFiltering: React.FC = () => {
   const [openStatus, setOpenStatus] = useState(false);
@@ -91,7 +91,7 @@ const HospitalFiltering: React.FC = () => {
         </div>
 
         {isLoading ? (
-          <LoadingPage />
+          <HospitalsLoading />
         ) : (
           <div>
             {hospitals?.value.length > 0 ? (
