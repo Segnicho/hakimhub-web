@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
       <div
         className={`flex justify-between ${
           isHospitalsPage && "justify-center"
-        } mr-10 bg-slate-50 mx-auto`}
+        } mr-10 bg-slate-50 mx-auto sm:mx-8`}
       >
         <div className="justify-between">
           <span className="md:mr-8 mr-4">
