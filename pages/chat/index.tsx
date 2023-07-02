@@ -15,8 +15,6 @@ import TypingLoading from "@/components/commons/TypingLoading";
 const Index: FC = () => {
   const messages = useSelector((state:RootState) => state.ChatHistory.messages)
   const [loading,setLoading] = useState<boolean>(false)
-  console.log(messages)
-  console.log(typeof(messages))
 
   
   
