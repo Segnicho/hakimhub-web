@@ -7,7 +7,7 @@ const HospitalLoading: React.FC = () => {
             <div className="w-full h-[150px] bg-slate-200">
               <div className="relative w-full h-full"></div>
             </div>
-            <div className="bg-slate-200  flex justify-center rounded-full object-cover -mt-[60px] mx-auto  relative w-[100px] h-[100px]"></div>
+            <div className="bg-slate-200 rounded-full flex justify-center object-cover -mt-[60px] mx-auto relative w-[100px] h-[100px]"></div>
             <div className="flex flex-wrap m-2">
               <div className="w-1/2 md:block justify-center p-2">
                 <div className="text-xl font-bold max-lg:text-md animate-pulse h-4 w-full bg-slate-200">

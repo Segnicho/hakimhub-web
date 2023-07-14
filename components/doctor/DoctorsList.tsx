@@ -52,12 +52,12 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
     return <Loading />;
   }
 
-  const containerClasses ='flex flex-wrap my-6 overflow-y-auto h-[520px] lg:mx-4';
+  const containerClasses ='flex flex-wrap my-6 overflow-y-auto h-[520px] mx-4';
 
   return (
-    <div className="my-5  sm:my-8">
+    <div className="my-5 sm:my-8">
       <div className="flex flex-row cursor-pointer justify-between px-8" onClick={toggleFilters}>
-        <div className="text-xs md:text-lg lg:text-xl flex flex-row">
+        <div className="text-sm max-md:text-lg lg:text-xl flex flex-row">
           <h3 className="font-bold">
             Doctors at<span className="text-primary ml-1">{name}</span>
           </h3>
@@ -94,7 +94,7 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
         <div className={containerClasses}>
           {filteredDoctors?.value && filteredDoctors?.value.length > 0 ? (
             filteredDoctors?.value.map((filterdoctor, index) => (
-            <div key={index} className='w-1/4 max-lg:w-1/3 max-sm:w-1/3 max-xl:w-1/5'>
+            <div key={index} className='w-1/3 md:w-1/3 max-sm:w-1/2 lg:w-1/4 max-xl:w-1/5'>
                 <DoctorCard key={index} doctor={filterdoctor} />
             </div>
             ))

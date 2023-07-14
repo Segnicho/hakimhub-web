@@ -57,7 +57,7 @@ const HospitalDetailPage = () => {
 
   if (isSuccess) {
     return (
-      <div className={`max-sm:${isMobileOrTablet ? 'flex-col' : 'flex'} sm:flex`}>
+      <div className={`max-sm:${isMobileOrTablet ? 'flex-col' : 'flex'} sm:flex min-h-screen`}>
         <div className="w-1/3 px-4 pb-4 max-md:w-full">
           <div className='w-full'>
           <HospitalDetailCard
