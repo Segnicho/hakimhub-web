@@ -5,7 +5,6 @@ import { AllEducationalInstitutions } from '@/types/institution/institution-deta
 import DoctorFilter from './DoctorFilter';
 import ErrorCard from '@/components/commons/ErrorCard';
 import { Loading } from '@/components';
-import NoDoctors from './NoDoctors';
 import NoFilteredDoctors from './NoFilteredDoctors';
 
 interface DoctorsListProps {
@@ -31,10 +30,8 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
     setSelectedSpeciality((prevSpecialities) => {
       const isSpecialitySelected = prevSpecialities.includes(speciality);
       if (isSpecialitySelected) {
-        // Remove the speciality if it already exists
         return prevSpecialities.filter((item) => item !== speciality);
       } else {
-        // Add the speciality if it doesn't exist
         return [...prevSpecialities, speciality];
       }
     });

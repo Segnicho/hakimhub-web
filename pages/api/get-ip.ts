@@ -8,6 +8,5 @@ export default async function  handler(req: NextApiRequest, res: NextApiResponse
   if (ipAddress){
       store.dispatch(setIpAddress(ipAddress));
   }
-  console.log('IP Address:', ipAddress);
   
 }

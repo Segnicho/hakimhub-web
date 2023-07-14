@@ -1,5 +1,5 @@
-import { Service } from "@/types/services";
-import Image, { StaticImageData } from "next/image";
+import { Service } from "@/types/home/services";
+import Image from "next/image";
 import React from "react";
 
 const Service: React.FC<Service> = ({ image, description, service }) => {

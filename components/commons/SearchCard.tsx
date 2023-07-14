@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { MdMenu, MdSearch } from "react-icons/md";
+import React from "react";
+import {  MdSearch } from "react-icons/md";
 interface SearchProps {
   keyword: string;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;

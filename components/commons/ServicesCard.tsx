@@ -1,4 +1,4 @@
-import { check, docService, plus } from "@/public";
+import { check, plus } from "@/public";
 import Image from "next/image";
 interface ServiceProps {
   service: string;

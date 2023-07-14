@@ -1,8 +1,5 @@
-import { usePostChatBotMutation } from "@/store/features/chat/chat-api";
-import { pushMessage } from "@/store/features/chat/message-history";
-import { ChatResponse } from "@/types/chat/service";
+
 import React from "react";
-import { useDispatch } from "react-redux";
 
 interface ServiceProps {
   title: string;
