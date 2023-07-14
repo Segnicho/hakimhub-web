@@ -1,5 +1,5 @@
-import { usePostChatBotMutation } from "@/slices/chat/chat-api";
-import { pushMessage } from "@/slices/chat/message-history";
+import { usePostChatBotMutation } from "@/store/features/chat/chat-api";
+import { pushMessage } from "@/store/features/chat/message-history";
 import { ChatResponse } from "@/types/chat/service";
 import React from "react";
 import { useDispatch } from "react-redux";
@@ -10,8 +10,6 @@ interface ServiceProps {
 }
 
 const Service: React.FC<ServiceProps> = ({ title, detail }) => {
-  
-
   return (
     <div className="flex flex-col gap-4 items-center  my-8 max-w-sm text-xl text-center">
       <p className="font-semibold">{title}</p>

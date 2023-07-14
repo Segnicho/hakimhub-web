@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import {BsBagFill} from "react-icons/bs"
 import { useRouter } from 'next/router';
-import { useGetDoctorByIdQuery } from '@/slices/doctors/doctor-detail-api';
+import { useGetDoctorByIdQuery } from "@/store/features/doctor-detail";
 import { Loading } from '@/components';
 function DoctorDetail() {
     const router = useRouter();
