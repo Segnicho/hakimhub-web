@@ -1,5 +1,3 @@
-import { TbBrandWebflow, TbWebhook, TbWebhookOff } from "react-icons/tb";
-import { MdPhone, MdWeb, MdWebAsset, MdWebhook } from "react-icons/md";
 import Link from "next/link";
 
 interface ContactProps {

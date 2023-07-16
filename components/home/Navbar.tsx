@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { HiChat } from "react-icons/hi";
 import { HiMenu } from "react-icons/hi";
 
 import { header } from "@/public";

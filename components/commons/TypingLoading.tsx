@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const TypingLoading = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [loadingText, setLoadingText] = useState('typing');
+   
     const [dots, setDots] = useState('');
   
     useEffect(() => {

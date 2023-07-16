@@ -1,6 +1,6 @@
 import { chat, doctor, hospital, medicalTeam } from "@/public";
-import { VisionMission } from "@/types/mission";
-import { Service } from "@/types/services";
+import { VisionMission } from "@/types/home/mission";
+import { Service } from "@/types/home/services";
 export const services: Service[] = [
   {
     description:

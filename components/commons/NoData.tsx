@@ -1,4 +1,4 @@
-import { doctor, doctorImg } from "@/public";
+import { doctor } from "@/public";
 import Image from "next/image";
 import Link from "next/link";
 import HospitalsList from "../hospital/HospitalsList";

@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Doctor,Institution } from "@/types/chat/service";
+import { Institution } from "@/types/chat/service";
 import RecomendedDoctorList from "./RecomendedDoctorList";
 import { useRouter } from "next/router";
 interface RecomendedHospitalInterface{

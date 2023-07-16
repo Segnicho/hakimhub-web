@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import  {AiOutlineClose} from "react-icons/ai"
 import {MdArrowDropDown} from "react-icons/md"
 import FilterChip from '../commons/FilterChip';
 

@@ -32,10 +32,8 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
     const submitData = async () => {
       try {
         const response = await fetch("/api/get-ip");
-        console.log("hello");
-        console.log(response);
+        
       } catch (error) {
-        console.error("Error submitting data:", error);
       }
     };
 
@@ -60,7 +58,6 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
     })
       .unwrap()
       .then((response: ChatResponse) => {
-        console.log(response);
         setLoading(false);
         dispatch(pushMessage(response));
         setButtonActive(false);
@@ -72,7 +69,6 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
         );
         setButtonActive(false);
       });
-    //since there shouldn't be new chat on every request
     setNewChat(false);
     setInput("");
   };
