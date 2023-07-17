@@ -5,7 +5,6 @@ import {
 } from "@/store/features/chat/message-history";
 import { RootState } from "@/store";
 import { ChatResponse } from "@/types/chat/service";
-import { truncate } from "fs";
 import React, { useState, useRef, useEffect } from "react";
 import {
   IoChatbubbleEllipsesOutline,
