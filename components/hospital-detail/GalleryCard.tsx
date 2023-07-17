@@ -5,12 +5,12 @@ interface GalleryProps {
 }
 
 const Gallery: React.FC<GalleryProps> = ({ photos }) => {
-  const columns = Math.ceil(photos.length / 3);
+
   return (
     <div className='my-4 mx-6'>
       <h3 className='text-xl md:text-2xl font-bold mx-4 my-6'>Gallery</h3>
       <div className='flex flex-col overflow-y-auto h-[400px] sm:h-[430px] lg:h-[520px]'>
-        <div className={`sm:gap-4 sm:grid sm:grid-rows-${columns} sm:grid-cols-3 lg:mx-4`}>
+        <div className={`sm:gap-4 sm:grid sm:grid-cols-3 lg:mx-4`}>
           {photos.map((photosUrl, index) => (
             <div
             key={index}
@@ -25,8 +25,7 @@ const Gallery: React.FC<GalleryProps> = ({ photos }) => {
             } ${
               index >= 6 && (index - 1) % 3 !== 0 && index % 2 === 0 ? 'sm:mt-[4px]' : ''
             }`}
-          >
-                  
+          >   
               <Image
                 width={200}
                 height={200}
