@@ -58,7 +58,7 @@ function DoctorDetail() {
                 <p className='max-w-[700px] text-xl font-normal text-[#8B8B8B]  '>{doctor?.value?.about} </p>
                 <h1 className='text-3xl font-bold pt-4 pb-8'>Education</h1>
                 {doctor?.value?.educations.length !== 0 ?
-                    doctor?.value?.educations.map((education:Education,index:number) =>{
+                    doctor?.value?.educations.map(({EducationInstitutionLogoUrl,Degree,EducationInstitution,StartYear,GraduationYear}:Education,index:number) =>{
                         return (
 
                 <div className='sm:flex justify-between gap-9' key={index}>
@@ -69,19 +69,19 @@ function DoctorDetail() {
                         className='rounded-full '
                         alt = 'Education'
                         fill
-                        src = {education.EducationInstitutionLogoUrl}
+                        src = {EducationInstitutionLogoUrl}
                         priority
                          />
                         
                     </div>
                     <div>
-                        <p>{education.Degree}</p>
-                        <p className="text-sm capitalize pt-5 text-lightblack">{education.EducationInstitution}</p>
+                        <p>{Degree}</p>
+                        <p className="text-sm capitalize pt-5 text-lightblack">{EducationInstitution}</p>
                     </div>
                     
                 </div>
                     <div className='justify-self-end'>
-                        <p>{education.StartYear.toLocaleString()} - {education.GraduationYear.toLocaleString()}</p>
+                        <p>{StartYear?.toLocaleString()} - {GraduationYear?.toLocaleString()}</p>
                     </div>
                 </div>
                         )
