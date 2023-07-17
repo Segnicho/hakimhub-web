@@ -69,16 +69,18 @@ const Overview: React.FC<OverviewProps> = ({
   }, [latitude, longitude]);
 
   return (
-    <div className="p-5 md:-mr-12 -z-10">
+    <div className="p-5 -z-10">
       <div className="bg-white rounded-md p-5 w-[95%] shadow-md">
         <h1 className="font-medium text-[30px]">About Us</h1>
         <p className="py-5 text-gray-600">{about}</p>
       </div>
       <div className="bg-white rounded-lg w-[95%] shadow-md -z-10">
-          <div id="map" className="h-96"></div>
+        <div id="map" className="h-96"></div>
       </div>
-      <h1 className="pt-2 text-xl font-bold">Our Services</h1>
-      {services && <ServicesSlide slideShow={4} services={services} />}
+      <div className="mr-10">
+        <h1 className="pt-2 text-xl font-bold">Our Services</h1>
+        {services && <ServicesSlide slideShow={4} services={services} />}
+      </div>
     </div>
   );
 };
