@@ -11,6 +11,7 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
   const Institution = name?.split(" ");
   const LastInstitutionName = Institution?.pop();
   const FirtInstitutionName = Institution?.join(" ");
+
   return (
     <div className='drop-shadow shadow-md rounded-lg bg-white mt-10'>
       <div>
@@ -20,9 +21,8 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
            <Image
              src={image}
              alt="Hospital Image"
-             layout="fill"
-             objectFit="cover"
              className="object-cover rounded-lg"
+             fill
            />
          </div>
        </div>
@@ -51,8 +51,7 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
       <div
         className={`text-lg font-bold flex flex-wrap justify-end mr-4 pb-4 mb-auto self-end ${
           status == "Open" ? "text-isopen-text" : "text-closed-text"
-        }`}
-      >
+        }`}>
         {status == "Open" ? "OPEN" : "CLOSED"}
       </div>
     </div>
