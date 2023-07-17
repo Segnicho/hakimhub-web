@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import DoctorCard from './DoctorCard';
 import { useFilterDoctorsQuery } from '@/store/features/doctors/doctors-api';
 import { AllEducationalInstitutions } from '@/types/institution/institution-detail';
@@ -53,7 +53,6 @@ const DoctorsList: React.FC<DoctorsListProps> = ({
   }
 
   const containerClasses ='flex flex-wrap my-6 overflow-y-auto h-[520px] mx-4';
-
   return (
     <div className="my-5 sm:my-8">
       <div className="flex flex-row cursor-pointer justify-between px-8" onClick={toggleFilters}>
