@@ -2,9 +2,8 @@ import { Inter } from "next/font/google";
 import { Hero, Search } from "@/components";
 import Services from "@/components/home/Services";
 import AboutUs from "@/components/home/AboutUs";
-import VisionMission from "@/components/home/VisionMission";
 import Hospitals from "@/components/home/Hospitals";
-
+import { hakimhub } from "@/data/home";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,7 +16,20 @@ export default function Home() {
       <div className="flex flex-col gap-y-16 mt-28">
         <Services />
         <AboutUs />
-        <VisionMission />
+        <div className="flex space-x-3 flex-wrap my-10 max-md:flex-col">
+          <div className="md:flex-1">
+            <h3 className="text-primary text-[40px] font-semibold text-center">
+              Mission
+            </h3>
+            <p className="px-5">{hakimhub.mission}</p>
+          </div>
+          <div className="md:flex-1">
+            <h3 className="text-primary text-[40px] font-semibold text-center">
+              Vision
+            </h3>
+            <p className="px-5">{hakimhub.vision}</p>
+          </div>
+        </div>
         <Hospitals />
       </div>
     </main>
