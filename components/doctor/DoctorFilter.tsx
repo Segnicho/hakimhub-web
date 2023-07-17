@@ -27,10 +27,6 @@ const DoctorFilter: React.FC<DoctorFilterProps> = ({
   setSpeciality,
   setSelectedSpeciality
 }) => {
-  const handleSpecialityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedOptions = Array.from(e.target.selectedOptions, (option) => option.value);
-    onSpecialityChange(selectedOptions);
-  };
 
   var educations: string[] = [];
   for (let i=0; i < allEducationalInstitutions.length;i++){
@@ -64,8 +60,6 @@ const DoctorFilter: React.FC<DoctorFilterProps> = ({
       })
 
     }
-
-   
     </div>
   );
 };
