@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import { chat_logo } from "@/public";
 import services from "@/data/chat/services.json";
 import Service from "@/components/chat/Service";
 import ServiceType from "@/types/chat/service";
 import Chat from "@/components/chat/Chat";
-import MessageList from "@/components/chat/RecomendedHospitalList";
 import MessageCard from "@/components/chat/MessageCard";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
