@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <RootLayout>
         
         <Component {...pageProps} />
-      </RootLayout>
+      </RootLayout> 
     </Provider>
 
     </>

@@ -1,15 +1,12 @@
-import { Inter } from "next/font/google";
 import { Hero, Search } from "@/components";
 import Services from "@/components/home/Services";
 import AboutUs from "@/components/home/AboutUs";
 import Hospitals from "@/components/home/Hospitals";
 import { hakimhub } from "@/data/home";
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   return (
     <main
-      className={`flex min-h-screen flex-col mt-20 px-8 md:px-20 ${inter.className}`}
+      className={`flex min-h-screen flex-col mt-20 px-8 md:px-20`}
     >
       <Hero />
       <Search />

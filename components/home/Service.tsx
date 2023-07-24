@@ -1,8 +1,8 @@
-import { Service } from "@/types/home/services";
+import { Service as ServiceType } from "@/types/home/services";
 import Image from "next/image";
 import React from "react";
 
-const Service: React.FC<Service> = ({ image, description, service }) => {
+const Service: React.FC<ServiceType> = ({ image, description, service }) => {
   return (
     <div className="flex flex-col justify-center gap-4 w-[300px] h-[300px] items-center">
       <div className="text-center">{description}</div>
