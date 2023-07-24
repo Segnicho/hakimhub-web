@@ -1,13 +1,11 @@
-import { ChatResponse } from '@/types/chat/service';
+import { ChatResponse } from '@/types/chat/chat-types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 export interface MessageHistory {
     messages:(string|ChatResponse)[];
-
 }
 const initialState: MessageHistory = {
     messages: [], 
 };
-
 const ChatHistory = createSlice({
     name: 'ChatHistory',
     initialState,
@@ -20,6 +18,5 @@ const ChatHistory = createSlice({
       },
     },
   });
-
-  export const {pushMessage, removeAllMessage} = ChatHistory.actions
-  export default ChatHistory
+export const {pushMessage, removeAllMessage} = ChatHistory.actions
+export default ChatHistory

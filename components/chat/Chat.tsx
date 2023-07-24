@@ -4,15 +4,17 @@ import {
   removeAllMessage,
 } from "@/store/features/chat/message-history";
 import { RootState } from "@/store";
-import { ChatResponse } from "@/types/chat/service";
+import { ChatResponse } from "@/types/chat/chat-types";
 import React, { useState, useRef, useEffect } from "react";
 import {
   IoChatbubbleEllipsesOutline,
   IoSendSharp,
   IoAdd,
 } from "react-icons/io5";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { 
+  useSelector,
+  useDispatch,
+ } from "react-redux";
 
 type SetStateFunction<T> = React.Dispatch<React.SetStateAction<T>>;
 type ChatProp = {
@@ -24,13 +26,12 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
   const [buttonActive, setButtonActive] = useState(false);
   const dispatch = useDispatch();
   const ipaddress = useSelector((state: RootState) => state.IpSlice.ipAddress);
-  const [postChat, { isLoading, isSuccess }] = usePostChatBotMutation();
+  const [postChat, { isLoading }] = usePostChatBotMutation();
   const inputRef = useRef<HTMLInputElement>(null);
-
   useEffect(() => {
     const submitData = async () => {
       try {
-        const response = await fetch("/api/get-ip");
+        await fetch("/api/get-ip");
         
       } catch (error) {
       }
@@ -64,7 +65,7 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
       .catch((error) => {
         setLoading(false);
         dispatch(
-          pushMessage("An error occured while generating response try again")
+          pushMessage("An error occured while generating response.Please try again")
         );
         setButtonActive(false);
       });
@@ -82,11 +83,11 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
         onClick={newTopic}
         className="flex flex-col  justify-center items-center border hover:shadow-chat-button rounded-full text-xl  w-[3rem] h-[3rem] md:px-6 hover:bg-primary bg-[#56b2fd] capitalize text-white"
       >
-        <IoAdd className=" text-white" size="1.4rem" />
+      <IoAdd className=" text-white" size="1.4rem" />
       </button>
 
       <form className="flex flex-stretch w-[80vw] md:w-[50vw] py-2">
-        <div className="flex w-full items-center shadow-md rounded-md   p-2 bg-[rgb(248,246,246)]">
+        <div className="flex w-full items-center shadow-md rounded-md p-2 bg-[rgb(248,246,246)]">
           <IoChatbubbleEllipsesOutline
             className="text-secondary-text hidden md:flex my-[6px]  "
             size={24}
@@ -114,5 +115,4 @@ const Chat: React.FC<ChatProp> = ({ setLoading }) => {
     </div>
   );
 };
-
 export default Chat;

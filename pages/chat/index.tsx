@@ -3,7 +3,7 @@ import Image from "next/image";
 import { chat_logo } from "@/public";
 import services from "@/data/chat/services.json";
 import Service from "@/components/chat/Service";
-import ServiceType from "@/types/chat/service";
+import ServiceType from "@/types/chat/chat-types";
 import Chat from "@/components/chat/Chat";
 import MessageCard from "@/components/chat/MessageCard";
 import { useSelector } from "react-redux";
@@ -14,12 +14,8 @@ import TypingLoading from "@/components/commons/TypingLoading";
 const Index: FC = () => {
   const messages = useSelector((state:RootState) => state.ChatHistory.messages)
   const [loading,setLoading] = useState<boolean>(false)
-
-  
-  
   return (
-    <div className="min-h-screen relative bg-white">
-      
+    <div className="min-h-screen relative bg-white"> 
       <div className="max-w-screen-2xl min-h-[100vh]">
       <div className="flex flex-col mb-16 "> 
         <div className="flex-grow">
@@ -34,45 +30,31 @@ const Index: FC = () => {
                 height={100}
               />
             <p className="text-5xl font-bold text-center  font-inter">
-
              Welcome to Hakim<span className="text-main">Hub</span><span className="text-5xl">AI</span>
             </p>
             <p className="text-secondary-text text-xl text-center font-bold font-inter">
                Your AI-powered copilot for your health
-               </p>
+            </p>
             </div>
-            
-
             <div className="flex flex-col lg:flex-row justify-center items-center gap-4 lg:justify-around p-8">
               {services.map((service: ServiceType) => (
                 <Service
                   key={service.id}
                   title={service.title}
-                  detail={service.detail}
-                  
+                  detail={service.detail}   
                 />
               ))}
             </div>
           </div>
           :
-          ""
-            
+          <MessageCard/>
           }
         </div>
-        { messages.length > 0 && <MessageCard/>}
         {loading && <TypingLoading/>}     
       </div>
     </div> 
-        <Chat setLoading = {setLoading} />
-
-      
-    </div>
-    
-      
-      
-     
-    
-    
+        <Chat setLoading = {setLoading} />  
+    </div>  
   );
 };
 

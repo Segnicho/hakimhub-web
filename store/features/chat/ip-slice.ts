@@ -1,13 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-interface IpState {
-  ipAddress: string ;
-}
-
+import { IpState } from '@/types/chat/chat-types';
 const initialState: IpState = {
-  ipAddress: '',
+  ipAddress:'',
 };
-
 const IpSlice = createSlice({
   name: 'ipaddress',
   initialState,
@@ -17,7 +12,5 @@ const IpSlice = createSlice({
     },
   },
 });
-
 export const { setIpAddress } = IpSlice.actions;
-
 export default IpSlice;

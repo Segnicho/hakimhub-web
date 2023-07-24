@@ -73,3 +73,6 @@ export interface Institution {
     Address:string,
     isNewChat:boolean
   }
+  export interface IpState {
+    ipAddress: string ;
+  }

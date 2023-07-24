@@ -10,7 +10,6 @@ export const doctorDetail = createApi({
             })
         }
     )
-
 })
 
 export const {useGetDoctorByIdQuery} = doctorDetail

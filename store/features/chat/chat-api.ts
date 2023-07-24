@@ -1,4 +1,4 @@
-import { ChatResponse, MessageBody } from "@/types/chat/service"
+import { ChatResponse, MessageBody } from "@/types/chat/chat-types"
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react"
 const API_BASE_URL = 'https://hakim-hub.onrender.com'
 export const ChatBot = createApi({
