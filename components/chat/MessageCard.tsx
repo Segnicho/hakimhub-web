@@ -7,7 +7,7 @@ const MessageCard: React.FC = () => {
   
   const messageHistory = useSelector((state:RootState) => state.ChatHistory) 
   return <div>
-    <div className="shoadow-md" >
+    <div  data-testid="message-card" className="shoadow-md" >
       {
         messageHistory.messages.map((message , index:number) =>{
           return (
