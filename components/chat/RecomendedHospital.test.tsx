@@ -1,8 +1,7 @@
-// RecomendedHospital.tsx
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import RecomendedHospital from "./RecomendedHospital";
-import { Institution } from "@/types/chat/service";
+import { Institution } from "@/types/chat/chat-types";
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
 const mockPush = jest.fn();

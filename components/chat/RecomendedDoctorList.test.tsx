@@ -1,8 +1,7 @@
-// RecomendedDoctorList.test.tsx
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import RecomendedDoctorList from "./RecomendedDoctorList";
-import { Doctor } from "@/types/chat/service";
+import { Doctor } from "@/types/chat/chat-types";
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
 const mockPush = jest.fn();

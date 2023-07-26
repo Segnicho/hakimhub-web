@@ -1,4 +1,3 @@
-// RecomendedDoctor.test.tsx
 import React from "react";
 import { render } from "@testing-library/react";
 import RecomendedDoctor from "./RecomendedDoctor";
