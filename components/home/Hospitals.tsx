@@ -17,7 +17,12 @@ const Hospitals: React.FC = () => {
       <h3 className=" text-[40px] font-semibold text-center pb-3">
         Our <span className="text-primary">Hospitals</span>{" "}
       </h3>
-      {isLoading && <HospitalLoading />}
+      {isLoading && (
+        <div data-testid="hospital-loading">
+          {" "}
+          <HospitalLoading />{" "}
+        </div>
+      )}
       {isLoading && <HospitalLoading />}
       {hospitals && <HospitalsList hospitals={hospitals.value.slice(0, 2)} />}
     </div>
