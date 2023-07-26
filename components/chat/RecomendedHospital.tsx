@@ -1,11 +1,11 @@
 import Image from "next/image"
-import { Institution } from "@/types/chat/service";
+import { Institution } from "@/types/chat/chat-types";
 import RecomendedDoctorList from "./RecomendedDoctorList";
 import { useRouter } from "next/router";
-interface RecomendedHospitalInterface{
+interface RecomendedHospitalProp{
   institution : Institution
 }
-const RecomendedHospital: React.FC<RecomendedHospitalInterface> = ({institution}) => {
+const RecomendedHospital: React.FC<RecomendedHospitalProp> = ({institution}) => {
   const router = useRouter()
   const hospitalClickHandler = (id:string) =>{
     router.push(`/hospitals/${id}`)
@@ -33,7 +33,7 @@ const RecomendedHospital: React.FC<RecomendedHospitalInterface> = ({institution}
         </div>
       </div>
 
-      <div className=" mt-3">
+      <div className="mt-3">
         <p className="font-semibold text-lg text-secondary-text py-3">Doctors</p>
         <RecomendedDoctorList doctors = {institution.doctors} />   
       </div>

@@ -1,13 +1,12 @@
 import React from "react";
-import { Institution } from "@/types/chat/service";
+import { Institution } from "@/types/chat/chat-types";
 import RecomendedHospital from "./RecomendedHospital";
 
-interface RecomendedHospitalListInterface{
+interface RecomendedHospitalListProp{
   institutions : Institution[]
 }
-const RecomendedHospitalList: React.FC<RecomendedHospitalListInterface> = ({institutions}) => {
-  
-  
+const RecomendedHospitalList: React.FC<RecomendedHospitalListProp> = ({institutions}) => {
+
   return <div className="mt-4 px-2 ">
     <div className="mb-3">
       <p> Based on your symptoms I recommend that you see the following Hospitals </p>

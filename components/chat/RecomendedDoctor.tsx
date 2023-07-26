@@ -1,9 +1,9 @@
-import { Doctor } from "@/types/chat/service";
+import { Doctor } from "@/types/chat/chat-types";
 import Image from "next/image";
-interface RecomendedDoctorInterface{
+interface RecomendedDoctorProp{
     doctor:Doctor
 }
-const RecomendedDoctor: React.FC<RecomendedDoctorInterface> = ({doctor}) => {
+const RecomendedDoctor: React.FC<RecomendedDoctorProp> = ({doctor}) => {
     return (
         <div className=" flex flex-col justify-center  items-center rounded-md shadow-md  m-2 p-3 ">
             <div className=' relative w-[3.5rem] h-[3.5rem] rounded-full  shadow-md'>
