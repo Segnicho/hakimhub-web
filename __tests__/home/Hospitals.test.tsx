@@ -5,7 +5,6 @@ import { useGetHospitalsQuery } from "@/store/features/hospital/hospitals-api";
 import { hospitalsResponse } from "@/mocks/hospitals";
 import { store } from "@/store";
 
-// Mock the useGetHospitalsQuery hook
 jest.mock("@/store/features/hospital/hospitals-api", () => ({
   ...jest.requireActual("@/store/features/hospital/hospitals-api"),
   useGetHospitalsQuery: jest.fn(),
