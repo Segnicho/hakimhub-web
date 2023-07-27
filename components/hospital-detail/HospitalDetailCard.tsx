@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface HospitalCardProps {
+export interface HospitalCardProps {
   image?: string;
   name?: string;
   status?: string;
@@ -59,4 +59,3 @@ const HospitalDetailCard: React.FC<HospitalCardProps> = ({ image, name, status, 
 };
 
 export default HospitalDetailCard;
-
