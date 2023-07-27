@@ -1,7 +1,7 @@
 // Service.test.tsx
 import React from "react";
 import { render } from "@testing-library/react";
-import Service from "./Service";
+import Service from "../../components/chat/Service";
 describe("Service component", () => {
   test("renders the title and detail correctly", () => {
     const title = "Sample Title";

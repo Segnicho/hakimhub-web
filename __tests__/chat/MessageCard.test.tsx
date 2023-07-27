@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { Provider } from "react-redux";
 import {store} from "../../store/index"; 
-import MessageCard from "./MessageCard";
+import MessageCard from "../../components/chat/MessageCard";
 describe("MessageCard component", () => {
   test("renders the outer div", () => {
     const { getByTestId } = render(

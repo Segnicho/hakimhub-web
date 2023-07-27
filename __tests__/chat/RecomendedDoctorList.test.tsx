@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-import RecomendedDoctorList from "./RecomendedDoctorList";
+import RecomendedDoctorList from "../../components/chat/RecomendedDoctorList";
 import { Doctor } from "@/types/chat/chat-types";
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter");

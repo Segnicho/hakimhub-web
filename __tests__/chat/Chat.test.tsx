@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Chat from "./Chat";
+import Chat from "../../components/chat/Chat";
 import { Provider } from "react-redux";
 import {store} from "../../store/index"; 
 
