@@ -11,9 +11,10 @@ function DoctorDetail() {
     const { data: doctor, error, isLoading } = useGetDoctorByIdQuery(id)
     if (isLoading){
         return (
-            <Loading/>
+         <Loading/>
         );
     }
+    
     if (error){
         return <div>
         <div className="flex items-center justify-center h-screen ">
