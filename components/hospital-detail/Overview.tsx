@@ -79,7 +79,11 @@ const Overview: React.FC<OverviewProps> = ({
       </div>
       <div className="mr-10">
         <h1 className="pt-2 text-xl font-bold">Our Services</h1>
-        {services && <ServicesSlide slideShow={4} services={services} />}
+        {services && (
+          <div data-testid="overview-services">
+            <ServicesSlide slideShow={4} services={services} />
+          </div>
+        )}
       </div>
     </div>
   );

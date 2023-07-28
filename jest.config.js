@@ -1,7 +1,11 @@
 module.exports = {
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/.next/",
+    "<rootDir>/node_modules/",
+    "<rootDir>/__tests__/mocks/",
+  ],
   moduleNameMapper: {
     "^@/(.*)": "<rootDir>/$1",
     "\\.(css)$": "identity-obj-proxy",
