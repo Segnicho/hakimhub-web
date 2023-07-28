@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
 import Hospitals from "@/components/home/Hospitals";
 import { useGetHospitalsQuery } from "@/store/features/hospital/hospitals-api";
-import { hospitalsResponse } from "@/mocks/hospitals";
+import { hospitalsResponse } from "../mocks/hospitals";
 import { store } from "@/store";
 
 jest.mock("@/store/features/hospital/hospitals-api", () => ({
