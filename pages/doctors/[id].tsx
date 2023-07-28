@@ -7,10 +7,12 @@ import { Loading } from '@/components';
 function DoctorDetail() {
     const router = useRouter();
     const  id = router.query.id as string;
+    
     const { data: doctor, error, isLoading } = useGetDoctorByIdQuery(id)
     if (isLoading){
-        return 
+        return (
             <Loading/>
+        );
     }
     if (error){
         return <div>
