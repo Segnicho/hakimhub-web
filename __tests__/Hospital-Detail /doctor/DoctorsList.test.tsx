@@ -1,23 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import DoctorsList from '@/components/doctor/DoctorsList';
+import { hospitalsResponse } from './../../mocks/hospitals'; 
 
 jest.mock('@/store/features/doctors/doctors-api', () => ({
   useFilterDoctorsQuery: jest.fn(() => ({
-    data: {
-      value: [
-        {
-          id: 'doctor-1',
-          fullName: 'John Doe',
-          specialities: ['Cardiology', 'Neurology'],
-        },
-        {
-          id: 'doctor-2',
-          fullName: 'Jane Smith',
-          specialities: ['Dermatology', 'Ophthalmology'],
-        },
-      ],
-    },
+    data: hospitalsResponse,
     isError: false,
     isLoading: false,
   })),
