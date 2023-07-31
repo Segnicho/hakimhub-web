@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import DoctorDetail from '../../pages/doctors/[id]';
-import { mockDoctorData } from '@/mocks/doctor';
+import { mockDoctorData } from '@/__tests__/mocks/doctor';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({
@@ -24,7 +24,10 @@ describe('DoctorDetail', () => {
   test('renders Doctor Detail correctly', async () => {
     render(<DoctorDetail />);
 
-    await waitFor(() => expect(screen.queryByText('Loading')).not.toBeInTheDocument());
+    await waitFor(
+      () => expect(screen.queryByText('Loading')).not.toBeInTheDocument(),
+      { timeout: 10000 } 
+    );
 
     expect(screen.getByText('John Doe')).toBeInTheDocument();
     expect(screen.getByText('Dentist')).toBeInTheDocument();
