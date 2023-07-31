@@ -4,7 +4,7 @@ import { Service } from "@/components";
 
 const Services: React.FC = () => {
   return (
-    <div>
+    <div data-testid="services">
       <h3 className="font-bold text-center text-primary-text text-[40px]">
         Services We Provide
       </h3>
