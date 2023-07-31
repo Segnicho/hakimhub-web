@@ -13,7 +13,7 @@ const Hospitals: React.FC = () => {
   };
   const { data: hospitals, isLoading, isError } = useGetHospitalsQuery(filters);
   return (
-    <div>
+    <div data-testid="hospitals">
       <h3 className=" text-[40px] font-semibold text-center pb-3">
         Our <span className="text-primary">Hospitals</span>{" "}
       </h3>
