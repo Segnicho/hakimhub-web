@@ -1,6 +1,6 @@
 const HospitalLoading: React.FC = () => {
   return (
-    <div>
+    <div data-testid="loading-hospital">
       <div className="animate-pulse bg-slate-100 p-2 mb-16">
         <div className="flex flex-wrap rounded-lg shadow-lg">
           <div className="w-full md:w-1/3 bg-slate-100 rounded-lg shadow-lg">
