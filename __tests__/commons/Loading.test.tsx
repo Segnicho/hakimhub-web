@@ -14,7 +14,7 @@ describe("LoadingPage component", () => {
   test('render the 2 divs correctly',() => {
     render(<LoadingPage />)
 
-    const divElements = screen.getAllByRole('div');
+    const divElements = screen.getAllByRole('load');
     expect(divElements.length).toBe(2);
   })
 });
