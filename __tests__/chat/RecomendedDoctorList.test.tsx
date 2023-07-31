@@ -2,26 +2,11 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import RecomendedDoctorList from "../../components/chat/RecomendedDoctorList";
 import { Doctor } from "@/types/chat/chat-types";
+import { mockDoctors } from "../mocks/doctors";
 
 const useRouter = jest.spyOn(require("next/router"), "useRouter");
 const mockPush = jest.fn();
 useRouter.mockReturnValue({ push: mockPush });
-
-const mockDoctors: Doctor[] = [
-  {
-    fullName: "John Doe",
-    about: "Experienced doctor",
-    gender: "Male",
-    email: "john.doe@example.com",
-    photoUrl: "https://example.com/john-doe.jpg",
-    yearsOfExperience: 10,
-    mainInstitutionId: "12345",
-    mainInstitutionName: "Example Hospital",
-    specialities: ["Cardiology"],
-    id: "6789",
-  },
-];
-
 describe("RecomendedDoctorList component", () => {
   test("renders a single doctor when there is only one doctor", () => {
     const { getByText } = render(<RecomendedDoctorList doctors={[mockDoctors[0]]} />);

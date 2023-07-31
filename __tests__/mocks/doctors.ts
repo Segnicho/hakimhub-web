@@ -1,5 +1,5 @@
 import { Doctor } from "@/types/chat/chat-types";
-const mockDoctors: Doctor[] = [
+export const mockDoctors: Doctor[] = [
   {
     fullName: "John Doe",
     about: "Experienced doctor",
