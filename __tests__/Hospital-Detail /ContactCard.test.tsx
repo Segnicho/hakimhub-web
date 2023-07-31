@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ContactCard from "./../../components/hospital-detail/ContactCard";
+import ContactCard from "@/components/hospital-detail/ContactCard";
 
 const mockData = {
   website: "https://example.com",

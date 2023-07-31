@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import HospitalDetailCard, { HospitalCardProps } from './../../components/hospital-detail/HospitalDetailCard';
+import HospitalDetailCard, { HospitalCardProps } from '@/components/hospital-detail/HospitalDetailCard';
 
 const mockData: HospitalCardProps = {
   image: "https://example.com/path/to/image.jpg",

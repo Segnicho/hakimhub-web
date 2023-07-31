@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Gallery from "./../../components/hospital-detail/GalleryCard";
+import Gallery from "@/components/hospital-detail/GalleryCard";
 
 const mockPhotos = [
   "https://example.com/photo1.jpg",

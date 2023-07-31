@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import DoctorsList from './../../../components/doctor/DoctorsList';
+import DoctorsList from '@/components/doctor/DoctorsList';
 
 jest.mock('@/store/features/doctors/doctors-api', () => ({
   useFilterDoctorsQuery: jest.fn(() => ({

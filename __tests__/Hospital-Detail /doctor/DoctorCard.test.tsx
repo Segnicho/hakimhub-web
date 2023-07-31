@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import DoctorCard from "./../../../components/doctor/DoctorCard";
+import DoctorCard from "@/components/doctor/DoctorCard";
 
 const mockDoctor = {
     fullName: "John Doe",
