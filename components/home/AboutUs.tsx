@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const AboutUs: React.FC = () => {
   return (
-    <div className="flex flex-row">
+    <div data-testid="about-us" className="flex flex-row">
       <div className="flex flex-col w-2/3 justify-center gap-6">
         <h1
           className="font-bold text-[40px] text-primary-text text-center w-[80%] "
