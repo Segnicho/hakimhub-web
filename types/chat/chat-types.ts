@@ -54,7 +54,14 @@ export interface Institution {
     summary: string;
     id: string;
   }
-  
+  interface Education {
+    EducationInstitution:string;
+    StartYear:Date;
+    Degree:string;
+    FieldOfStudy:string;
+    EducationInstitutionLogoUrl:string;
+    GraduationYear:Date;
+  }
  export interface Doctor {
     fullName: string;
     about: string;
@@ -66,7 +73,9 @@ export interface Institution {
     mainInstitutionName: string;
     specialities: string[];
     id: string;
+    educations:Education[]
   }
+ 
   
   export interface MessageBody {
     message:string,

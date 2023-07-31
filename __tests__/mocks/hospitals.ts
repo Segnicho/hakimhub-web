@@ -46,6 +46,7 @@ export const hospital: Institution ={
       mainInstitutionName: "Sample Hospital",
       specialities: ["Cardiology", "Neurology"],
       id: "doctor-id-1",
+      educations:[]
     },
     {
       fullName: "Jane Smith",
@@ -58,6 +59,7 @@ export const hospital: Institution ={
       mainInstitutionName: "Sample Hospital",
       specialities: ["Pediatrics"],
       id: "doctor-id-2",
+      educations:[]
     },
   ],
   id: "hospital-id",
