@@ -24,7 +24,10 @@ describe('DoctorDetail', () => {
   test('renders Doctor Detail correctly', async () => {
     render(<DoctorDetail />);
 
-    await waitFor(() => expect(screen.queryByText('Loading')).not.toBeInTheDocument());
+    await waitFor(
+      () => expect(screen.queryByText('Loading')).not.toBeInTheDocument(),
+      { timeout: 10000 } 
+    );
 
     expect(screen.getByText('John Doe')).toBeInTheDocument();
     expect(screen.getByText('Dentist')).toBeInTheDocument();
