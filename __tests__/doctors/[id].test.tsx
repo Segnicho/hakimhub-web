@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import DoctorDetail from '../../pages/doctors/[id]';
-import { mockDoctorData } from '@/mocks/doctor';
+import { mockDoctorData } from '@/__tests__/mocks/doctor';
 
 jest.mock('next/router', () => ({
   useRouter: () => ({
