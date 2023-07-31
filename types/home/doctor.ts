@@ -4,7 +4,7 @@ interface DoctorResponse {
     error: string | null;
   }
   
- export  interface Doctor {
+ interface Doctor {
     fullName: string;
     about: string;
     gender: string;
