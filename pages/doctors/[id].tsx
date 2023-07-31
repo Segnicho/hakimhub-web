@@ -7,11 +7,14 @@ import { Loading } from '@/components';
 function DoctorDetail() {
     const router = useRouter();
     const  id = router.query.id as string;
+    
     const { data: doctor, error, isLoading } = useGetDoctorByIdQuery(id)
     if (isLoading){
-        return 
-            <Loading/>
+        return (
+         <Loading/>
+        );
     }
+    
     if (error){
         return <div>
         <div className="flex items-center justify-center h-screen ">
