@@ -15,7 +15,7 @@ export const hospitalResponse = {
       endDay: "Friday",
       opening: "08:00",
       closing: "18:00",
-      twentyFourHours: false, // Update this to a boolean value (not a string)
+      twentyFourHours: false,
       id: "availability_id_1",
     },
     address: {
