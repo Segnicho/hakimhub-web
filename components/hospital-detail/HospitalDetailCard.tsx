@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface HospitalCardProps {
+export interface HospitalCardProps {
   image?: string;
   name?: string;
   status?: string;

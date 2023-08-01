@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-interface GalleryProps {
+export interface GalleryProps {
   photos: string[];
 }
 

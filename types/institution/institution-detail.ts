@@ -25,7 +25,6 @@ export interface HospitalDetailResponse {
   id: string;
   }
   export type AllEducationalInstitutions={
-  id:string;
   institutionName:string;
   logoUrl:string;
   }
