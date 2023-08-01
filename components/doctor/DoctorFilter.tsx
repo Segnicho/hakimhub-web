@@ -2,7 +2,7 @@ import { AllEducationalInstitutions } from '@/types/institution/institution-deta
 import FilterComponent from './FilterComponent';
 import FilterSpecialityComponent from './FilterSpecialityComponent';
 
-interface DoctorFilterProps {
+export interface DoctorFilterProps {
   allSpecialities: string[];
   allEducationalInstitutions: AllEducationalInstitutions[];
   selectedSpeciality: string[];
