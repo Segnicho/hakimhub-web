@@ -17,7 +17,7 @@ const RecomendedHospital: React.FC<RecomendedHospitalProp> = ({institution}) => 
               <div className=' relative w-[4rem] h-[4rem] rounded-full  shadow-md'>
                 <Image 
                 className='object-cover rounded-full'
-                alt='recomended hospital detail'
+                alt='recomended hospital detail image'
                 fill
                 src = {institution.bannerUrl}
                 sizes='1'

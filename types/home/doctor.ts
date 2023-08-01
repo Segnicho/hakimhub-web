@@ -4,7 +4,7 @@ interface DoctorResponse {
     error: string | null;
   }
   
-  interface Doctor {
+ interface Doctor {
     fullName: string;
     about: string;
     gender: string;
