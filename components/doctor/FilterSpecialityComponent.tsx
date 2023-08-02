@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {MdArrowDropDown} from "react-icons/md"
 import FilterChip from '../commons/FilterChip';
 
-interface Props {
+export interface Props {
   label: string;
   selected: string[] ;
   values: string[];

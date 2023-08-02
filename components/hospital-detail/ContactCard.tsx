@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-interface ContactProps {
+export interface ContactProps {
   website: string;
   phoneNumber: string;
 }
