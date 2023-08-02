@@ -10,7 +10,7 @@ describe('NoDoctors', () => {
     expect(noDoctorsText).toBeInTheDocument();
 
     const doctorImage = screen.getByAltText('There is no doctor');
-    // expect(doctorImage).toBeInTheDocument();
+    expect(doctorImage).toBeInTheDocument();
 
     const noDataMessage = screen.getByText(
       'Seems like there is no doctor data available for this hospital at the moment.'

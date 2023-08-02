@@ -1,15 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import ContactCard from "@/components/hospital-detail/ContactCard";
-
-const mockData = {
-  website: "https://example.com",
-  phoneNumber: "123-456-7890",
-};
+import { mockContactCardData } from "../mocks/data";
 
 describe("ContactCard", () => {
   it("should render the contact card with the correct data", () => {
-    const { getByText } = render(<ContactCard {...mockData} />);
+    const { getByText } = render(<ContactCard {...mockContactCardData} />);
 
     const heading1 = getByText("Contact");
     const heading2 = getByText("Reception");
@@ -27,7 +23,7 @@ describe("ContactCard", () => {
   });
 
   it("should render the phone number and website link", () => {
-    const { getByText } = render(<ContactCard {...mockData} />);
+    const { getByText } = render(<ContactCard {...mockContactCardData} />);
 
     const phoneNumber = getByText("123-456-7890");
     expect(phoneNumber).toBeInTheDocument();

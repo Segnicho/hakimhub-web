@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import DoctorCard from "@/components/doctor/DoctorCard";
-import { mockDoctor } from "@/__tests__/mocks/doctor";
+import { mockDoctor } from "@/__tests__/mocks/data";
 
 mockDoctor: mockDoctor
   

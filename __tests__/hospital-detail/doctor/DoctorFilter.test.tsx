@@ -1,12 +1,6 @@
 import { render,  screen } from '@testing-library/react';
 import DoctorFilter from '@/components/doctor/DoctorFilter';
-import { AllEducationalInstitutions } from '@/types/institution/institution-detail';
-
-const mockAllEducationalInstitutions: AllEducationalInstitutions[] = [
-  { institutionName: 'University A', logoUrl: 'sample-url' },
-  { institutionName: 'University B', logoUrl: 'sample-url' },
-  { institutionName: 'University C', logoUrl: 'sample-url'},
-];
+import { mockAllEducationalInstitutions } from '@/__tests__/mocks/data';
 
 test('renders DoctorFilter correctly', () => {
     const allSpecialities = ['Speciality1', 'Speciality2', 'Speciality3'];

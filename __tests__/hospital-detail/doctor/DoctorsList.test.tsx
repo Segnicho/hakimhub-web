@@ -1,7 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import DoctorsList from '@/components/doctor/DoctorsList';
-import { mockDoctors } from '@/__tests__/mocks/doctor'; 
+import { mockDoctors } from '@/__tests__/mocks/data'; 
+import { mockAllEducationalInstitutions } from '@/__tests__/mocks/data';
+import { mockAllSpecialities } from '@/__tests__/mocks/data';
 
 jest.mock('@/store/features/doctors/doctors-api', () => ({
   useFilterDoctorsQuery: jest.fn(() => ({
@@ -13,18 +15,6 @@ jest.mock('@/store/features/doctors/doctors-api', () => ({
 
 describe('DoctorsList', () => {
   it('should render the list of doctors with their names and specialities', () => {
-    const mockAllSpecialities = ['Cardiology', 'Neurology', 'Dermatology', 'Ophthalmology'];
-    const mockAllEducationalInstitutions = [{
-        id: "edu-1",
-        institutionName: "Sample University 1",
-        logoUrl: "https://example.com/university1-logo.png",
-      },
-      {
-        id: "edu-2",
-        institutionName: "Sample University 2",
-        logoUrl: "https://example.com/university2-logo.png",
-      },
-    ]; 
 
     render(
       <DoctorsList

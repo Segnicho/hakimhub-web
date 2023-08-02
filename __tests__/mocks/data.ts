@@ -1,3 +1,6 @@
+import { AllEducationalInstitutions } from '@/types/institution/institution-detail';
+import { HospitalCardProps } from '@/components/hospital-detail/HospitalDetailCard';
+
 export const mockDoctor = {
     fullName: "John Doe",
     about: "Experienced doctor",
@@ -56,3 +59,30 @@ export const mockDoctors = {
         },
       ],
 }
+
+
+export const mockAllEducationalInstitutions: AllEducationalInstitutions[] = [
+  { institutionName: 'University A', logoUrl: 'sample-url' },
+  { institutionName: 'University B', logoUrl: 'sample-url' },
+  { institutionName: 'University C', logoUrl: 'sample-url'},
+];
+
+export const mockAllSpecialities = ['Cardiology', 'Neurology', 'Dermatology', 'Ophthalmology'];
+
+export const mockContactCardData = {
+  website: "https://example.com",
+  phoneNumber: "123-456-7890",
+};
+
+export const mockGalleryPhotos = [
+  "https://example.com/photo1.jpg",
+  "https://example.com/photo2.jpg",
+  "https://example.com/photo3.jpg",
+];
+
+export const mockHospitalDetailCardData: HospitalCardProps = {
+  image: "https://example.com/path/to/image.jpg",
+  name: "Hospital Name",
+  status: "Open",
+  logo: "https://example.com/path/to/logo.jpg",
+};
