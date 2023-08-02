@@ -57,24 +57,33 @@ const HospitalDetailPage = () => {
 
   if (isSuccess) {
     return (
-      <div className={`max-sm:${isMobileOrTablet ? 'flex-col' : 'flex'} sm:flex min-h-screen`}>
+      <div
+        data-testid="hospital-detail-page"
+        className={`max-sm:${
+          isMobileOrTablet ? "flex-col" : "flex"
+        } sm:flex min-h-screen`}
+      >
         <div className="w-1/3 px-4 pb-4 max-md:w-full">
-          <div className='w-full'>
-          <HospitalDetailCard
-            image={hospital?.value.bannerUrl}
-            name={hospital?.value.institutionName}
-            status={hospital?.value.status}
-            logo={hospital?.value.logoUrl}
-          />
+          <div className="w-full">
+            <HospitalDetailCard
+              image={hospital?.value.bannerUrl}
+              name={hospital?.value.institutionName}
+              status={hospital?.value.status}
+              logo={hospital?.value.logoUrl}
+            />
           </div>
-          <div className='w-full mt-2'>
-          <ContactCard
-            website={hospital?.value.website}
-            phoneNumber={hospital?.value.phoneNumber}
-          />
+          <div className="w-full mt-2">
+            <ContactCard
+              website={hospital?.value.website}
+              phoneNumber={hospital?.value.phoneNumber}
+            />
           </div>
         </div>
-        <div className={`mt-10 ${activeTab === "overview" && !isMobileOrTablet ? "w-3/4" : "w-full"}`}>
+        <div
+          className={`mt-10 ${
+            activeTab === "overview" && !isMobileOrTablet ? "w-3/4" : "w-full"
+          }`}
+        >
           {/* Navigation */}
           <nav className="flex flex-row bg-white rounded-lg text-gray-500 drop-shadow shadow-md mx-8 lg:gap-24 h-8 xl:gap-x-56 ">
             <div className="flex items-center justify-between">
@@ -91,7 +100,9 @@ const HospitalDetailPage = () => {
                       }`}
                     />
                     <span
-                      className={isMobileMenuOpen ? "hidden" : "text-grey ml-10"}
+                      className={
+                        isMobileMenuOpen ? "hidden" : "text-grey ml-10"
+                      }
                     >
                       Menu
                     </span>
@@ -111,8 +122,8 @@ const HospitalDetailPage = () => {
                     handleToggleMobileMenu();
                   }}
                   className={classNames(
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                    { 'text-primary font-bold': activeTab === 'overview' }
+                    "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                    { "text-primary font-bold": activeTab === "overview" }
                   )}
                 >
                   Overview
@@ -123,8 +134,8 @@ const HospitalDetailPage = () => {
                     handleToggleMobileMenu();
                   }}
                   className={classNames(
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                    { 'text-primary font-bold': activeTab === 'doctors' }
+                    "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                    { "text-primary font-bold": activeTab === "doctors" }
                   )}
                 >
                   Doctors
@@ -135,8 +146,8 @@ const HospitalDetailPage = () => {
                     handleToggleMobileMenu();
                   }}
                   className={classNames(
-                    'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                    { 'text-primary font-bold': activeTab === 'gallery' }
+                    "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                    { "text-primary font-bold": activeTab === "gallery" }
                   )}
                 >
                   Gallery
@@ -148,8 +159,8 @@ const HospitalDetailPage = () => {
                   <button
                     onClick={() => handleTabClick("overview")}
                     className={classNames(
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                      { 'text-primary font-bold': activeTab === 'overview' }
+                      "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                      { "text-primary font-bold": activeTab === "overview" }
                     )}
                   >
                     Overview
@@ -157,8 +168,8 @@ const HospitalDetailPage = () => {
                   <button
                     onClick={() => handleTabClick("doctors")}
                     className={classNames(
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                      { 'text-primary font-bold': activeTab === 'doctors' }
+                      "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                      { "text-primary font-bold": activeTab === "doctors" }
                     )}
                   >
                     Doctors
@@ -166,8 +177,8 @@ const HospitalDetailPage = () => {
                   <button
                     onClick={() => handleTabClick("gallery")}
                     className={classNames(
-                      'hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold',
-                      { 'text-primary font-bold': activeTab === 'gallery' }
+                      "hover:text-primary hover:border-b-2 hover:border-primary hover:font-bold",
+                      { "text-primary font-bold": activeTab === "gallery" }
                     )}
                   >
                     Gallery
@@ -178,39 +189,43 @@ const HospitalDetailPage = () => {
           </nav>
 
           <div className="mt-4">
-          {activeTab === "overview" && (
-                <Overview
-                  about={hospital?.value.summary}
-                  services={hospital?.value.services}
-                  latitude={hospital?.value.address?.latitude}
-                  longitude={hospital?.value.address?.longitude}
-                />
-          )}
-        {activeTab === 'doctors' && (
-        <>
-          {isLoading && <Loading />}
-          {!isError && hospital?.value.doctors && hospital?.value.doctors.length > 0 ? (
-           <div className='w-full'>
-             <DoctorsList
-              hospitalId={hospital?.value.id}
-              name={hospital?.value.institutionName}
-              allSpecialities={hospital?.value.allSpecialities}
-              allEducationalInstitutions={hospital?.value.allEducationalInstitutions}
-            />
-           </div>
-          ) : (
-              <NoDoctors />
-          )}
-        </>
-        )}
+            {activeTab === "overview" && (
+              <Overview
+                about={hospital?.value.summary}
+                services={hospital?.value.services}
+                latitude={hospital?.value.address?.latitude}
+                longitude={hospital?.value.address?.longitude}
+              />
+            )}
+            {activeTab === "doctors" && (
+              <>
+                {isLoading && <Loading />}
+                {!isError &&
+                hospital?.value.doctors &&
+                hospital?.value.doctors.length > 0 ? (
+                  <div className="w-full">
+                    <DoctorsList
+                      hospitalId={hospital?.value.id}
+                      name={hospital?.value.institutionName}
+                      allSpecialities={hospital?.value.allSpecialities}
+                      allEducationalInstitutions={
+                        hospital?.value.allEducationalInstitutions
+                      }
+                    />
+                  </div>
+                ) : (
+                  <NoDoctors />
+                )}
+              </>
+            )}
 
-          {activeTab === "gallery" && hospital?.value.photos && (
-            <GalleryCard photos={hospital?.value.photos} />
-          )}
+            {activeTab === "gallery" && hospital?.value.photos && (
+              <GalleryCard photos={hospital?.value.photos} />
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
  };
 }  
 
